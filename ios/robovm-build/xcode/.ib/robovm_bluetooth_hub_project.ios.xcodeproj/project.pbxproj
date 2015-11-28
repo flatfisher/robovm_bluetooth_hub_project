@@ -1,0 +1,182 @@
+{
+	"archiveVersion" = "1";
+	"classes" =
+		{
+		};
+	"objectVersion" = "46";
+	"objects" =
+		{
+			"100000000000000000000002" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("E083809424EC401A9B117E13", "798B12F95B9643B8A5F85238", "C7387373B7064D2EBD3F3011"
+);
+					"sourceTree" = "<group>";
+				};
+			"100000000000000000000006" =
+				{
+					"isa" = "PBXNativeTarget";
+					"buildPhases" =
+						("100000000000000000000007");
+					"buildRules" =
+						();
+					"dependencies" =
+						();
+					"name" = "test";
+					"productName" = "test";
+					"productType" = "com.apple.product-type.application";
+				};
+			"100000000000000000000001" =
+				{
+					"isa" = "PBXProject";
+					"attributes" =
+						{
+							"LastUpgradeCheck" = "0620";
+						};
+					"buildConfigurationList" = "100000000000000000000003";
+					"compatibilityVersion" = "Xcode 3.2";
+					"developmentRegion" = "English";
+					"hasScannedForEncodings" = "0";
+					"knownRegions" =
+						("en");
+					"mainGroup" = "100000000000000000000002";
+					"projectDirPath" = "";
+					"projectRoot" = "";
+					"targets" =
+						("100000000000000000000006");
+				};
+			"100000000000000000000007" =
+				{
+					"isa" = "PBXSourcesBuildPhase";
+					"buildActionMask" = "2147483647";
+					"files" =
+						("B8FBCDC3DD04469FB593F6AA");
+					"runOnlyForDeploymentPostprocessing" = "0";
+				};
+			"100000000000000000000004" =
+				{
+					"isa" = "XCBuildConfiguration";
+					"buildSettings" =
+						{
+							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/Info.plist.xml";
+							"SDKROOT" = "iphoneos";
+							"TARGETED_DEVICE_FAMILY" = "1,2";
+							"GCC_PRECOMPILE_PREFIX_HEADER" = "YES";
+							"GCC_PREFIX_HEADER" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/Prefix.pch";
+						};
+					"name" = "Debug";
+				};
+			"100000000000000000000005" =
+				{
+					"isa" = "XCBuildConfiguration";
+					"buildSettings" =
+						{
+							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/Info.plist.xml";
+							"SDKROOT" = "iphoneos";
+							"TARGETED_DEVICE_FAMILY" = "1,2";
+							"GCC_PRECOMPILE_PREFIX_HEADER" = "YES";
+							"GCC_PREFIX_HEADER" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/Prefix.pch";
+						};
+					"name" = "Release";
+				};
+			"100000000000000000000003" =
+				{
+					"isa" = "XCConfigurationList";
+					"buildConfigurations" =
+						("100000000000000000000004", "100000000000000000000005");
+					"defaultConfigurationIsVisible" = "0";
+					"defaultConfigurationName" = "Release";
+				};
+			"1125C35AB04943BE923C13BB" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "MainViewController.h";
+					"lastKnownFileType" = "sourcecode.c.h";
+					"sourceTree" = "<group>";
+					"path" = "MainViewController.h";
+				};
+			"798B12F95B9643B8A5F85238" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("CDA2B33FE6A045A6BCEC91A3");
+					"name" = "Sources";
+					"sourceTree" = "<absolute>";
+					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib";
+				};
+			"CDA2B33FE6A045A6BCEC91A3" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("1125C35AB04943BE923C13BB", "8AAB3B7D8295432F9840CF12");
+					"name" = "com.liferay.bluetooth";
+					"sourceTree" = "<group>";
+					"path" = "com.liferay.bluetooth";
+				};
+			"8AAB3B7D8295432F9840CF12" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "MainViewController.m";
+					"lastKnownFileType" = "sourcecode.c.objc";
+					"sourceTree" = "<group>";
+					"path" = "MainViewController.m";
+				};
+			"B8FBCDC3DD04469FB593F6AA" =
+				{
+					"isa" = "PBXBuildFile";
+					"fileRef" = "8AAB3B7D8295432F9840CF12";
+				};
+			"4DC99A3F05B64FF79F25A62F" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Main.storyboard";
+					"lastKnownFileType" = "file.storyboard";
+					"sourceTree" = "<group>";
+					"path" = "Base.lproj/Main.storyboard";
+				};
+			"E083809424EC401A9B117E13" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("A8EEB68983EE42AC84876CCD", "2072CAC20DBE469487DC08BE");
+					"name" = "Resources";
+					"sourceTree" = "<absolute>";
+					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/resources";
+				};
+			"A8EEB68983EE42AC84876CCD" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Images.xcassets";
+					"lastKnownFileType" = "folder.assetcatalog";
+					"sourceTree" = "<group>";
+					"path" = "Images.xcassets";
+				};
+			"2072CAC20DBE469487DC08BE" =
+				{
+					"isa" = "PBXVariantGroup";
+					"children" =
+						("4DC99A3F05B64FF79F25A62F");
+					"name" = "Main.storyboard";
+					"sourceTree" = "<group>";
+				};
+			"F22C5521E63D48E29CD2D296" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Info.plist";
+					"explicitFileType" = "text.plist.info";
+					"sourceTree" = "<group>";
+					"path" = "Info.plist.xml";
+				};
+			"C7387373B7064D2EBD3F3011" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("F22C5521E63D48E29CD2D296");
+					"name" = "Supporting Files";
+					"sourceTree" = "<absolute>";
+					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios";
+				};
+		};
+	"rootObject" = "100000000000000000000001";
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classToHeader</key>
+	<dict>
+		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/MainViewController.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/MainViewController.h</string>
+	</dict>
+	<key>implementationToBuild</key>
+	<dict>
+		<key>8AAB3B7D8295432F9840CF12</key>
+		<string>B8FBCDC3DD04469FB593F6AA</string>
+	</dict>
+</dict>
+</plist>
