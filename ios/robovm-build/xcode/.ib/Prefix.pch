@@ -19,3 +19,4 @@
 #import <WebKit/WebKit.h>
 
 #import "MainViewController.h"
+#import "AddDeviceTableViewController.h"

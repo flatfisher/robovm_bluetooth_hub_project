@@ -4,13 +4,17 @@
 <dict>
 	<key>classToHeader</key>
 	<dict>
+		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/AddDeviceTableViewController.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/AddDeviceTableViewController.h</string>
 		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/MainViewController.class</key>
 		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/MainViewController.h</string>
 	</dict>
 	<key>implementationToBuild</key>
 	<dict>
-		<key>504F3D500BFF4768907CEFCF</key>
-		<string>BF0F3E51227748BBB3B509C5</string>
+		<key>1E0A67A2FA6943068448CAE7</key>
+		<string>2BB689F9F0BE43FEAA578105</string>
+		<key>B21A04B5BE1248D1BBD5E297</key>
+		<string>54D8BCDEDFFA4D938EDF1AB8</string>
 	</dict>
 </dict>
 </plist>

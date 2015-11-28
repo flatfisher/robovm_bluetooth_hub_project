@@ -62,22 +62,22 @@
                             <constraint firstItem="UUR-sy-6K3" firstAttribute="top" secondItem="WrT-94-kTm" secondAttribute="bottom" id="yOV-TM-IjZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="v8L-Xy-FDX"/>
+                    <navigationItem key="navigationItem" title="Main" id="m6M-Wf-lZn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK6-Qu-SKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609" y="507"/>
         </scene>
-        <!--Root View Controller-->
+        <!--AddDevice-->
         <scene sceneID="mM3-Cj-nCY">
             <objects>
-                <tableViewController id="7Ut-6I-Ftx" sceneMemberID="viewController">
+                <tableViewController title="AddDevice" id="7Ut-6I-Ftx" customClass="AddDeviceTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V2p-bX-pZm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wUP-IT-SLJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ScanResultCell" selectionStyle="default" indentationWidth="10" id="wUP-IT-SLJ">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wUP-IT-SLJ" id="FyW-aM-T0T">
@@ -91,7 +91,6 @@
                             <outlet property="delegate" destination="7Ut-6I-Ftx" id="7Pw-gh-u0O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="AZw-zq-TMw"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xbF-Ls-Ml4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

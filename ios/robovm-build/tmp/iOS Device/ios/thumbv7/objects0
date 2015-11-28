@@ -1,12 +1,14 @@
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker0.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker6.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker1.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker7.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker4.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker3.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker5.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker2.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker3.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker4.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker7.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker5.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker8.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController.70177a03e074cb49479dfb121fc932ab.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$1.e624c2168f3a15329a2c475687b5a1fa.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Main.11d9c5ad04572f106a9065645b4f5a19.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController.fde38ef34e8d3ddd0c6031b4d3d7e3e9.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard.14e020d2ebc90634eb8bd345d6fe28e6.class.o
@@ -714,6 +716,12 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/StringTokenizer.8cff74b2ae4261146eb03c2acfa889e3.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TimSort.161e1abd7ec1439f182c14b189d07999.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TimeZone.0d72edf47fe8e8e5a0fd4080e12b8bae.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer.39935bcc0917a359b72899801aab81bd.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$1.85f26a61ce6f7d0d79a8e96646982bdc.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$FinalizerHelper.cc9008ad91ccf7dfc0301a50179e9509.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$TimerImpl.613bdf38b8015e0b4d469e3d765e46cc.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$TimerImpl$TimerHeap.6b2f5c475448ada4a371844c9e534595.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TimerTask.a90428b698a697e6a600a9f348f4a6ff.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TreeMap.93e8ca84e76bad0bc7e9354f3b08d44a.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TreeMap$1.80ab42ab8bd0dfebce662777305e600b.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TreeMap$2.0ea1a43ffbb7a39e7e69cff806f87360.class.o
@@ -1289,6 +1297,40 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coreaudio/SMPTEStateFlags.0493355f2d32ce73100a4cd7a39f38cf.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coreaudio/SMPTETime.9896d5a92deb0943af9e4d4a403d8096.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coreaudio/SMPTETimeType.0d663673f4e1c70bc2950738e454e00c.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAdvertisementData.0b6400bcc77710c92016d65c577707da.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAdvertisementData$Keys.129ff1f43cf17adfc6da32e045a0d83f.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAdvertisementData$Marshaler.1ea65f13019b066a2beebe3027cc44c1.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAttribute.32dc2f711ab575b550591b63403ec425.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManager.04c28a6f15df1fd902a336ab59c25f9c.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerDelegate.c600e603f85039e3821a264f4b72cbf1.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerDelegate$ObjCProxy.094e27edb96b100074307723c7b0b335.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerOptions.22d9d36ffa1759819f0a87d663352786.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerOptions$Keys.7da582e825c9d3f600a8fa0f5c243b49.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerOptions$Marshaler.b63a7c29199b8998a0643ab8647b37db.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerRestoredState.a10901f3e8e0807f59a53f50c7029136.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerRestoredState$Keys.42d94dd468d3d3a56caaa8bc7f655137.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerRestoredState$Marshaler.2743e99634038a59a0bc3e51219483a5.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerScanOptions.ea76a76ab4b7bd6bc8fae54f661ab095.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerScanOptions$Keys.1b7bb627559377a75d6740147fd41837.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerScanOptions$Marshaler.ba02915536eabcdadbc003f2868ebaa7.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerState.294e486df8f9f41adeb411666bf98de5.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCharacteristic.61a7e05de3627a9b76b6025d0481bbf7.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCharacteristicProperties.d422e5217d6d66ced63bd59673429aae.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCharacteristicWriteType.7af3f6707cac4d6a77db823d4291116f.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBConnectPeripheralOptions.3e1ba2fe16f3ed56372fcea235f05357.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBConnectPeripheralOptions$Keys.64b3a40de450c046a4e6d7c647b0f035.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBConnectPeripheralOptions$Marshaler.5b86f162691e7f18ecb1c6ab37d3d633.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBDescriptor.c7744dd7e2d6658a379215ce31350331.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeer.1a1b1fcb8b353bb4e19ca0adfc0cc92f.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheral.247fc391cff09cbeca0843c7b43ea2f7.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheralDelegate.1c9a117dc1c6694b78899b8bc95632b3.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheralDelegate$ObjCProxy.0c1bf4cb2b6a32671e4b6e3913b87e75.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheralState.199b02fd4d8fc61ea3b909d8a30a7980.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBService.ef05c12a1cd0a1628e4e974219daa868.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUID.f37413f31c2ae76c15f8d3be6b99aa1c.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUIDIdentifier.922255b980cd55e412ef318ba4bf7518.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUIDIdentifier$Marshaler.26e13dc70597bca7b58622aa629c607d.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUIDIdentifier$Values.1216d765876d1ffb3ebb84d8640a3490.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coredata/NSCoreDataErrorCode.7146e240532b22e167e9555977f471d1.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFAllocator.1da39de111463e7b124a3030153b853e.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFAllocatorContext.b75a48a30bd8091f8f1c0d8e794324a4.class.o
@@ -1366,6 +1408,8 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFType$NoRetainMarshaler.451d8a4ba25036bd9b1d51a0e302f19f.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFURL.1b954c83ff50227048f6beb9398c78c7.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFURLPathStyle.4a24583c7c8d3d346b040e90b00fa9ce.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFUUID.730e4dd9957857be3c07424f1b68ea6b.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFUUIDBytes.73b3575ff2bca7d800d24411e1f287ec.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFWriteStream.bace269c60861acbff99239b550d2163.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFWriteStream$ClientCallback.36143093050e6a8e3ba96faf52d73d59.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/OSStatus.1b6b617a2ba5288b8d7dcde2abd3944a.class.o
@@ -2220,6 +2264,8 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAccessibilityIdentification$ObjCProxy.87cd871b98ca68ff6f4342458157977a.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAccessibilityNavigationStyle.fdb322902d38691488eb62f6cdbfb6e9.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAccessibilityTraits.b4f36dca8ce41beaa26c2b8958db3f7d.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIActivityIndicatorView.f49a82dc1c579e15f82950995d76eee0.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIActivityIndicatorViewStyle.776b6e75dafb875995afe586a327152e.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAdaptivePresentationControllerDelegate.f340fd86f912a57f2cc66875d7991bca.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAdaptivePresentationControllerDelegate$ObjCProxy.4e7a3b13ac8a8032e883ce83bca207b8.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAppearanceContainer.8bef01ea157276464f8a858908a450d0.class.o
@@ -2270,6 +2316,27 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIBaselineAdjustment.56a7c88af76e0c0b50fedeaa849f4a5a.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIBezierPath.81ae424a005bc6968d258f164a002a91.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIColor.9d2b7ce4ec5fb8c66fc377047c881a02.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl.44c545b9a652a84cd59f053bda8d67af.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$1.788a763f81229b9a9b7da0eb12d88b45.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$Listener.4a9f7495d8a702d1403e4301494838f9.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$ListenerWrapper.d417c7eca2841ce60bf66643626d4022.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnEditingChangedListener.aec86aadaae8ed23b79dcbd4ff234f68.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnEditingDidBeginListener.229ee19ca38421d8decead3c2910e7d4.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnEditingDidEndListener.348ad9e4c093b0eb942d9bc61f467c4e.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnEditingDidEndOnExitListener.1effde4b6e8422f69880d6efdef8c0ef.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchCancelListener.cc20e702dd695d74567c52363b6fd950.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchDownListener.30c4f638db960786a8d280467cd8936e.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchDownRepeatListener.af12dbdf3c38c04adf33e63a2db31c92.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchDragEnterListener.b2d8e7272785b3ccaf58009e9d25a879.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchDragExitListener.deefb3b113562931c46ce7d3ad1406c7.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchDragInsideListener.1b2538b5d2456ed0eda85dad90d25909.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchDragOutsideListener.ecd3c4499ac703bf7be0405f3e7e8f20.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchUpInsideListener.3be3dc566868cc848f3d0017db54aa31.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnTouchUpOutsideListener.1e1018f82dfae41220314845718cc7a7.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$OnValueChangedListener.8dcbc739b4fd05e0fddb28cbffa243a1.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlContentHorizontalAlignment.5b033f79be0ddf2df9ab865936dbb84e.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlContentVerticalAlignment.a467f1f096b54eca8ea146f5ce6ee5a0.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlEvents.b7dc91d93288d8d44a5d99f4540801c6.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlState.5223ec1241a5b887cea31bf46122afd5.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UICoordinateSpace.ff28f9139fbbf3d32ef7f54972b2575b.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UICoordinateSpace$ObjCProxy.4a7cd8d1251c00159a264050a317517a.class.o
@@ -2373,6 +2440,7 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIPrintPageRenderer.b9f0bb5663f572ef55f900cd11fe146e.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRectCorner.af129c0c72ea5e2fea7e8f02a7472b1b.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRectEdge.e6fe9287848aa5f5789248032c8c75fc.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRefreshControl.f0382112d19fc67a14a849890dfb71f7.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRemoteNotification.8db4d5795ecf4326d275c5d0bc9179b6.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRemoteNotification$Marshaler.fbde5c528979008bbde15524059abef9.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRemoteNotificationType.515f2fa2ef5570e48428a21b8a8e4fa8.class.o
@@ -2425,6 +2493,7 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewCellSeparatorStyle.7e9b36901d8ec894e04deaab5c059115.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewCellStateMask.0641bdfdbb215a4c6cb573b79eeefeb2.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewCellStyle.a802a9a51254a0426d216768c98a1c15.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewController.7e44ef2d214e376122a31497e995960a.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewDataSource.23e2460d9a6723d27f0e564d673f5581.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewDataSource$ObjCProxy.af356a322f2973c64da372a69336ea5f.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewDelegate.a4e5a0d02f5903f0eca4a995776d79b9.class.o
@@ -2702,6 +2771,8 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/xmlpull/v1/XmlPullParser.3ac114b5dd492674d5d663052443dbea.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/xmlpull/v1/XmlPullParserException.e518f6958fca3cadb50a7d1289dd0d01.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/sun/misc/Unsafe.d89abf37163f4e4af115ddde2836593a.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController.70177a03e074cb49479dfb121fc932ab.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$1.e624c2168f3a15329a2c475687b5a1fa.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Main.11d9c5ad04572f106a9065645b4f5a19.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController.fde38ef34e8d3ddd0c6031b4d3d7e3e9.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard.14e020d2ebc90634eb8bd345d6fe28e6.class.lines.o
@@ -3322,6 +3393,11 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/StringTokenizer.8cff74b2ae4261146eb03c2acfa889e3.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TimSort.161e1abd7ec1439f182c14b189d07999.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TimeZone.0d72edf47fe8e8e5a0fd4080e12b8bae.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer.39935bcc0917a359b72899801aab81bd.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$FinalizerHelper.cc9008ad91ccf7dfc0301a50179e9509.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$TimerImpl.613bdf38b8015e0b4d469e3d765e46cc.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/Timer$TimerImpl$TimerHeap.6b2f5c475448ada4a371844c9e534595.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TimerTask.a90428b698a697e6a600a9f348f4a6ff.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TreeMap.93e8ca84e76bad0bc7e9354f3b08d44a.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TreeMap$1.80ab42ab8bd0dfebce662777305e600b.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/java/util/TreeMap$2.0ea1a43ffbb7a39e7e69cff806f87360.class.lines.o
@@ -3865,6 +3941,38 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coreaudio/SMPTEStateFlags.0493355f2d32ce73100a4cd7a39f38cf.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coreaudio/SMPTETime.9896d5a92deb0943af9e4d4a403d8096.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coreaudio/SMPTETimeType.0d663673f4e1c70bc2950738e454e00c.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAdvertisementData.0b6400bcc77710c92016d65c577707da.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAdvertisementData$Keys.129ff1f43cf17adfc6da32e045a0d83f.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAdvertisementData$Marshaler.1ea65f13019b066a2beebe3027cc44c1.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBAttribute.32dc2f711ab575b550591b63403ec425.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManager.04c28a6f15df1fd902a336ab59c25f9c.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerDelegate$ObjCProxy.094e27edb96b100074307723c7b0b335.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerOptions.22d9d36ffa1759819f0a87d663352786.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerOptions$Keys.7da582e825c9d3f600a8fa0f5c243b49.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerOptions$Marshaler.b63a7c29199b8998a0643ab8647b37db.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerRestoredState.a10901f3e8e0807f59a53f50c7029136.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerRestoredState$Keys.42d94dd468d3d3a56caaa8bc7f655137.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerRestoredState$Marshaler.2743e99634038a59a0bc3e51219483a5.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerScanOptions.ea76a76ab4b7bd6bc8fae54f661ab095.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerScanOptions$Keys.1b7bb627559377a75d6740147fd41837.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerScanOptions$Marshaler.ba02915536eabcdadbc003f2868ebaa7.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCentralManagerState.294e486df8f9f41adeb411666bf98de5.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCharacteristic.61a7e05de3627a9b76b6025d0481bbf7.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCharacteristicProperties.d422e5217d6d66ced63bd59673429aae.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBCharacteristicWriteType.7af3f6707cac4d6a77db823d4291116f.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBConnectPeripheralOptions.3e1ba2fe16f3ed56372fcea235f05357.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBConnectPeripheralOptions$Keys.64b3a40de450c046a4e6d7c647b0f035.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBConnectPeripheralOptions$Marshaler.5b86f162691e7f18ecb1c6ab37d3d633.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBDescriptor.c7744dd7e2d6658a379215ce31350331.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeer.1a1b1fcb8b353bb4e19ca0adfc0cc92f.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheral.247fc391cff09cbeca0843c7b43ea2f7.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheralDelegate$ObjCProxy.0c1bf4cb2b6a32671e4b6e3913b87e75.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBPeripheralState.199b02fd4d8fc61ea3b909d8a30a7980.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBService.ef05c12a1cd0a1628e4e974219daa868.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUID.f37413f31c2ae76c15f8d3be6b99aa1c.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUIDIdentifier.922255b980cd55e412ef318ba4bf7518.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUIDIdentifier$Marshaler.26e13dc70597bca7b58622aa629c607d.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corebluetooth/CBUUIDIdentifier$Values.1216d765876d1ffb3ebb84d8640a3490.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/coredata/NSCoreDataErrorCode.7146e240532b22e167e9555977f471d1.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFAllocator.1da39de111463e7b124a3030153b853e.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFAllocatorContext.b75a48a30bd8091f8f1c0d8e794324a4.class.lines.o
@@ -3941,6 +4049,8 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFType$NoRetainMarshaler.451d8a4ba25036bd9b1d51a0e302f19f.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFURL.1b954c83ff50227048f6beb9398c78c7.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFURLPathStyle.4a24583c7c8d3d346b040e90b00fa9ce.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFUUID.730e4dd9957857be3c07424f1b68ea6b.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFUUIDBytes.73b3575ff2bca7d800d24411e1f287ec.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/CFWriteStream.bace269c60861acbff99239b550d2163.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/OSStatus.1b6b617a2ba5288b8d7dcde2abd3944a.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/corefoundation/OSStatus$Marshaler.f9a1735f5d3a84ac28ec69cbed6fdc83.class.lines.o
@@ -4760,6 +4870,8 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAccessibilityIdentification$ObjCProxy.87cd871b98ca68ff6f4342458157977a.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAccessibilityNavigationStyle.fdb322902d38691488eb62f6cdbfb6e9.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAccessibilityTraits.b4f36dca8ce41beaa26c2b8958db3f7d.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIActivityIndicatorView.f49a82dc1c579e15f82950995d76eee0.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIActivityIndicatorViewStyle.776b6e75dafb875995afe586a327152e.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAdaptivePresentationControllerDelegate$ObjCProxy.4e7a3b13ac8a8032e883ce83bca207b8.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIAppearanceContainer$ObjCProxy.cf73c2f47c2efd6fd6ed5c4bfdf97c87.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIApplication.cc70dd77bbd8969fd87b968f31708385.class.lines.o
@@ -4803,6 +4915,11 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIBaselineAdjustment.56a7c88af76e0c0b50fedeaa849f4a5a.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIBezierPath.81ae424a005bc6968d258f164a002a91.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIColor.9d2b7ce4ec5fb8c66fc377047c881a02.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl.44c545b9a652a84cd59f053bda8d67af.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControl$ListenerWrapper.d417c7eca2841ce60bf66643626d4022.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlContentHorizontalAlignment.5b033f79be0ddf2df9ab865936dbb84e.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlContentVerticalAlignment.a467f1f096b54eca8ea146f5ce6ee5a0.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlEvents.b7dc91d93288d8d44a5d99f4540801c6.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIControlState.5223ec1241a5b887cea31bf46122afd5.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UICoordinateSpace$ObjCProxy.4a7cd8d1251c00159a264050a317517a.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIDevice.ebaf089dbfe8709faab4530297e1b94d.class.lines.o
@@ -4894,6 +5011,7 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIPrintPageRenderer.b9f0bb5663f572ef55f900cd11fe146e.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRectCorner.af129c0c72ea5e2fea7e8f02a7472b1b.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRectEdge.e6fe9287848aa5f5789248032c8c75fc.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRefreshControl.f0382112d19fc67a14a849890dfb71f7.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRemoteNotification.8db4d5795ecf4326d275c5d0bc9179b6.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRemoteNotification$Marshaler.fbde5c528979008bbde15524059abef9.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UIRemoteNotificationType.515f2fa2ef5570e48428a21b8a8e4fa8.class.lines.o
@@ -4939,6 +5057,7 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewCellSeparatorStyle.7e9b36901d8ec894e04deaab5c059115.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewCellStateMask.0641bdfdbb215a4c6cb573b79eeefeb2.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewCellStyle.a802a9a51254a0426d216768c98a1c15.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewController.7e44ef2d214e376122a31497e995960a.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewDataSource$ObjCProxy.af356a322f2973c64da372a69336ea5f.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewDelegate$ObjCProxy.96b91f9a6cd3187f6335a16f1ddd08f1.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/robovm/apple/uikit/UITableViewHeaderFooterView.e92ce32667d1edfe60e3b2827afe15ff.class.lines.o

@@ -52,11 +52,20 @@
 		<data>
 		gCtbFsVBr4LoZEFLhvvadXEY7d8=
 		</data>
+		<key>Base.lproj/Main.storyboardc/7Ut-6I-Ftx-view-V2p-bX-pZm.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4gAh4xnv48JzTf203yazIwuYlGM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZiHz9/5XhoxxuE54qaJtFlbEMJk=
+			N/9MosfdgtVt6u7A9n+IkchDaUM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -65,16 +74,25 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x81oKs0LvR9WxouUthqnBvUCB3A=
+			xkXPghJUXsn75g2REUVXZErjRQc=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>Base.lproj/Main.storyboardc/UIViewController-Rw5-ns-KcI.nib</key>
+		<key>Base.lproj/Main.storyboardc/UINavigationController-kaE-Ll-Q5Q.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LNUCzLoXZ8JpcsWnXZUA3ukrGAc=
+			iuN4uo7N1ixXtaTOCD1Hk1wCeFo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Base.lproj/Main.storyboardc/UITableViewController-7Ut-6I-Ftx.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JRbSrypGdiZ/aezsnzVbKz/p9fA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -129,7 +147,7 @@
 		</data>
 		<key>lib/ios.jar</key>
 		<data>
-		7dZB5vDl98caZcwTptDivhrM1RU=
+		JJL1FF8tJI60jClkGVhKrEm3dys=
 		</data>
 		<key>lib/robovm-cacerts-full.jar</key>
 		<data>
@@ -194,11 +212,20 @@
 		<data>
 		gCtbFsVBr4LoZEFLhvvadXEY7d8=
 		</data>
+		<key>Base.lproj/Main.storyboardc/7Ut-6I-Ftx-view-V2p-bX-pZm.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4gAh4xnv48JzTf203yazIwuYlGM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZiHz9/5XhoxxuE54qaJtFlbEMJk=
+			N/9MosfdgtVt6u7A9n+IkchDaUM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -207,16 +234,25 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			x81oKs0LvR9WxouUthqnBvUCB3A=
+			xkXPghJUXsn75g2REUVXZErjRQc=
 			</data>
 			<key>optional</key>
 			<true/>
 		</dict>
-		<key>Base.lproj/Main.storyboardc/UIViewController-Rw5-ns-KcI.nib</key>
+		<key>Base.lproj/Main.storyboardc/UINavigationController-kaE-Ll-Q5Q.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			LNUCzLoXZ8JpcsWnXZUA3ukrGAc=
+			iuN4uo7N1ixXtaTOCD1Hk1wCeFo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Base.lproj/Main.storyboardc/UITableViewController-7Ut-6I-Ftx.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JRbSrypGdiZ/aezsnzVbKz/p9fA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -267,7 +303,7 @@
 		</data>
 		<key>lib/ios.jar</key>
 		<data>
-		7dZB5vDl98caZcwTptDivhrM1RU=
+		JJL1FF8tJI60jClkGVhKrEm3dys=
 		</data>
 		<key>lib/robovm-cacerts-full.jar</key>
 		<data>
