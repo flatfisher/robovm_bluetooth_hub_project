@@ -31,7 +31,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
     private List<String> configNameList;
 
-    private List<String> savedDeviceList;
+    private List<String> checkedDeviceList;
 
     private UIActivityIndicatorView uiActivityIndicatorView;
 
@@ -40,7 +40,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     public void viewDidLoad() {
         super.viewDidLoad();
 
-//        savedDeviceList = Setting.getSavedDeviceNameList();
+        checkedDeviceList = DataManager.getCheckedDeviceList();
+
+        System.out.println(checkedDeviceList);
 
         configNameList = getConfigData();
 
@@ -106,6 +108,8 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     private void saveConfig() {
         NSArray<UITableViewCell> cellNSArray = getTableView().getVisibleCells();
 
+        List<String> checkedDeviceList = new ArrayList<String>();
+
         for (UITableViewCell cell : cellNSArray) {
 
             if (cell.getAccessoryType() == UITableViewCellAccessoryType.Checkmark) {
@@ -114,12 +118,14 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
                 if (!cell.getDetailTextLabel().getText().equals(Constants.NO_CONFIG_MESSAGE)) {
 
-//                    Setting.saveDeviceName(deviceName);
+                    checkedDeviceList.add(deviceName);
 
                 }
 
             }
         }
+
+        DataManager.saveCheckedDeviceList(checkedDeviceList);
 
     }
 
@@ -159,9 +165,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
         String deviceName = scanResultArray.get(row);
 
-//        if (isCheckSavedDevice(deviceName)) {
-//            cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
-//        }
+        if (isCheckSavedDevice(deviceName)) {
+            cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
+        }
 
         cell.getTextLabel().setText(deviceName);
 
@@ -192,7 +198,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private boolean isCheckSavedDevice(String deviceName) {
-        for (String device : savedDeviceList) {
+        for (String device : checkedDeviceList) {
             if (device.equals(deviceName)) {
                 return true;
             }
@@ -226,9 +232,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private void disSelectDevice(String deviceName) {
-        savedDeviceList.remove(deviceName);
+        checkedDeviceList.remove(deviceName);
 
-//        Setting.saveDeviceNameList(savedDeviceList);
+        DataManager.saveCheckedDeviceList(checkedDeviceList);
     }
 
     @Override

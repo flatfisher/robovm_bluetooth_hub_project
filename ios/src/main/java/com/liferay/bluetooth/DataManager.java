@@ -3,6 +3,7 @@ package com.liferay.bluetooth;
 import org.robovm.apple.foundation.NSDictionary;
 import org.robovm.apple.foundation.NSUserDefaults;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DataManager {
@@ -19,8 +20,6 @@ public class DataManager {
         NSUserDefaults nsUserDefaults = new NSUserDefaults();
 
         NSDictionary configData = (NSDictionary) nsUserDefaults.get(Constants.CONFIG_DATA_KEY);
-
-//        List<ConfigManager> configList = NetworkManager.getConfigManagerList(configData);
 
         return configData;
     }
@@ -39,6 +38,45 @@ public class DataManager {
             return true;
         }
 
+    }
+
+    public static void saveCheckedDeviceList(List<String> checkedDeviceList){
+        NSUserDefaults nsUserDefaults = NSUserDefaults.getStandardUserDefaults();
+
+        nsUserDefaults.put(Constants.CHECKED_DEVICE_KEY,checkedDeviceList);
+
+        nsUserDefaults.synchronize();
+    }
+
+    public static List<String> getCheckedDeviceList(){
+        NSUserDefaults nsUserDefaults = NSUserDefaults.getStandardUserDefaults();
+
+        List<String> deviceList = nsUserDefaults.getStringArray(Constants.CHECKED_DEVICE_KEY);
+
+        if (deviceList == null){
+
+            List<String> newDeviceList = new ArrayList<String>();
+
+            nsUserDefaults.put(Constants.CHECKED_DEVICE_KEY,newDeviceList);
+
+            return newDeviceList;
+
+        }else{
+
+            return deviceList;
+
+        }
+
+    }
+
+    public static void removeCheckedDevice(String deviceName){
+        NSUserDefaults nsUserDefaults = NSUserDefaults.getStandardUserDefaults();
+
+        List<String> deviceList = nsUserDefaults.getStringArray(Constants.CHECKED_DEVICE_KEY);
+
+        deviceList.remove(deviceName);
+
+        saveCheckedDeviceList(deviceList);
     }
 
 }
