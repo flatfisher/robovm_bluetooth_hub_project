@@ -29,7 +29,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
     private double ROW_HEIGHT;
 
-//    private List<ConfigManager> configManagerList;
+    private List<String> configNameList;
 
     private List<String> savedDeviceList;
 
@@ -41,8 +41,8 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         super.viewDidLoad();
 
 //        savedDeviceList = Setting.getSavedDeviceNameList();
-//
-//        configManagerList = getConfigData();
+
+        configNameList = getConfigData();
 
         ROW_HEIGHT = getView().getFrame().getHeight() / 8;
 
@@ -123,15 +123,13 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
     }
 
-//    private List<ConfigManager> getConfigData() {
-//        NSUserDefaults nsUserDefaults = new NSUserDefaults();
-//
-//        NSDictionary configData = (NSDictionary) nsUserDefaults.get(Constants.CONFIG_DATA_KEY);
-//
-//        List<ConfigManager> configList = NetworkManager.getConfigManagerList(configData);
-//
-//        return configList;
-//    }
+    private List<String> getConfigData() {
+        NSDictionary nsDictionary = DataManager.getConfigData();
+
+        ConfigManager configManager = new ConfigManager(nsDictionary);
+
+        return configManager.getDeviceNameList();
+    }
 
     //UIControl.OnValueChangedListener fot pull to refresh
     @Override
@@ -322,14 +320,14 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
     private String checkConfigDataName(String device) {
 
-//        for (ConfigManager configManager : configManagerList) {
-//
-//            if (device.contains(configManager.getDeviceName())) {
-//
-//                return configManager.getDeviceName();
-//
-//            }
-//        }
+        for (String configName : configNameList) {
+
+            if (device.contains(configName)) {
+
+                return configName;
+
+            }
+        }
 
         return null;
     }
