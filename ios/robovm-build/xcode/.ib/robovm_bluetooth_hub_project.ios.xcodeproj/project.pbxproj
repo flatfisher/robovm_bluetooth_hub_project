@@ -10,7 +10,7 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("E083809424EC401A9B117E13", "798B12F95B9643B8A5F85238", "C7387373B7064D2EBD3F3011"
+						("E083809424EC401A9B117E13", "5CB01EA7B58F4D3790695EE7", "C7387373B7064D2EBD3F3011"
 );
 					"sourceTree" = "<group>";
 				};
@@ -51,7 +51,7 @@
 					"isa" = "PBXSourcesBuildPhase";
 					"buildActionMask" = "2147483647";
 					"files" =
-						("B8FBCDC3DD04469FB593F6AA");
+						("BF0F3E51227748BBB3B509C5");
 					"runOnlyForDeploymentPostprocessing" = "0";
 				};
 			"100000000000000000000004" =
@@ -87,45 +87,6 @@
 						("100000000000000000000004", "100000000000000000000005");
 					"defaultConfigurationIsVisible" = "0";
 					"defaultConfigurationName" = "Release";
-				};
-			"1125C35AB04943BE923C13BB" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "MainViewController.h";
-					"lastKnownFileType" = "sourcecode.c.h";
-					"sourceTree" = "<group>";
-					"path" = "MainViewController.h";
-				};
-			"798B12F95B9643B8A5F85238" =
-				{
-					"isa" = "PBXGroup";
-					"children" =
-						("CDA2B33FE6A045A6BCEC91A3");
-					"name" = "Sources";
-					"sourceTree" = "<absolute>";
-					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib";
-				};
-			"CDA2B33FE6A045A6BCEC91A3" =
-				{
-					"isa" = "PBXGroup";
-					"children" =
-						("1125C35AB04943BE923C13BB", "8AAB3B7D8295432F9840CF12");
-					"name" = "com.liferay.bluetooth";
-					"sourceTree" = "<group>";
-					"path" = "com.liferay.bluetooth";
-				};
-			"8AAB3B7D8295432F9840CF12" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "MainViewController.m";
-					"lastKnownFileType" = "sourcecode.c.objc";
-					"sourceTree" = "<group>";
-					"path" = "MainViewController.m";
-				};
-			"B8FBCDC3DD04469FB593F6AA" =
-				{
-					"isa" = "PBXBuildFile";
-					"fileRef" = "8AAB3B7D8295432F9840CF12";
 				};
 			"4DC99A3F05B64FF79F25A62F" =
 				{
@@ -176,6 +137,45 @@
 					"name" = "Supporting Files";
 					"sourceTree" = "<absolute>";
 					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios";
+				};
+			"14286359C67345809CF98E26" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "MainViewController.h";
+					"lastKnownFileType" = "sourcecode.c.h";
+					"sourceTree" = "<group>";
+					"path" = "MainViewController.h";
+				};
+			"5CB01EA7B58F4D3790695EE7" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("9C6CF588CCB044199FA3FBC9");
+					"name" = "Sources";
+					"sourceTree" = "<absolute>";
+					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib";
+				};
+			"9C6CF588CCB044199FA3FBC9" =
+				{
+					"isa" = "PBXGroup";
+					"children" =
+						("14286359C67345809CF98E26", "504F3D500BFF4768907CEFCF");
+					"name" = "com.liferay.bluetooth";
+					"sourceTree" = "<group>";
+					"path" = "com.liferay.bluetooth";
+				};
+			"504F3D500BFF4768907CEFCF" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "MainViewController.m";
+					"lastKnownFileType" = "sourcecode.c.objc";
+					"sourceTree" = "<group>";
+					"path" = "MainViewController.m";
+				};
+			"BF0F3E51227748BBB3B509C5" =
+				{
+					"isa" = "PBXBuildFile";
+					"fileRef" = "504F3D500BFF4768907CEFCF";
 				};
 		};
 	"rootObject" = "100000000000000000000001";
