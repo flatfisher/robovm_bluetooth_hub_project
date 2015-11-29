@@ -16,4 +16,8 @@ public class Constants {
 
     public static final String NO_CONFIG_MESSAGE = "No configuration found.";
 
+    public static final String GATT = "GATT";
+
+    public static final String BROADCAST = "Broadcast";
+
 }

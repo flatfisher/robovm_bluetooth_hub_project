@@ -79,4 +79,19 @@ public class DataManager {
         saveCheckedDeviceList(deviceList);
     }
 
+    public static boolean isCheckedData() {
+
+        NSUserDefaults nsUserDefaults = new NSUserDefaults();
+
+        NSDictionary nsDictionary = nsUserDefaults.getDictionary(Constants.CHECKED_DEVICE_KEY);
+
+        if (nsDictionary == null) {
+            return false;
+        } else if (nsDictionary.size() <= 0) {
+            return false;
+        } else {
+            return true;
+        }
+
+    }
 }

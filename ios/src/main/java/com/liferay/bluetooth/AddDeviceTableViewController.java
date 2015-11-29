@@ -232,9 +232,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private void disSelectDevice(String deviceName) {
-        checkedDeviceList.remove(deviceName);
-
-        DataManager.saveCheckedDeviceList(checkedDeviceList);
+        DataManager.removeCheckedDevice(deviceName);
     }
 
     @Override
@@ -300,8 +298,6 @@ public class AddDeviceTableViewController extends UITableViewController implemen
                                       CBAdvertisementData cbAdvertisementData, NSNumber nsNumber) {
 
         String deviceName = cbPeripheral.getName();
-
-        System.out.println(""+deviceName);
 
         if (isCheckCanAdd(deviceName)) {
 
