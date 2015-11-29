@@ -28,4 +28,8 @@ public class Convert {
         return hex;
     }
 
+    public static String byteToDecimalString(byte value){
+        return String.valueOf(value);
+    }
+
 }
