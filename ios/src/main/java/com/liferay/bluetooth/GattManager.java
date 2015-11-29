@@ -1,5 +1,6 @@
 package com.liferay.bluetooth;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class GattManager {
 
     private int currentCount;
 
-    public GattManager(){
+    public GattManager() {
         currentCount = 0;
     }
 
@@ -73,18 +74,18 @@ public class GattManager {
         return gattProcessList;
     }
 
-    public GattProcess getGattProcess(){
+    public GattProcess getGattProcess() {
         return gattProcessList.get(currentCount);
     }
 
-    public GattProcess getLastGattProcess(){
+    public GattProcess getLastGattProcess() {
         int size = gattProcessList.size();
 
         int index = 0;
 
-        if (currentCount > size){
+        if (currentCount > size) {
 
-            index = currentCount - 1 ;
+            index = currentCount - 1;
 
         }
 
@@ -92,20 +93,68 @@ public class GattManager {
 
     }
 
-    public void upCurrentCount(){
+    public void upCurrentCount() {
         int size = gattProcessList.size();
 
-        if (currentCount + 1 >= size){
+        if (currentCount + 1 >= size) {
 
             currentCount = size - 1;
 
-        }else{
+        } else {
             currentCount = currentCount + 1;
         }
     }
 
-    public int getCurrentCount(){
+    public int getCurrentCount() {
         return currentCount;
+    }
+
+    public List<String> getValue(byte[] valueArray) {
+
+        int dataCount = valueUnitTypeList.size();
+
+        List<String> valueList = new ArrayList<String>();
+
+        if (dataCount == 1) {
+
+            String valueString = "";
+
+            for (byte value : valueArray) {
+
+                valueString = valueString + getConvertedData(value);
+            }
+
+            valueList.add(valueString);
+
+        } else {
+
+            for (int i = 0; i < dataCount; i++) {
+
+                valueList.add(getConvertedData(valueArray[i]));
+
+            }
+
+        }
+
+        return valueList;
+
+    }
+
+    private String getConvertedData(byte value) {
+
+        if (convertType.equals("decimal")) {
+
+            return Convert.byteToDecimalString(value);
+
+        } else if (convertType.equals("ascii")) {
+
+            return Convert.byteToAscii(value);
+
+        } else {
+
+            return null;
+
+        }
     }
 
 }

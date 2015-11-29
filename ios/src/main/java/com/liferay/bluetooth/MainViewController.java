@@ -1,6 +1,7 @@
 package com.liferay.bluetooth;
 
 import org.robovm.apple.corebluetooth.*;
+import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.UIActivityIndicatorView;
 import org.robovm.apple.uikit.UIActivityIndicatorViewStyle;
@@ -9,6 +10,7 @@ import org.robovm.apple.uikit.UIViewController;
 import org.robovm.objc.annotation.CustomClass;
 import org.robovm.objc.block.VoidBlock3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CustomClass("MainViewController")
@@ -22,6 +24,8 @@ public class MainViewController extends UIViewController implements
 
     private List<BroadcastManager> broadcastManagerList;
 
+    private List<DeviceDataUIView> deviceDataUIViewList;
+
     private List<String> checkedDeviceList;
 
     private CBCentralManager bluetoothManager;
@@ -32,13 +36,13 @@ public class MainViewController extends UIViewController implements
     public void viewDidLoad() {
         super.viewDidLoad();
 
-        getConfigData();
-
     }
 
     @Override
     public void viewWillAppear(boolean b) {
         super.viewWillAppear(b);
+
+        getConfigData();
 
     }
 
@@ -121,9 +125,15 @@ public class MainViewController extends UIViewController implements
 
         if (size >= 1) {
 
+            deviceDataUIViewList = new ArrayList<DeviceDataUIView>();
+
+            setUpDeviceDataView();
+
             startScanBluetooth();
 
         } else {
+
+            removeMainView();
 
             moveToAddDeviceTableViewController();
 
@@ -336,8 +346,6 @@ public class MainViewController extends UIViewController implements
 
         gattManager.upCurrentCount();
 
-        System.out.println("name" + gattManager.getDeviceName() + " " + method);
-
         if (method == GattProcess.READ) {
 
             cbPeripheral.readValue(characteristic);
@@ -354,11 +362,36 @@ public class MainViewController extends UIViewController implements
 
             byte[] values = characteristic.getValue().getBytes();
 
-
-//            updateValue(config, values);
+            updateValueOnDataLayout(gattManager,values);
         }
 
     }
+
+    private void updateValueOnDataLayout(GattManager gattManager,byte[] values){
+
+        DeviceDataUIView deviceDataUIView = getDeviceDataUIView(gattManager.getDeviceName());
+
+        List<String> valueList = gattManager.getValue(values);
+
+        deviceDataUIView.setValue(valueList);
+
+    }
+
+    private DeviceDataUIView getDeviceDataUIView(String deviceName){
+
+        for (DeviceDataUIView deviceDataUIView:deviceDataUIViewList){
+
+            if (deviceDataUIView.getDeviceName().equals(deviceName)){
+
+                return deviceDataUIView;
+
+            }
+        }
+
+        return null;
+
+    }
+
 
     //for BLE Gatt Server
     private void setWriteValue(CBPeripheral cbPeripheral, CBCharacteristic characteristic, String value) {
@@ -373,17 +406,16 @@ public class MainViewController extends UIViewController implements
 
     @Override
     public void didUpdateValue(CBPeripheral cbPeripheral, CBCharacteristic cbCharacteristic, NSError nsError) {
-        System.out.println("didUpdateValue");
 
         if (nsError == null) {
 
             GattManager gattManager = getGattManager(cbPeripheral.getName());
 
             GattProcess gattProcess = gattManager.getGattProcess();
-;
-            if (gattProcess.getCharacteristic().equals(cbCharacteristic.getUUID().getUUIDString())){
+            ;
+            if (gattProcess.getCharacteristic().equals(cbCharacteristic.getUUID().getUUIDString())) {
 
-                doGattServer(gattManager,cbPeripheral,cbCharacteristic);
+                doGattServer(gattManager, cbPeripheral, cbCharacteristic);
 
             }
         }
@@ -459,6 +491,94 @@ public class MainViewController extends UIViewController implements
     @Override
     public void didWriteValue(CBPeripheral cbPeripheral, CBDescriptor cbDescriptor, NSError nsError) {
         System.out.print("didWriteValue");
+    }
+
+    private void setUpDeviceDataView() {
+
+        int size = checkedDeviceList.size();
+
+        double width = getView().getFrame().getWidth();
+
+        double height = getView().getFrame().getHeight();
+
+            for (int index = 0; index < size; index++) {
+
+                String checkedDevice = checkedDeviceList.get(index);
+
+                if (configManager.getServerType(checkedDevice).equals(Constants.GATT)) {
+
+                    createDeviceLayout(checkedDevice,index,height,width);
+
+                }
+
+            }
+
+        addDeviceDataView();
+
+    }
+
+    private void createDeviceLayout(String checkedDevice,int index,double height,double width){
+
+        GattManager gattManager = getGattManager(checkedDevice);
+
+        CGRect position = new CGRect(0, height / 5 * index, width, height / 5);
+
+        String deviceName = gattManager.getDeviceName();
+
+        List<String> valueTypeList = gattManager.getValueTypeLabelList();
+
+        List<String> valueUnitList = gattManager.getValueUnitTypeList();
+
+        DeviceDataUIView deviceDataUIView = new DeviceDataUIView(position, deviceName,
+                valueTypeList, valueUnitList);
+
+        deviceDataUIViewList.add(deviceDataUIView);
+
+    }
+
+    private void addDeviceDataView(){
+
+        for (DeviceDataUIView deviceDataUIView : deviceDataUIViewList) {
+
+            getView().addSubview(deviceDataUIView);
+
+        }
+    }
+
+    private void removeMainView() {
+        stopBluetoothScan();
+
+        removeDataView();
+    }
+
+
+    private void stopBluetoothScan() {
+
+        if (bluetoothManager != null) {
+
+            bluetoothManager.stopScan();
+
+            bluetoothManager.release();
+
+            bluetoothManager = null;
+        }
+
+    }
+
+    private void removeDataView() {
+
+        if (deviceDataUIViewList != null) {
+
+            for (DeviceDataUIView deviceDataView : deviceDataUIViewList) {
+
+                deviceDataView.removeFromSuperview();
+
+                deviceDataView.release();
+
+                deviceDataUIViewList = null;
+
+            }
+        }
     }
 
 }
