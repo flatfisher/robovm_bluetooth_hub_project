@@ -8,9 +8,10 @@ import org.apache.commons.codec.binary.Hex;
  */
 public class Convert {
 
-    private Convert(){}
+    private Convert() {
+    }
 
-    public static byte[] stringToByteArray(String value){
+    public static byte[] stringToByteArray(String value) {
         byte[] hex = new byte[0];
 
         try {
@@ -28,8 +29,11 @@ public class Convert {
         return hex;
     }
 
-    public static String byteToDecimalString(byte value){
+    public static String byteToDecimalString(byte value) {
         return String.valueOf(value);
     }
 
+    public static String byteToAscii(byte value) {
+        return String.format("%02X ", value);
+    }
 }
