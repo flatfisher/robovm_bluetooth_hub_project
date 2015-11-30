@@ -31,7 +31,12 @@ public class Convert {
     }
 
     public static String byteToAscii(byte value) {
-        return String.format("%02X ", value);
+
+        char[] data = new char[1];
+
+        data[0] = (char) value;
+
+        return new String(data);
     }
 
     public static int byteToDecimal(byte value) {
