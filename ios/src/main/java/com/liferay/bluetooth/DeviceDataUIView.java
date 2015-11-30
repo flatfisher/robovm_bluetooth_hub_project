@@ -48,11 +48,15 @@ public class DeviceDataUIView extends UIView {
     }
 
     public void setDeviceName(String deviceName){
+
         this.deviceName = deviceName;
+
     }
 
     public String getDeviceName() {
+
         return deviceName;
+
     }
 
     private void setValueTypeLabel() {
@@ -81,6 +85,7 @@ public class DeviceDataUIView extends UIView {
     }
 
     private void setValueLabel() {
+
         int count = valueUnitList.size();
 
         valueLabelList = new ArrayList<UILabel>();
@@ -110,6 +115,7 @@ public class DeviceDataUIView extends UIView {
     }
 
     public void setValue(List<String> valueList) {
+
         int count = valueUnitList.size();
 
         for (int i = 0; i < count; i++) {

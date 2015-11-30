@@ -38,7 +38,9 @@ public class BroadcastManager {
     }
 
     public void setDeviceName(String deviceName) {
+
         this.deviceName = deviceName;
+
     }
 
     public void setValues(byte[] values) {
@@ -50,10 +52,13 @@ public class BroadcastManager {
     }
 
     public void setDataLength(int dataLength) {
+
         this.dataLength = dataLength;
+
     }
 
     public void setBroadcastMethodList(List<BroadcastMethod> broadcastMethodList) {
+
         this.broadcastMethodList = broadcastMethodList;
 
         setValueTypeLabelList();
@@ -63,31 +68,57 @@ public class BroadcastManager {
     }
 
     public void setInactiveType(String inactiveType) {
+
         this.inactiveType = inactiveType;
+
     }
 
     public void setInactiveValueIndexArray(int[] inactiveValueIndexArray) {
+
         this.inactiveValueIndexArray = inactiveValueIndexArray;
+
     }
 
     public void setUnstableType(String unstableType) {
+
         this.unstableType = unstableType;
+
     }
 
     public void setUnstableValueIndexArray(int[] unstableValueIndexArray) {
+
         this.unstableValueIndexArray = unstableValueIndexArray;
+
     }
 
     public String getDeviceName() {
+
         return deviceName;
+
+    }
+
+    public List<String> getValueTypeLabelList() {
+
+        return valueTypeLabelList;
+
+    }
+
+    public List<String> getValueUnitTypeList() {
+
+        return valueUnitTypeList;
+
     }
 
     public byte[] getValues() {
+
         return values;
+
     }
 
     public int getDataLength() {
+
         return dataLength;
+
     }
 
     public List<String> getValueData() {
@@ -110,7 +141,7 @@ public class BroadcastManager {
 
         if (isRunning) {
 
-            parseAndSetValueData();
+            addValueData();
 
         } else {
 
@@ -214,7 +245,7 @@ public class BroadcastManager {
 
     }
 
-    private void parseAndSetValueData() {
+    private void addValueData() {
 
         for (BroadcastMethod broadcastMethod : broadcastMethodList) {
 
@@ -274,6 +305,7 @@ public class BroadcastManager {
     }
 
     private String getConvertedData(byte value, String convert) {
+
         String converted = null;
 
         if (convert.equals("decimal")) {
@@ -309,14 +341,6 @@ public class BroadcastManager {
 
         }
 
-    }
-
-    public List<String> getValueTypeLabelList() {
-        return valueTypeLabelList;
-    }
-
-    public List<String> getValueUnitTypeList() {
-        return valueUnitTypeList;
     }
 
 }

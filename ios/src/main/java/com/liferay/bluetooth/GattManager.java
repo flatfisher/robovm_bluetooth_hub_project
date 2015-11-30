@@ -2,6 +2,7 @@ package com.liferay.bluetooth;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class GattManager {
 
@@ -20,62 +21,91 @@ public class GattManager {
     private int currentCount;
 
     public GattManager() {
+
         currentCount = 0;
+
     }
 
     public void setDeviceName(String deviceName) {
+
         this.deviceName = deviceName;
+
     }
 
     public void setMethodName(String methodName) {
+
         this.methodName = methodName;
+
     }
 
     public void setConvertType(String convertType) {
+
         this.convertType = convertType;
+
     }
 
     public void setValueTypeLabelList(List<String> valueTypeLabelList) {
+
         this.valueTypeLabelList = valueTypeLabelList;
+
     }
 
     public void setValueUnitTypeList(List<String> valueUnitTypeList) {
+
         this.valueUnitTypeList = valueUnitTypeList;
+
     }
 
     public void setGattProcessList(List<GattProcess> gattProcessList) {
+
         this.gattProcessList = gattProcessList;
+
     }
 
     public String getDeviceName() {
+
         return deviceName;
+
     }
 
     public String getMethodName() {
+
         return methodName;
+
     }
 
     public String getConvertType() {
+
         return convertType;
+
     }
 
     public List<String> getValueTypeLabelList() {
+
         return valueTypeLabelList;
+
     }
 
     public List<String> getValueUnitTypeList() {
+
         return valueUnitTypeList;
+
     }
 
     public List<GattProcess> getGattProcessList() {
+
         return gattProcessList;
+
     }
 
     public GattProcess getGattProcess() {
+
         return gattProcessList.get(currentCount);
+
     }
 
     public GattProcess getLastGattProcess() {
+
         int size = gattProcessList.size();
 
         int index = 0;
@@ -91,6 +121,7 @@ public class GattManager {
     }
 
     public void upCurrentCount() {
+
         int size = gattProcessList.size();
 
         if (currentCount + 1 >= size) {
@@ -103,7 +134,9 @@ public class GattManager {
     }
 
     public int getCurrentCount() {
+
         return currentCount;
+
     }
 
     public List<String> getValue(byte[] valueArray) {
@@ -119,6 +152,7 @@ public class GattManager {
             for (byte value : valueArray) {
 
                 valueString = valueString + getConvertedData(value);
+
             }
 
             valueList.add(valueString);

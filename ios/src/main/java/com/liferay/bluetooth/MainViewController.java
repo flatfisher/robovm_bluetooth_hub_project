@@ -2,6 +2,7 @@ package com.liferay.bluetooth;
 
 import org.robovm.apple.corebluetooth.*;
 import org.robovm.apple.coregraphics.CGRect;
+import org.robovm.apple.dispatch.DispatchQueue;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.objc.annotation.CustomClass;
@@ -34,15 +35,22 @@ public class MainViewController extends UIViewController implements
 
     private UIActivityIndicatorView uiActivityIndicatorView;
 
+    //First call method
     @Override
     public void viewDidLoad() {
+
         super.viewDidLoad();
+
+        System.out.println("Main viewDidLoad");
 
     }
 
     @Override
     public void viewWillAppear(boolean b) {
+
         super.viewWillAppear(b);
+
+        System.out.println("viewWillAppear");
 
         getConfigData();
 
@@ -56,8 +64,10 @@ public class MainViewController extends UIViewController implements
     }
 
     private void getConfigData() {
+
         //check saved configuration.
         if (DataManager.isConfigData()) {
+
             configManager = new ConfigManager(DataManager.getConfigData());
 
             gattManagerList = configManager.getGattManagerList();
@@ -67,17 +77,19 @@ public class MainViewController extends UIViewController implements
             startBluetoothIFCheckedDevice();
 
         } else {
+
             getConfigurationFromServer();
+
         }
     }
 
     private void getConfigurationFromServer() {
 
-        startActivityIndicator();
-
         NetworkManager.getConfiguration(new VoidBlock3<NSData, NSURLResponse, NSError>() {
+
             @Override
             public void invoke(NSData nsData, NSURLResponse nsurlResponse, NSError nsError) {
+
                 try {
 
                     NSDictionary jsonConfigData = (NSDictionary) NSJSONSerialization.createJSONObject(nsData,
@@ -85,15 +97,33 @@ public class MainViewController extends UIViewController implements
 
                     DataManager.saveConfigData(jsonConfigData);
 
-                    stopActivityIndicator();
+                    System.out.println("getData");
 
-                    moveToAddDeviceTableViewController();
+                    DispatchQueue queue = DispatchQueue.getGlobalQueue(DispatchQueue.PRIORITY_BACKGROUND, 0);
+
+                    queue.async(new Runnable() {
+
+                        @Override
+                        public void run() {
+
+                            stopActivityIndicator();
+
+                            moveToAddDeviceTableViewController();
+
+                        }
+
+                    });
 
                 } catch (NSErrorException nserrorException) {
 
+                    System.out.println("Error" + nserrorException);
+
                 }
             }
+
         });
+
+        startActivityIndicator();
 
     }
 
@@ -108,6 +138,7 @@ public class MainViewController extends UIViewController implements
     }
 
     private void startActivityIndicator() {
+
         uiActivityIndicatorView = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 
         uiActivityIndicatorView.setCenter(getView().getCenter());
@@ -117,6 +148,7 @@ public class MainViewController extends UIViewController implements
         bluetoothDataView.addSubview(uiActivityIndicatorView);
 
         uiActivityIndicatorView.startAnimating();
+
     }
 
     private void stopActivityIndicator() {
@@ -130,6 +162,7 @@ public class MainViewController extends UIViewController implements
     }
 
     private void startBluetoothIFCheckedDevice() {
+
         checkedDeviceList = getCheckedList();
 
         int size = checkedDeviceList.size();
@@ -153,21 +186,32 @@ public class MainViewController extends UIViewController implements
     }
 
     private void startScanBluetooth() {
+
+        System.out.println("main startScanBluetooth");
+
         bluetoothManager = new CBCentralManager(this, null, null);
+
     }
 
     private List<String> getCheckedList() {
+
         return DataManager.getCheckedDeviceList();
+
     }
 
     @Override
     public void didUpdateState(CBCentralManager cbCentralManager) {
+
         // usable BLE
         if (cbCentralManager.getState() == CBCentralManagerState.PoweredOn) {
+
             bluetoothManager.scanForPeripherals(null, null);
+
         } else {
+
             System.out.println("unusable Bluetooth.");
         }
+
     }
 
     @Override
@@ -197,7 +241,7 @@ public class MainViewController extends UIViewController implements
 
                 BroadcastManager broadcastManager = getBroadcastManager(deviceName);
 
-                if (broadcastManager.getDataLength() == data.length){
+                if (broadcastManager.getDataLength() == data.length) {
 
                     broadcastManager.setValues(data);
 
@@ -371,6 +415,7 @@ public class MainViewController extends UIViewController implements
     }
 
     private void doGattServer(GattManager gattManager, CBPeripheral cbPeripheral, CBCharacteristic characteristic) {
+
         GattProcess gattProcess = gattManager.getGattProcess();
 
         int method = gattProcess.getMethod();
@@ -395,12 +440,12 @@ public class MainViewController extends UIViewController implements
 
             byte[] values = characteristic.getValue().getBytes();
 
-            updateValueOnDataLayout(gattManager,values);
+            updateValueOnDataLayout(gattManager, values);
         }
 
     }
 
-    private void updateValueOnDataLayout(GattManager gattManager,byte[] values){
+    private void updateValueOnDataLayout(GattManager gattManager, byte[] values) {
 
         DeviceDataUIView deviceDataUIView = getDeviceDataUIView(gattManager.getDeviceName());
 
@@ -410,11 +455,11 @@ public class MainViewController extends UIViewController implements
 
     }
 
-    private DeviceDataUIView getDeviceDataUIView(String deviceName){
+    private DeviceDataUIView getDeviceDataUIView(String deviceName) {
 
-        for (DeviceDataUIView deviceDataUIView:deviceDataUIViewList){
+        for (DeviceDataUIView deviceDataUIView : deviceDataUIViewList) {
 
-            if (deviceDataUIView.getDeviceName().equals(deviceName)){
+            if (deviceDataUIView.getDeviceName().equals(deviceName)) {
 
                 return deviceDataUIView;
 
@@ -457,6 +502,7 @@ public class MainViewController extends UIViewController implements
 
     @Override
     public void didWriteValue(CBPeripheral cbPeripheral, CBCharacteristic cbCharacteristic, NSError nsError) {
+
         System.out.println("didWriteValue");
 
         if (nsError == null) {
@@ -547,27 +593,27 @@ public class MainViewController extends UIViewController implements
 
         double height = getView().getFrame().getHeight();
 
-            for (int index = 0; index < size; index++) {
+        for (int index = 0; index < size; index++) {
 
-                String checkedDevice = checkedDeviceList.get(index);
+            String checkedDevice = checkedDeviceList.get(index);
 
-                if (configManager.getServerType(checkedDevice).equals(Constants.GATT)) {
+            if (configManager.getServerType(checkedDevice).equals(Constants.GATT)) {
 
-                    createDeviceLayoutForGatt(checkedDevice,index,height,width);
+                createDeviceLayoutForGatt(checkedDevice, index, height, width);
 
-                }else if (configManager.getServerType(checkedDevice).equals(Constants.BROADCAST)){
+            } else if (configManager.getServerType(checkedDevice).equals(Constants.BROADCAST)) {
 
-                    createDeviceLayoutForBroadcast(checkedDevice,index,height,width);
-
-                }
+                createDeviceLayoutForBroadcast(checkedDevice, index, height, width);
 
             }
+
+        }
 
         addDeviceDataView();
 
     }
 
-    private void createDeviceLayoutForGatt(String checkedDevice,int index,double height,double width){
+    private void createDeviceLayoutForGatt(String checkedDevice, int index, double height, double width) {
 
         GattManager gattManager = getGattManager(checkedDevice);
 
@@ -586,7 +632,7 @@ public class MainViewController extends UIViewController implements
 
     }
 
-    private void createDeviceLayoutForBroadcast(String checkedDevice,int index,double height,double width){
+    private void createDeviceLayoutForBroadcast(String checkedDevice, int index, double height, double width) {
 
         BroadcastManager broadcastManager = getBroadcastManager(checkedDevice);
 
@@ -606,7 +652,7 @@ public class MainViewController extends UIViewController implements
 
     }
 
-    private void addDeviceDataView(){
+    private void addDeviceDataView() {
 
         for (DeviceDataUIView deviceDataUIView : deviceDataUIViewList) {
 
@@ -616,13 +662,19 @@ public class MainViewController extends UIViewController implements
     }
 
     private void removeMainView() {
+
+        System.out.println("removeMainView");
+
         stopBluetoothScan();
 
         removeDataView();
+
     }
 
 
     private void stopBluetoothScan() {
+
+        System.out.println("stopBluetoothScan");
 
         if (bluetoothManager != null) {
 
@@ -631,11 +683,14 @@ public class MainViewController extends UIViewController implements
             bluetoothManager.release();
 
             bluetoothManager = null;
+
         }
 
     }
 
     private void removeDataView() {
+
+        System.out.println("removeDataView");
 
         if (deviceDataUIViewList != null) {
 

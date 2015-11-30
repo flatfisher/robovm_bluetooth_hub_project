@@ -9,6 +9,7 @@ public class Convert {
     }
 
     public static byte[] stringToByteArray(String value) {
+
         byte[] hex = new byte[0];
 
         try {
@@ -27,7 +28,9 @@ public class Convert {
     }
 
     public static String byteToDecimalString(byte value) {
+
         return String.valueOf(value);
+
     }
 
     public static String byteToAscii(byte value) {

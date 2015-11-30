@@ -9,12 +9,18 @@ public class Main extends UIApplicationDelegateAdapter {
 
     @Override
     public boolean didFinishLaunching(UIApplication application, UIApplicationLaunchOptions launchOptions) {
+
         return true;
+
     }
 
     public static void main(String[] args) {
+
         try (NSAutoreleasePool pool = new NSAutoreleasePool()) {
+
             UIApplication.main(args, null, Main.class);
+
         }
+
     }
 }

@@ -38,7 +38,10 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     // first call method.
     @Override
     public void viewDidLoad() {
+
         super.viewDidLoad();
+
+        System.out.println("add device viewDidLoad");
 
         checkedDeviceList = DataManager.getCheckedDeviceList();
 
@@ -77,17 +80,24 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private void startScanBLEData() {
+
+        System.out.println("startScanBLEData");
+
         bluetoothManager = new CBCentralManager(this, null, null);
+
     }
 
     @Override
     public void viewWillDisappear(boolean b) {
+
         super.viewWillDisappear(b);
 
         NSArray<UIViewController> array = getNavigationController().getViewControllers();
 
         if (array.getAssociatedObject(this) == null) {
+
             stopBLEScan();
+
         }
 
     }
@@ -106,6 +116,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private void saveConfig() {
+
         NSArray<UITableViewCell> cellNSArray = getTableView().getVisibleCells();
 
         List<String> checkedDeviceList = new ArrayList<String>();
@@ -130,43 +141,56 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private List<String> getConfigData() {
+
         NSDictionary nsDictionary = DataManager.getConfigData();
 
         ConfigManager configManager = new ConfigManager(nsDictionary);
 
         return configManager.getDeviceNameList();
+
     }
 
     //UIControl.OnValueChangedListener fot pull to refresh
     @Override
     public void onValueChanged(UIControl uiControl) {
+
         startScanBLEData();
+
     }
 
     @Override
     public long getNumberOfRowsInSection(UITableView uiTableView, @MachineSizedSInt long l) {
+
         return scanResultArray.size();
+
     }
 
     @Override
     public long getNumberOfSections(UITableView uiTableView) {
+
         return 1;
+
     }
 
     @Override
     public UITableViewCell getCellForRow(UITableView uiTableView, NSIndexPath nsIndexPath) {
+
         int row = (int) nsIndexPath.getRow();
 
         UITableViewCell cell = uiTableView.dequeueReusableCell(scanResultCellId);
 
         if (cell == null) {
+
             cell = new UITableViewCell(UITableViewCellStyle.Subtitle, scanResultCellId);
+
         }
 
         String deviceName = scanResultArray.get(row);
 
         if (isCheckSavedDevice(deviceName)) {
+
             cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
+
         }
 
         cell.getTextLabel().setText(deviceName);
@@ -187,6 +211,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         uiLabel.setTextColor(UIColor.gray());
 
         if (checkConfigDataName(device) != null) {
+
             uiLabel.setText(Constants.CONFIG_MESSAGE);
 
         } else {
@@ -198,16 +223,24 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private boolean isCheckSavedDevice(String deviceName) {
+
         for (String device : checkedDeviceList) {
+
             if (device.equals(deviceName)) {
+
                 return true;
+
             }
+
         }
+
         return false;
+
     }
 
     @Override
     public void didSelectRow(UITableView uiTableView, NSIndexPath nsIndexPath) {
+
         uiTableView.deselectRow(nsIndexPath, true);
 
         UITableViewCell cell = uiTableView.getCellForRow(nsIndexPath);
@@ -225,6 +258,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             } else {
 
                 cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
+
             }
 
         }
@@ -232,12 +266,16 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private void disSelectDevice(String deviceName) {
+
         DataManager.removeCheckedDevice(deviceName);
+
     }
 
     @Override
     public double getHeightForRow(UITableView uiTableView, NSIndexPath nsIndexPath) {
+
         return ROW_HEIGHT;
+
     }
 
     //CBCentralManagerDelegate
@@ -336,20 +374,33 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
 
     private boolean isCheckCanAdd(String deviceName) {
+
         if (deviceName == null) {
+
             return false;
+
         } else {
+
             return true;
+
         }
+
     }
 
     private boolean isCheckOverlap(String deviceName) {
+
         for (String device : scanResultArray) {
+
             if (device.equals(deviceName)) {
+
                 return false;
+
             }
+
         }
+
         return true;
+
     }
 
 

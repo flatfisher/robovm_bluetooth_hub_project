@@ -9,8 +9,11 @@ import java.util.List;
 public class ConfigManager {
 
     class Device {
+
         String deviceName;
+
         String serverType;
+
     }
 
     private List<Device> deviceList;
@@ -36,6 +39,7 @@ public class ConfigManager {
     }
 
     public List<String> getDeviceNameList() {
+
         List<String> deviceNameList = new ArrayList<String>();
 
         for (Device device : deviceList) {
@@ -48,6 +52,7 @@ public class ConfigManager {
     }
 
     public String getServerType(String deviceName) {
+
         String serverType;
 
         for (Device device : deviceList) {
@@ -65,22 +70,29 @@ public class ConfigManager {
     }
 
     public List<GattManager> getGattManagerList() {
+
         return gattManagerList;
+
     }
 
     public List<BroadcastManager> getBroadcastManagerList() {
+
         return broadcastManagerList;
+
     }
 
     private void parseConfigData() {
+
         NSArray deviceArray = (NSArray) jsonConfigData.get("device");
 
         setDeviceList(deviceArray);
 
         createManagers(deviceArray);
+
     }
 
     private void setDeviceList(NSArray deviceArray) {
+
         int size = deviceArray.size();
 
         for (int i = 0; i < size; i++) {
@@ -97,6 +109,7 @@ public class ConfigManager {
     }
 
     private void createManagers(NSArray deviceArray) {
+
         int size = deviceArray.size();
 
         for (int index = 0; index < size; index++) {
@@ -123,6 +136,7 @@ public class ConfigManager {
     }
 
     private void createGattManager(String deviceName, NSArray deviceArray, int index) {
+
         NSDictionary device = (NSDictionary) deviceArray.get(index);
 
         NSArray methodArray = (NSArray) device.get("method");
@@ -134,6 +148,7 @@ public class ConfigManager {
     }
 
     private List<GattManager> getGattManagerList(String deviceName, NSArray methodArray) {
+
         List<GattManager> gattManagerList = new ArrayList<GattManager>();
 
         String name;
@@ -199,10 +214,13 @@ public class ConfigManager {
 
 
     private List<String> getList(NSArray valueTypeArray) {
+
         List<String> list = new ArrayList<String>();
 
         for (int i = 0; i < valueTypeArray.size(); i++) {
+
             list.add(String.valueOf(valueTypeArray.get(i)));
+
         }
 
         return list;
@@ -285,6 +303,7 @@ public class ConfigManager {
     }
 
     private static int[] getIntArray(NSArray valueIndex){
+
         int length = valueIndex.size();
 
         int[] valueIndexArray = new int[length];
