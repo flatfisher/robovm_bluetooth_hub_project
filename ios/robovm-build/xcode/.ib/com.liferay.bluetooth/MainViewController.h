@@ -6,6 +6,17 @@
  * DO NOT MODIFY!
  */
 
-@interface MainViewController : UIViewController 
+@interface MainViewController : UIViewController <CBCentralManagerDelegate,CBPeripheralDelegate>
+
+/**
+ * IBOutlet bluetoothDataView
+ */
+@property (weak, nonatomic) IBOutlet UIView *bluetoothDataView;
+
+/**
+ * IBAction onClickAddDevice
+ * Selector: onClickAddDevice
+ */
+-(IBAction) onClickAddDevice;
 
 @end

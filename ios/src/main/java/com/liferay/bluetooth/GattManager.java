@@ -3,9 +3,6 @@ package com.liferay.bluetooth;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by flatfisher on 11/28/15.
- */
 public class GattManager {
 
     private String deviceName;

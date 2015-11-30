@@ -1,8 +1,5 @@
 package com.liferay.bluetooth;
 
-/**
- * Created by flatfisher on 11/28/15.
- */
 public class GattProcess {
 
     public static final int READ = 0;

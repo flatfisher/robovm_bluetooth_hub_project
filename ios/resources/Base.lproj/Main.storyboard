@@ -18,51 +18,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-4p-uGS" userLabel="DataView">
-                                <rect key="frame" x="20" y="546.5" width="560" height="53.5"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xci-4R-44w" userLabel="Vertical Criterion View">
+                                <rect key="frame" x="20" y="64" width="0.0" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="foI-3q-FSf"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvv-gx-QPF" userLabel="DataView">
+                                <rect key="frame" x="20" y="64" width="560" height="429"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCO-T0-RGb" userLabel="ButtonContainer">
+                                <rect key="frame" x="20" y="546" width="560" height="53.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPA-50-ekV">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-FH-g1H">
                                         <rect key="frame" x="241" y="12" width="79" height="30"/>
-                                        <state key="normal" title="Add Device"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="AddDevice"/>
+                                        <state key="normal" title="AddDevice"/>
                                         <connections>
-                                            <segue destination="7Ut-6I-Ftx" kind="show" id="Qtu-oG-MVC"/>
+                                            <action selector="onClickAddDevice" destination="Rw5-ns-KcI" eventType="touchUpInside" id="Wpe-Xj-qB7"/>
+                                            <segue destination="7Ut-6I-Ftx" kind="show" identifier="AddDevice" id="9Gi-vC-ZHE"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="FPA-50-ekV" firstAttribute="centerY" secondItem="FyU-4p-uGS" secondAttribute="centerY" id="A6X-LV-kJT"/>
-                                    <constraint firstItem="FPA-50-ekV" firstAttribute="centerX" secondItem="FyU-4p-uGS" secondAttribute="centerX" id="sf8-UC-h30"/>
+                                    <constraint firstItem="Ay9-FH-g1H" firstAttribute="centerY" secondItem="iCO-T0-RGb" secondAttribute="centerY" id="aL3-wf-xtW"/>
+                                    <constraint firstItem="Ay9-FH-g1H" firstAttribute="centerX" secondItem="iCO-T0-RGb" secondAttribute="centerX" id="x1W-Jj-Hcl"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUR-sy-6K3" userLabel="Vertical Criterion View">
-                                <rect key="frame" x="20" y="64" width="0.0" height="536"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" id="Di3-WB-ewn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPQ-iJ-mLX" userLabel="ButtonContainer">
-                                <rect key="frame" x="20" y="64" width="560" height="482.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FyU-4p-uGS" firstAttribute="height" secondItem="UUR-sy-6K3" secondAttribute="height" multiplier="0.1" id="5u9-hr-h3r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WPQ-iJ-mLX" secondAttribute="trailing" id="E0q-cm-frV"/>
-                            <constraint firstItem="FyU-4p-uGS" firstAttribute="leading" secondItem="UUR-sy-6K3" secondAttribute="trailing" id="EKv-ae-PXh"/>
-                            <constraint firstItem="GRf-jy-2iC" firstAttribute="top" secondItem="UUR-sy-6K3" secondAttribute="bottom" id="Rao-9s-jnR"/>
-                            <constraint firstItem="WPQ-iJ-mLX" firstAttribute="height" secondItem="UUR-sy-6K3" secondAttribute="height" multiplier="0.9" id="ScA-O2-WkW"/>
-                            <constraint firstItem="UUR-sy-6K3" firstAttribute="leading" secondItem="xOT-TG-81E" secondAttribute="leadingMargin" id="Tpj-NK-eYD"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FyU-4p-uGS" secondAttribute="trailing" id="kT0-2r-bZr"/>
-                            <constraint firstItem="WPQ-iJ-mLX" firstAttribute="leading" secondItem="UUR-sy-6K3" secondAttribute="trailing" id="kU2-dZ-ZLq"/>
-                            <constraint firstItem="GRf-jy-2iC" firstAttribute="top" secondItem="FyU-4p-uGS" secondAttribute="bottom" id="uaq-9M-tSE"/>
-                            <constraint firstItem="WPQ-iJ-mLX" firstAttribute="top" secondItem="WrT-94-kTm" secondAttribute="bottom" id="urp-bO-jI0"/>
-                            <constraint firstItem="UUR-sy-6K3" firstAttribute="top" secondItem="WrT-94-kTm" secondAttribute="bottom" id="yOV-TM-IjZ"/>
+                            <constraint firstItem="xci-4R-44w" firstAttribute="top" secondItem="WrT-94-kTm" secondAttribute="bottom" id="0VN-sV-cII"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zvv-gx-QPF" secondAttribute="trailing" id="6pk-U2-mCU"/>
+                            <constraint firstItem="GRf-jy-2iC" firstAttribute="top" secondItem="xci-4R-44w" secondAttribute="bottom" id="Iey-Aa-kFq"/>
+                            <constraint firstItem="Zvv-gx-QPF" firstAttribute="leading" secondItem="xci-4R-44w" secondAttribute="trailing" id="bRc-fF-3Qo"/>
+                            <constraint firstItem="Zvv-gx-QPF" firstAttribute="top" secondItem="WrT-94-kTm" secondAttribute="bottom" id="dux-b3-Tjh"/>
+                            <constraint firstItem="iCO-T0-RGb" firstAttribute="height" secondItem="xci-4R-44w" secondAttribute="height" multiplier="0.1" id="eYy-jN-cs2"/>
+                            <constraint firstItem="xci-4R-44w" firstAttribute="leading" secondItem="xOT-TG-81E" secondAttribute="leadingMargin" id="iyg-03-f1U"/>
+                            <constraint firstItem="GRf-jy-2iC" firstAttribute="top" secondItem="iCO-T0-RGb" secondAttribute="bottom" id="lSC-11-4fi"/>
+                            <constraint firstItem="iCO-T0-RGb" firstAttribute="leading" secondItem="xci-4R-44w" secondAttribute="trailing" id="lVJ-fy-ja0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iCO-T0-RGb" secondAttribute="trailing" id="qZ1-SV-t4y"/>
+                            <constraint firstItem="Zvv-gx-QPF" firstAttribute="height" secondItem="xci-4R-44w" secondAttribute="height" multiplier="0.8" id="uBa-Fr-cqh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="m6M-Wf-lZn"/>
+                    <connections>
+                        <outlet property="bluetoothDataView" destination="Zvv-gx-QPF" id="Iea-Xq-bHh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK6-Qu-SKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

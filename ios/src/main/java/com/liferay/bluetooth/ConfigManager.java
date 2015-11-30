@@ -38,7 +38,7 @@ public class ConfigManager {
     public List<String> getDeviceNameList() {
         List<String> deviceNameList = new ArrayList<String>();
 
-        for (Device device:deviceList){
+        for (Device device : deviceList) {
 
             deviceNameList.add(device.deviceName);
 
@@ -50,9 +50,9 @@ public class ConfigManager {
     public String getServerType(String deviceName) {
         String serverType;
 
-        for (Device device:deviceList){
+        for (Device device : deviceList) {
 
-            if (device.deviceName.equals(deviceName)){
+            if (device.deviceName.equals(deviceName)) {
 
                 serverType = device.serverType;
 
@@ -66,6 +66,10 @@ public class ConfigManager {
 
     public List<GattManager> getGattManagerList() {
         return gattManagerList;
+    }
+
+    public List<BroadcastManager> getBroadcastManagerList() {
+        return broadcastManagerList;
     }
 
     private void parseConfigData() {
@@ -107,6 +111,8 @@ public class ConfigManager {
                 createGattManager(deviceName, deviceArray, index);
 
             } else if (server.equals(Constants.BROADCAST)) {
+
+                createBroadcastManager(deviceName,deviceArray,index);
 
             } else {
                 // error no server type.
@@ -200,6 +206,94 @@ public class ConfigManager {
         }
 
         return list;
+
+    }
+
+    private void createBroadcastManager(String deviceName, NSArray deviceArray, int index) {
+
+        NSDictionary device = (NSDictionary) deviceArray.get(index);
+
+        BroadcastManager broadcastManager = new BroadcastManager();
+
+        NSArray methodArray = (NSArray) device.get("method");
+
+        NSDictionary inactive = (NSDictionary) device.get("inactive");
+
+        String inactiveType = inactive.getString("type");
+
+        int[] inactiveIndex = getIntArray((NSArray) inactive.get("valueIndex"));
+
+        NSDictionary unstable = (NSDictionary) device.get("unstable");
+
+        String unstableType = unstable.getString("type");
+
+        int[] unstableIndex = getIntArray((NSArray) unstable.get("valueIndex"));
+
+        int length = device.getInt("dataLength");
+
+        broadcastManager.setDeviceName(deviceName);
+
+        broadcastManager.setInactiveType(inactiveType);
+
+        broadcastManager.setInactiveValueIndexArray(inactiveIndex);
+
+        broadcastManager.setUnstableType(unstableType);
+
+        broadcastManager.setUnstableValueIndexArray(unstableIndex);
+
+        broadcastManager.setDataLength(length);
+
+        List<BroadcastManager> newBroadcastManagerList = getBroadCastManagerList(broadcastManager,
+                                                                                    device, length,methodArray);
+        broadcastManagerList.addAll(newBroadcastManagerList);
+    }
+
+    private static List<BroadcastManager> getBroadCastManagerList(BroadcastManager broadcastManager,
+                                                                  NSDictionary device,
+                                                                  int dataLength, NSArray methodArray) {
+
+        List<BroadcastManager> broadcastManagerList = new ArrayList<BroadcastManager>();
+
+        List<BroadcastMethod> methodList = new ArrayList<BroadcastMethod>();
+
+        for (int i = 0; i < methodArray.size(); i++) {
+
+            NSDictionary method = (NSDictionary) methodArray.get(i);
+
+            int valueIndex = method.getInt("valueIndex");
+
+            BroadcastMethod broadcastMethod = new BroadcastMethod();
+
+            broadcastMethod.setName(method.getString("name"));
+
+            broadcastMethod.setConvert(method.getString("convert"));
+
+            broadcastMethod.setUnitType(method.getString("unitType"));
+
+            broadcastMethod.setIndex(valueIndex);
+
+            methodList.add(broadcastMethod);
+
+        }
+
+        broadcastManager.setBroadcastMethodList(methodList);
+
+        broadcastManagerList.add(broadcastManager);
+
+        return broadcastManagerList;
+
+    }
+
+    private static int[] getIntArray(NSArray valueIndex){
+        int length = valueIndex.size();
+
+        int[] valueIndexArray = new int[length];
+
+        for (int j = 0; j < length; j++) {
+            valueIndexArray[j] = Integer.parseInt(valueIndex.get(j).toString());
+        }
+
+        return valueIndexArray;
 
     }
 

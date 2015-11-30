@@ -3,9 +3,6 @@ package com.liferay.bluetooth;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.binary.Hex;
 
-/**
- * Created by flatfisher on 11/27/15.
- */
 public class Convert {
 
     private Convert() {
@@ -36,4 +33,10 @@ public class Convert {
     public static String byteToAscii(byte value) {
         return String.format("%02X ", value);
     }
+
+    public static int byteToDecimal(byte value) {
+
+        return value & 0xff;
+    }
+
 }

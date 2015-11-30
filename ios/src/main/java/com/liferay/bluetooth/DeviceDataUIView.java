@@ -91,19 +91,16 @@ public class DeviceDataUIView extends UIView {
 
         double dividedHeight = displayHeight / count;
 
-        System.out.println(count);
-
         for (int i = 0; i < count; i++) {
 
-            CGRect position = new CGRect(displayWidth / 2, dividedHeight * (i + 1) - dividedHeight / 2, width, height / 3);
+            CGRect position = new CGRect(displayWidth / 2,
+                    dividedHeight * (i + 1) - dividedHeight / 2, width, height / 3);
 
             UILabel valueLabel = new UILabel(position);
 
             valueLabel.setTextAlignment(NSTextAlignment.Right);
 
             valueLabel.setText("--");
-
-            System.out.println("va" + valueUnitList.get(i));
 
             valueLabelList.add(valueLabel);
 
@@ -115,11 +112,19 @@ public class DeviceDataUIView extends UIView {
     public void setValue(List<String> valueList) {
         int count = valueUnitList.size();
 
-        System.out.println(count);
-
         for (int i = 0; i < count; i++) {
 
-            valueLabelList.get(i).setText(valueList.get(i));
+            String value = valueList.get(i);
+
+            if (value == null || value.length() <= 0){
+
+                valueLabelList.get(i).setText("--");
+
+            }else{
+
+                valueLabelList.get(i).setText(value);
+
+            }
 
         }
 
