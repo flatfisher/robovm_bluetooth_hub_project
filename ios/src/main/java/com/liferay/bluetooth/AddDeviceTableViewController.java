@@ -45,8 +45,6 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
         checkedDeviceList = DataManager.getCheckedDeviceList();
 
-        System.out.println(checkedDeviceList);
-
         configNameList = getConfigData();
 
         ROW_HEIGHT = getView().getFrame().getHeight() / 8;
@@ -75,7 +73,16 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
         uiActivityIndicatorView.startAnimating();
 
-        startScanBLEData();
+    }
+
+    @Override
+    public void viewWillAppear(boolean b) {
+
+        super.viewWillAppear(b);
+
+        System.out.println("add device viewWillAppear");
+
+        startScanBLEData() ;
 
     }
 
@@ -84,6 +91,18 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         System.out.println("startScanBLEData");
 
         bluetoothManager = new CBCentralManager(this, null, null);
+
+    }
+
+    private void moveCheckedDeviceToScanResultArray(){
+
+        scanResultArray.clear();
+
+        for (String checkedDevice : checkedDeviceList){
+
+            scanResultArray.add(checkedDevice);
+
+        }
 
     }
 
@@ -111,6 +130,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             bluetoothManager.release();
 
             bluetoothManager = null;
+
         }
 
     }
@@ -154,7 +174,11 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     @Override
     public void onValueChanged(UIControl uiControl) {
 
-        startScanBLEData();
+        if (!bluetoothManager.isScanning()){
+
+            startScanBLEData();
+
+        }
 
     }
 
@@ -295,7 +319,11 @@ public class AddDeviceTableViewController extends UITableViewController implemen
                 @Override
                 public void run() {
 
+                    System.out.println("add device scan...");
+
                     if (count > SCAN_TIME / 1000) {
+
+                        System.out.println(bluetoothManager);
 
                         bluetoothManager.stopScan();
 
@@ -303,23 +331,35 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
                         getTableView().reloadData();
 
-                        if (pullToRefreshManager.isRefreshing()){
+                        stopPullToRefresh();
 
-                            pullToRefreshManager.endRefreshing();
-
-                        }
-
-                        if (uiActivityIndicatorView.isAnimating()) {
-
-                            uiActivityIndicatorView.stopAnimating();
-
-                        }
+                        stopUIActivityIndicator();
 
                     }
                     count++;
                 }
 
             }, 0, 1000);
+        }
+
+    }
+
+    private void stopPullToRefresh(){
+
+        if (pullToRefreshManager.isRefreshing()){
+
+            pullToRefreshManager.endRefreshing();
+
+        }
+
+    }
+
+    private void stopUIActivityIndicator(){
+
+        if (uiActivityIndicatorView.isAnimating()) {
+
+            uiActivityIndicatorView.stopAnimating();
+
         }
 
     }
@@ -334,6 +374,8 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     public void didDiscoverPeripheral(CBCentralManager cbCentralManager,
                                       CBPeripheral cbPeripheral,
                                       CBAdvertisementData cbAdvertisementData, NSNumber nsNumber) {
+
+        System.out.println("Add Device didDiscover"+cbPeripheral.getName());
 
         String deviceName = cbPeripheral.getName();
 
