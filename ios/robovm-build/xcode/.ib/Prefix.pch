@@ -20,3 +20,4 @@
 
 #import "MainViewController.h"
 #import "AddDeviceTableViewController.h"
+#import "DeviceDataUIView.h"

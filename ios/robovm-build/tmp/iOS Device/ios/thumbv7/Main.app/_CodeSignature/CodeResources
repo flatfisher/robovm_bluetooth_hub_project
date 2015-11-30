@@ -56,7 +56,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4gAh4xnv48JzTf203yazIwuYlGM=
+			AoUcuqC/2bzGoJxjxLd4Y/hYrYs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -65,7 +65,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			N/9MosfdgtVt6u7A9n+IkchDaUM=
+			fjnyunsoAJGJIi95/g6DWO8heOs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -74,7 +74,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xkXPghJUXsn75g2REUVXZErjRQc=
+			vGXizhvYViP3nAJ0qYkzsFuPpJk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -83,7 +83,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iuN4uo7N1ixXtaTOCD1Hk1wCeFo=
+			VMu0IvaeE9oq6KBTRpNVSV/R4No=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JRbSrypGdiZ/aezsnzVbKz/p9fA=
+			YvGvwuOLRVyNIqdNcFWeKr6Hy/E=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -147,7 +147,7 @@
 		</data>
 		<key>lib/ios.jar</key>
 		<data>
-		JJL1FF8tJI60jClkGVhKrEm3dys=
+		NHpXbsXpiSSEtivFGZ4wf4EwTIQ=
 		</data>
 		<key>lib/robovm-cacerts-full.jar</key>
 		<data>
@@ -216,7 +216,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4gAh4xnv48JzTf203yazIwuYlGM=
+			AoUcuqC/2bzGoJxjxLd4Y/hYrYs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -225,7 +225,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			N/9MosfdgtVt6u7A9n+IkchDaUM=
+			fjnyunsoAJGJIi95/g6DWO8heOs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -234,7 +234,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xkXPghJUXsn75g2REUVXZErjRQc=
+			vGXizhvYViP3nAJ0qYkzsFuPpJk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -243,7 +243,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			iuN4uo7N1ixXtaTOCD1Hk1wCeFo=
+			VMu0IvaeE9oq6KBTRpNVSV/R4No=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -252,7 +252,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JRbSrypGdiZ/aezsnzVbKz/p9fA=
+			YvGvwuOLRVyNIqdNcFWeKr6Hy/E=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -303,7 +303,7 @@
 		</data>
 		<key>lib/ios.jar</key>
 		<data>
-		JJL1FF8tJI60jClkGVhKrEm3dys=
+		NHpXbsXpiSSEtivFGZ4wf4EwTIQ=
 		</data>
 		<key>lib/robovm-cacerts-full.jar</key>
 		<data>
