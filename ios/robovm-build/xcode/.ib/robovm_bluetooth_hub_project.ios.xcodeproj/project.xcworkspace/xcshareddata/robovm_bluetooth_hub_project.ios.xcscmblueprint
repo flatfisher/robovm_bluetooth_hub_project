@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DE2D6826BE9B12AE51E45EABFA8E153AD1B14C6A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DE2D6826BE9B12AE51E45EABFA8E153AD1B14C6A" : 0,
+    "EEA31905A10245C500B22B04F8172241748A8B6C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "31A5F3C1-BC44-4FEE-87E7-D50863D2D8BE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DE2D6826BE9B12AE51E45EABFA8E153AD1B14C6A" : "robovm_bluetooth_hub_project\/",
+    "EEA31905A10245C500B22B04F8172241748A8B6C" : "..\/GitProjects\/robovm_bluetooth_hub_project"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "robovm_bluetooth_hub_project.ios",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/robovm-build\/xcode\/.ib\/robovm_bluetooth_hub_project.ios.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/flatfisher\/robovm_bluetooth_hub_project.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DE2D6826BE9B12AE51E45EABFA8E153AD1B14C6A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/flatfisher\/robovm_bluetooth_hub_project.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EEA31905A10245C500B22B04F8172241748A8B6C"
+    }
+  ]
+}

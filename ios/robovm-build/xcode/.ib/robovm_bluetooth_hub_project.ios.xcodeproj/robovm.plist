@@ -4,21 +4,21 @@
 <dict>
 	<key>classToHeader</key>
 	<dict>
-		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/AddDeviceTableViewController.class</key>
-		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/AddDeviceTableViewController.h</string>
-		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/DeviceDataUIView.class</key>
-		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/DeviceDataUIView.h</string>
-		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/MainViewController.class</key>
+		<key>/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/BLEDataView.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/BLEDataView.h</string>
+		<key>/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/MainViewController.class</key>
 		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/MainViewController.h</string>
+		<key>/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/ScanBLEDeviceViewController.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/ScanBLEDeviceViewController.h</string>
 	</dict>
 	<key>implementationToBuild</key>
 	<dict>
-		<key>BCF7702F4AD84CF6836DAC63</key>
-		<string>6C8AA396F7964117BFE6811E</string>
-		<key>A6946A0381FF467CB0C278A6</key>
-		<string>8B2C50B078804419985FDFD7</string>
-		<key>B511ECDD000B48179D462B2F</key>
-		<string>F6B60CA3BBFA4F1893BF2561</string>
+		<key>6873AEB19D774968B28D7C2E</key>
+		<string>66A2ADFDD5244436823E02A3</string>
+		<key>E04B9E0DA79A4B9D8CB6E41B</key>
+		<string>FA58174C9C904B4AA3C3FE74</string>
+		<key>2205C6A14CE7424C9AC8F667</key>
+		<string>E816D3223364469F942233CA</string>
 	</dict>
 </dict>
 </plist>

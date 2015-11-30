@@ -10,7 +10,7 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("E083809424EC401A9B117E13", "EC9878D6407F47CCB9FB5925", "C7387373B7064D2EBD3F3011"
+						("E083809424EC401A9B117E13", "50D5DC562BB1449AA424125A", "C7387373B7064D2EBD3F3011"
 );
 					"sourceTree" = "<group>";
 				};
@@ -51,7 +51,7 @@
 					"isa" = "PBXSourcesBuildPhase";
 					"buildActionMask" = "2147483647";
 					"files" =
-						("6C8AA396F7964117BFE6811E", "8B2C50B078804419985FDFD7", "F6B60CA3BBFA4F1893BF2561"
+						("E816D3223364469F942233CA", "FA58174C9C904B4AA3C3FE74", "66A2ADFDD5244436823E02A3"
 );
 					"runOnlyForDeploymentPostprocessing" = "0";
 				};
@@ -60,7 +60,7 @@
 					"isa" = "XCBuildConfiguration";
 					"buildSettings" =
 						{
-							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/Info.plist.xml";
+							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/Info.plist.xml";
 							"SDKROOT" = "iphoneos";
 							"TARGETED_DEVICE_FAMILY" = "1,2";
 							"GCC_PRECOMPILE_PREFIX_HEADER" = "YES";
@@ -73,7 +73,7 @@
 					"isa" = "XCBuildConfiguration";
 					"buildSettings" =
 						{
-							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/Info.plist.xml";
+							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/Info.plist.xml";
 							"SDKROOT" = "iphoneos";
 							"TARGETED_DEVICE_FAMILY" = "1,2";
 							"GCC_PRECOMPILE_PREFIX_HEADER" = "YES";
@@ -89,36 +89,20 @@
 					"defaultConfigurationIsVisible" = "0";
 					"defaultConfigurationName" = "Release";
 				};
-			"4DC99A3F05B64FF79F25A62F" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Main.storyboard";
-					"lastKnownFileType" = "file.storyboard";
-					"sourceTree" = "<group>";
-					"path" = "Base.lproj/Main.storyboard";
-				};
 			"E083809424EC401A9B117E13" =
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("A8EEB68983EE42AC84876CCD", "2072CAC20DBE469487DC08BE");
+						("A046392D4AF2474E894A2B91", "2072CAC20DBE469487DC08BE");
 					"name" = "Resources";
 					"sourceTree" = "<absolute>";
-					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/resources";
-				};
-			"A8EEB68983EE42AC84876CCD" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Images.xcassets";
-					"lastKnownFileType" = "folder.assetcatalog";
-					"sourceTree" = "<group>";
-					"path" = "Images.xcassets";
+					"path" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/resources";
 				};
 			"2072CAC20DBE469487DC08BE" =
 				{
 					"isa" = "PBXVariantGroup";
 					"children" =
-						("4DC99A3F05B64FF79F25A62F");
+						("C064DAB850A94CA2AD6AE8D4");
 					"name" = "Main.storyboard";
 					"sourceTree" = "<group>";
 				};
@@ -134,74 +118,98 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("F22C5521E63D48E29CD2D296");
+						("949004EF845C4024B6F365D7", "F22C5521E63D48E29CD2D296");
 					"name" = "Supporting Files";
 					"sourceTree" = "<absolute>";
-					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios";
+					"path" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios";
 				};
-			"AF8A6EFF05174CC29E7B320D" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "AddDeviceTableViewController.h";
-					"lastKnownFileType" = "sourcecode.c.h";
-					"sourceTree" = "<group>";
-					"path" = "AddDeviceTableViewController.h";
-				};
-			"EC9878D6407F47CCB9FB5925" =
+			"50D5DC562BB1449AA424125A" =
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("A0C59DAB2A38447B9B2FED90");
+						("6D7AE60B85D24E79BA6E1A71");
 					"name" = "Sources";
 					"sourceTree" = "<absolute>";
 					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib";
 				};
-			"A0C59DAB2A38447B9B2FED90" =
+			"6D7AE60B85D24E79BA6E1A71" =
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("AF8A6EFF05174CC29E7B320D", "BCF7702F4AD84CF6836DAC63", "B9D8EF105A024555B2F3D28A",
- "A6946A0381FF467CB0C278A6", "006D0B3C2CD2413AB6606E0B", "B511ECDD000B48179D462B2F"
+						("902C5FE5B09D4994B6444118", "6873AEB19D774968B28D7C2E", "50958CD55F134C37955084D3",
+ "2205C6A14CE7424C9AC8F667", "BB246D5110CF4CE6B41EC934", "E04B9E0DA79A4B9D8CB6E41B"
 );
 					"name" = "com.liferay.bluetooth";
 					"sourceTree" = "<group>";
 					"path" = "com.liferay.bluetooth";
 				};
-			"BCF7702F4AD84CF6836DAC63" =
+			"902C5FE5B09D4994B6444118" =
 				{
 					"isa" = "PBXFileReference";
-					"name" = "AddDeviceTableViewController.m";
-					"lastKnownFileType" = "sourcecode.c.objc";
-					"sourceTree" = "<group>";
-					"path" = "AddDeviceTableViewController.m";
-				};
-			"6C8AA396F7964117BFE6811E" =
-				{
-					"isa" = "PBXBuildFile";
-					"fileRef" = "BCF7702F4AD84CF6836DAC63";
-				};
-			"B9D8EF105A024555B2F3D28A" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "DeviceDataUIView.h";
+					"name" = "BLEDataView.h";
 					"lastKnownFileType" = "sourcecode.c.h";
 					"sourceTree" = "<group>";
-					"path" = "DeviceDataUIView.h";
+					"path" = "BLEDataView.h";
 				};
-			"A6946A0381FF467CB0C278A6" =
+			"6873AEB19D774968B28D7C2E" =
 				{
 					"isa" = "PBXFileReference";
-					"name" = "DeviceDataUIView.m";
+					"name" = "BLEDataView.m";
 					"lastKnownFileType" = "sourcecode.c.objc";
 					"sourceTree" = "<group>";
-					"path" = "DeviceDataUIView.m";
+					"path" = "BLEDataView.m";
 				};
-			"8B2C50B078804419985FDFD7" =
+			"66A2ADFDD5244436823E02A3" =
 				{
 					"isa" = "PBXBuildFile";
-					"fileRef" = "A6946A0381FF467CB0C278A6";
+					"fileRef" = "6873AEB19D774968B28D7C2E";
 				};
-			"006D0B3C2CD2413AB6606E0B" =
+			"BB246D5110CF4CE6B41EC934" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "ScanBLEDeviceViewController.h";
+					"lastKnownFileType" = "sourcecode.c.h";
+					"sourceTree" = "<group>";
+					"path" = "ScanBLEDeviceViewController.h";
+				};
+			"E04B9E0DA79A4B9D8CB6E41B" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "ScanBLEDeviceViewController.m";
+					"lastKnownFileType" = "sourcecode.c.objc";
+					"sourceTree" = "<group>";
+					"path" = "ScanBLEDeviceViewController.m";
+				};
+			"FA58174C9C904B4AA3C3FE74" =
+				{
+					"isa" = "PBXBuildFile";
+					"fileRef" = "E04B9E0DA79A4B9D8CB6E41B";
+				};
+			"C064DAB850A94CA2AD6AE8D4" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Main.storyboard";
+					"lastKnownFileType" = "file.storyboard";
+					"sourceTree" = "<group>";
+					"path" = "Base.lproj/Main.storyboard";
+				};
+			"A046392D4AF2474E894A2B91" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Images.xcassets";
+					"lastKnownFileType" = "folder.assetcatalog";
+					"sourceTree" = "<group>";
+					"path" = "Images.xcassets";
+				};
+			"949004EF845C4024B6F365D7" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Info.plist";
+					"explicitFileType" = "text.plist.info";
+					"sourceTree" = "<group>";
+					"path" = "Info.plist.xml";
+				};
+			"50958CD55F134C37955084D3" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "MainViewController.h";
@@ -209,7 +217,7 @@
 					"sourceTree" = "<group>";
 					"path" = "MainViewController.h";
 				};
-			"B511ECDD000B48179D462B2F" =
+			"2205C6A14CE7424C9AC8F667" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "MainViewController.m";
@@ -217,10 +225,10 @@
 					"sourceTree" = "<group>";
 					"path" = "MainViewController.m";
 				};
-			"F6B60CA3BBFA4F1893BF2561" =
+			"E816D3223364469F942233CA" =
 				{
 					"isa" = "PBXBuildFile";
-					"fileRef" = "B511ECDD000B48179D462B2F";
+					"fileRef" = "2205C6A14CE7424C9AC8F667";
 				};
 		};
 	"rootObject" = "100000000000000000000001";

@@ -18,6 +18,8 @@
 #import <Social/Social.h>
 #import <WebKit/WebKit.h>
 
+#import "BLEDataView.h"
 #import "MainViewController.h"
+#import "ScanBLEDeviceViewController.h"
 #import "AddDeviceTableViewController.h"
 #import "DeviceDataUIView.h"
