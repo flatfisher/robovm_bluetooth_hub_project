@@ -22,12 +22,26 @@ public class DataManager {
         editor.commit();
     }
 
-    public String getConfigData(Context context) {
+    public static String getConfigData(Context context) {
 
         SharedPreferences sharedPreferences = context.getSharedPreferences(Constants.SHARED_PREFERENCE_NAME_CONFIG,
                 Context.MODE_PRIVATE);
 
         return sharedPreferences.getString(Constants.CONFIG_DATA_KEY, Constants.NO_CONFIG_MESSAGE);
+
+    }
+
+    public static boolean isCheckConfigData(Context context) {
+
+        if (!getConfigData(context).equals(Constants.NO_CONFIG_MESSAGE)) {
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
 
     }
 
