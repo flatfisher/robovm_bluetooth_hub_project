@@ -10,6 +10,8 @@ public class GattProcess {
 
     public static final int FINISH = 3;
 
+    public static final int NO_METHOD_ERROR = -1;
+
     private String method;
 
     private String service;
@@ -62,7 +64,7 @@ public class GattProcess {
 
         }else{
             // no method error
-            return -1;
+            return NO_METHOD_ERROR;
 
         }
 
