@@ -9,7 +9,8 @@ public class NetworkManager {
     }
 
     public static void getConfiguration(VoidBlock3<NSData, NSURLResponse, NSError> newDataTaskChangeListener) {
-        NSURL requestUrl = new NSURL("https://apiflatfisher.appspot.com/config");
+
+        NSURL requestUrl = new NSURL(Constants.REQUEST_URL+Constants.CONFIG_URL);
 
         NSURLRequest request = new NSURLRequest(requestUrl);
 
@@ -18,11 +19,12 @@ public class NetworkManager {
         NSURLSessionDataTask dataTask = session.newDataTask(request, newDataTaskChangeListener);
 
         dataTask.resume();
+
     }
 
     public static void postToServer(String value) {
 
-        NSURL requestUrl = new NSURL("https://apiflatfisher.appspot.com/");
+        NSURL requestUrl = new NSURL(Constants.REQUEST_URL);
 
         NSMutableURLRequest nsMutableURLRequest = new NSMutableURLRequest();
 
