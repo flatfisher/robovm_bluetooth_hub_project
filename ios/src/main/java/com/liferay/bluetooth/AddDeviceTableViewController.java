@@ -17,7 +17,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
                                                 UIControl.OnValueChangedListener,
                                                     CBCentralManagerDelegate {
 
-    private static String scanResultCellId = Constants.ScanResultCell;
+    private static String scanResultCellId = Constants.SCAN_RESULT_CELL;
 
     private UIRefreshControl pullToRefreshManager;
 
