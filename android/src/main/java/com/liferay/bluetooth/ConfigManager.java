@@ -30,6 +30,21 @@ public class ConfigManager {
         convertJsonStringToJsonObject(jsonConfigData);
 
     }
+
+    public boolean isCheckConfig(String deviceName){
+
+        for (String device: getDeviceNameList()){
+
+            if (device.equals(deviceName)){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
+
     public List<String> getDeviceNameList() {
 
         List<String> deviceNameList = new ArrayList<String>();
