@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -57,11 +59,72 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
 
         viewHolder.deviceName.setText(deviceName);
 
+        viewHolder.container.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                CheckBox checkBox = viewHolder.saveCheck;
+
+                if (checkBox.isChecked()){
+
+                    checkBox.setChecked(false);
+
+                }else{
+
+                    checkBox.setChecked(true);
+
+                }
+
+            }
+
+        });
+
         viewHolder.configuration.setText(configuration);
+
+        if (configuration.equals(Constants.NO_CONFIG_MESSAGE)){
+
+            viewHolder.saveCheck.setVisibility(View.INVISIBLE);
+
+        }
+
+        viewHolder.saveCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (isChecked){
+
+                    if (!configuration.equals(Constants.NO_CONFIG_MESSAGE)){
+
+                        DataManager.saveCheckedDevice(context,deviceName);
+
+                        System.out.println(DataManager.getCheckedList(context));
+
+                    }
+
+                }else{
+
+                    if (!configuration.equals(Constants.NO_CONFIG_MESSAGE)) {
+
+                        DataManager.removeCheckedDevice(context, deviceName);
+
+                        System.out.println(DataManager.getCheckedList(context));
+
+
+                    }
+
+                }
+
+            }
+
+        });
 
     }
 
     public static class ScanResultHolder extends RecyclerView.ViewHolder {
+
+        public LinearLayout container;
 
         public TextView deviceName;
 
@@ -72,6 +135,8 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
         public ScanResultHolder(View itemView) {
 
             super(itemView);
+
+            container = (LinearLayout)itemView.findViewById(R.id.container);
 
             deviceName = (TextView)itemView.findViewById(R.id.device_name_text);
 
