@@ -26,8 +26,6 @@ public class AddDeviceActivity extends Activity {
 
     private RecyclerView scanResultView;
 
-    private RecyclerView.LayoutManager layoutManager;
-
     private List<ScanResult> scanResultList;
 
     private BluetoothAdapter bluetoothAdapter;
@@ -53,6 +51,8 @@ public class AddDeviceActivity extends Activity {
 
         scanResultList = new ArrayList<ScanResult>();
 
+        addCheckedDeviceToScanResultList();
+
         scanResultView = (RecyclerView) findViewById(R.id.scan_result_view);
 
         scanResultView.setLayoutManager(new LinearLayoutManager(this));
@@ -70,6 +70,24 @@ public class AddDeviceActivity extends Activity {
             initializeBluetoothAdapter();
 
             startScanBluetooth();
+
+        }
+
+    }
+
+    private void addCheckedDeviceToScanResultList() {
+
+        List<String> list = DataManager.getCheckedList(this);
+
+        for (String checkedName:list){
+
+            ScanResult scanResult = new ScanResult();
+
+            scanResult.deviceName = checkedName;
+
+            scanResult.configuration = Constants.CONFIG_MESSAGE;
+
+            scanResultList.add(scanResult);
 
         }
 
