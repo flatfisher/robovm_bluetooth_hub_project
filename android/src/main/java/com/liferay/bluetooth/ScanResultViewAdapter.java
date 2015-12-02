@@ -1,10 +1,5 @@
 package com.liferay.bluetooth;
 
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothGatt;
-import android.bluetooth.le.BluetoothLeScanner;
-import android.bluetooth.le.ScanFilter;
-import android.bluetooth.le.ScanSettings;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -82,6 +77,12 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
 
         viewHolder.configuration.setText(configuration);
 
+        if(DataManager.isCheckedDevice(deviceName,context)){
+
+            viewHolder.saveCheck.setChecked(true);
+
+        }
+
         if (configuration.equals(Constants.NO_CONFIG_MESSAGE)){
 
             viewHolder.saveCheck.setVisibility(View.INVISIBLE);
@@ -147,4 +148,5 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
         }
 
     }
+
 }
