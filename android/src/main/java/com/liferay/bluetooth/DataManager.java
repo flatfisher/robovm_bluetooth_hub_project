@@ -128,4 +128,19 @@ public class DataManager {
 
     }
 
+    public static boolean isCheckedDevice(String deviceName,Context context){
+
+        List<String> list = getCheckedList(context);
+
+        if (isOverlap(deviceName,list)){
+
+            return true;
+
+        }else{
+
+            return false;
+        }
+
+    }
+
 }
