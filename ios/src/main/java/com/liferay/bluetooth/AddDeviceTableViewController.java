@@ -38,7 +38,6 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     // first call method.
     @Override
     public void viewDidLoad() {
-
         super.viewDidLoad();
 
         System.out.println("add device viewDidLoad");
@@ -72,30 +71,24 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         getTableView().addSubview(uiActivityIndicatorView);
 
         uiActivityIndicatorView.startAnimating();
-
     }
 
     @Override
     public void viewWillAppear(boolean b) {
-
         super.viewWillAppear(b);
 
         System.out.println("add device viewWillAppear");
 
         startScanBLEData() ;
-
     }
 
     private void startScanBLEData() {
-
         System.out.println("startScanBLEData");
 
         bluetoothManager = new CBCentralManager(this, null, null);
-
     }
 
     private void moveCheckedDeviceToScanResultArray(){
-
         scanResultArray.clear();
 
         for (String checkedDevice : checkedDeviceList){
@@ -103,12 +96,10 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             scanResultArray.add(checkedDevice);
 
         }
-
     }
 
     @Override
     public void viewWillDisappear(boolean b) {
-
         super.viewWillDisappear(b);
 
         NSArray<UIViewController> array = getNavigationController().getViewControllers();
@@ -118,11 +109,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             stopBLEScan();
 
         }
-
     }
 
     private void stopBLEScan() {
-
         if (bluetoothManager != null) {
 
             bluetoothManager.stopScan();
@@ -132,11 +121,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             bluetoothManager = null;
 
         }
-
     }
 
     private void saveConfig() {
-
         NSArray<UITableViewCell> cellNSArray = getTableView().getVisibleCells();
 
         List<String> checkedDeviceList = new ArrayList<String>();
@@ -157,64 +144,48 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         }
 
         DataManager.saveCheckedDeviceList(checkedDeviceList);
-
     }
 
     private List<String> getConfigData() {
-
         NSDictionary nsDictionary = DataManager.getConfigData();
 
         ConfigManager configManager = new ConfigManager(nsDictionary);
 
         return configManager.getDeviceNameList();
-
     }
 
     //UIControl.OnValueChangedListener fot pull to refresh
     @Override
     public void onValueChanged(UIControl uiControl) {
-
         if (!bluetoothManager.isScanning()){
-
             startScanBLEData();
-
         }
-
     }
 
     @Override
     public long getNumberOfRowsInSection(UITableView uiTableView, @MachineSizedSInt long l) {
-
         return scanResultArray.size();
-
     }
 
     @Override
     public long getNumberOfSections(UITableView uiTableView) {
-
         return 1;
-
     }
 
     @Override
     public UITableViewCell getCellForRow(UITableView uiTableView, NSIndexPath nsIndexPath) {
-
         int row = (int) nsIndexPath.getRow();
 
         UITableViewCell cell = uiTableView.dequeueReusableCell(scanResultCellId);
 
         if (cell == null) {
-
             cell = new UITableViewCell(UITableViewCellStyle.Subtitle, scanResultCellId);
-
         }
 
         String deviceName = scanResultArray.get(row);
 
         if (isCheckSavedDevice(deviceName)) {
-
             cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
-
         }
 
         cell.getTextLabel().setText(deviceName);
@@ -229,7 +200,6 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private void setConfigFound(UITableViewCell cell, String device) {
-
         UILabel uiLabel = cell.getDetailTextLabel();
 
         uiLabel.setTextColor(UIColor.gray());
@@ -243,11 +213,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             uiLabel.setText(Constants.NO_CONFIG_MESSAGE);
 
         }
-
     }
 
     private boolean isCheckSavedDevice(String deviceName) {
-
         for (String device : checkedDeviceList) {
 
             if (device.equals(deviceName)) {
@@ -259,12 +227,10 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         }
 
         return false;
-
     }
 
     @Override
     public void didSelectRow(UITableView uiTableView, NSIndexPath nsIndexPath) {
-
         uiTableView.deselectRow(nsIndexPath, true);
 
         UITableViewCell cell = uiTableView.getCellForRow(nsIndexPath);
@@ -284,28 +250,22 @@ public class AddDeviceTableViewController extends UITableViewController implemen
                 cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
 
             }
-
         }
         saveConfig();
     }
 
     private void disSelectDevice(String deviceName) {
-
         DataManager.removeCheckedDevice(deviceName);
-
     }
 
     @Override
     public double getHeightForRow(UITableView uiTableView, NSIndexPath nsIndexPath) {
-
         return ROW_HEIGHT;
-
     }
 
     //CBCentralManagerDelegate
     @Override
     public void didUpdateState(CBCentralManager cbCentralManager) {
-
         // usable BLE
         if (cbCentralManager.getState() == CBCentralManagerState.PoweredOn) {
 
@@ -341,108 +301,73 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
             }, 0, 1000);
         }
-
     }
 
     private void stopPullToRefresh(){
-
         if (pullToRefreshManager.isRefreshing()){
-
             pullToRefreshManager.endRefreshing();
-
         }
-
     }
 
     private void stopUIActivityIndicator(){
-
         if (uiActivityIndicatorView.isAnimating()) {
-
             uiActivityIndicatorView.stopAnimating();
-
         }
-
     }
 
     @Override
     public void willRestoreState(CBCentralManager cbCentralManager,
                                  CBCentralManagerRestoredState cbCentralManagerRestoredState) {
-
     }
 
     @Override
     public void didDiscoverPeripheral(CBCentralManager cbCentralManager,
                                       CBPeripheral cbPeripheral,
                                       CBAdvertisementData cbAdvertisementData, NSNumber nsNumber) {
-
         System.out.println("Add Device didDiscover"+cbPeripheral.getName());
 
         String deviceName = cbPeripheral.getName();
 
         if (isCheckCanAdd(deviceName)) {
-
             String name = checkConfigDataName(deviceName);
 
             if (name != null) {
-
                 if (isCheckOverlap(name)) {
                     scanResultArray.add(name);
                 }
-
             } else {
-
                 if (isCheckOverlap(deviceName)) {
                     scanResultArray.add(deviceName);
                 }
-
             }
         }
-
     }
 
     private String checkConfigDataName(String device) {
-
         for (String configName : configNameList) {
-
             if (device.contains(configName)) {
-
                 return configName;
-
             }
         }
-
         return null;
     }
 
 
     private boolean isCheckCanAdd(String deviceName) {
-
         if (deviceName == null) {
-
             return false;
-
         } else {
-
             return true;
-
         }
-
     }
 
     private boolean isCheckOverlap(String deviceName) {
-
         for (String device : scanResultArray) {
-
             if (device.equals(deviceName)) {
-
                 return false;
-
             }
-
         }
-
         return true;
-
     }
 
 

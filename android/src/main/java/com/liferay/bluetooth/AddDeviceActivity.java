@@ -17,11 +17,9 @@ import java.util.List;
 public class AddDeviceActivity extends Activity {
 
     class ScanResult {
-
         public String deviceName;
 
         public String configuration;
-
     }
 
     private RecyclerView scanResultView;
@@ -44,9 +42,7 @@ public class AddDeviceActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_add_device);
 
         scanResultList = new ArrayList<ScanResult>();
@@ -62,7 +58,6 @@ public class AddDeviceActivity extends Activity {
         scanResultView.addItemDecoration(new DividerItemDecoration(this));
 
         if (DataManager.isCheckConfigData(this)) {
-
             String configData = DataManager.getConfigData(this);
 
             configManager = new ConfigManager(configData);
@@ -70,17 +65,13 @@ public class AddDeviceActivity extends Activity {
             initializeBluetoothAdapter();
 
             startScanBluetooth();
-
         }
-
     }
 
     private void addCheckedDeviceToScanResultList() {
-
         List<String> list = DataManager.getCheckedList(this);
 
-        for (String checkedName:list){
-
+        for (String checkedName : list) {
             ScanResult scanResult = new ScanResult();
 
             scanResult.deviceName = checkedName;
@@ -88,30 +79,23 @@ public class AddDeviceActivity extends Activity {
             scanResult.configuration = Constants.CONFIG_MESSAGE;
 
             scanResultList.add(scanResult);
-
         }
-
     }
 
     private void setScanResultOnRecyclerView() {
-
         scanResultView.setAdapter(new ScanResultViewAdapter(this, scanResultList));
-
     }
 
     // for bluetooth methods bellow the this line
     private void initializeBluetoothAdapter() {
-
         scanHandler = new Handler();
 
         final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 
         bluetoothAdapter = bluetoothManager.getAdapter();
-
     }
 
     private void initializeBluetoothScanner() {
-
         bluetoothLeScanner = bluetoothAdapter.getBluetoothLeScanner();
 
         scanSettings = new ScanSettings.Builder()
@@ -119,125 +103,80 @@ public class AddDeviceActivity extends Activity {
                 .build();
 
         filterList = new ArrayList<ScanFilter>();
-
     }
 
     private void startScanBluetooth() {
-
         if (isEnableBluetoothSetting()) {
-
             initializeBluetoothScanner();
 
             scanLeDevice(true);
-
         } else {
-
             intentBluetoothSettingWindow();
-
         }
-
     }
 
     private void scanLeDevice(final boolean enable) {
-
         if (enable) {
 
             scanHandler.postDelayed(new Runnable() {
 
                 @Override
                 public void run() {
-
                     bluetoothLeScanner.stopScan(mScanCallback);
 
                     setScanResultOnRecyclerView();
                 }
-
             }, SCAN_PERIOD);
 
             bluetoothLeScanner.startScan(filterList, scanSettings, mScanCallback);
 
         } else {
-
             bluetoothLeScanner.stopScan(mScanCallback);
-
         }
     }
 
     private ScanCallback mScanCallback = new ScanCallback() {
-
         @Override
         public void onScanResult(int callbackType, android.bluetooth.le.ScanResult scanResult) {
-
-            Log.i("Result", "Name" + scanResult.getDevice().getName() +
-                    "Address" + scanResult.getDevice().getAddress());
-
             String name = scanResult.getDevice().getName();
 
             if (name != null) {
-
                 if (!isOverlap(name)) {
-
                     ScanResult device = new ScanResult();
 
                     device.deviceName = name;
 
                     if (configManager.isCheckConfig(name)) {
-
                         device.configuration = Constants.CONFIG_MESSAGE;
-
                     } else {
-
                         device.configuration = Constants.NO_CONFIG_MESSAGE;
-
                     }
-
                     scanResultList.add(device);
-
                 }
-
             }
-
         }
-
     };
 
-    private boolean isOverlap(String name){
-
-        for(ScanResult scanResult:scanResultList){
-
-            if (scanResult.deviceName.equals(name)){
-
+    private boolean isOverlap(String name) {
+        for (ScanResult scanResult : scanResultList) {
+            if (scanResult.deviceName.equals(name)) {
                 return true;
-
             }
-
         }
-
         return false;
-
     }
 
     private boolean isEnableBluetoothSetting() {
-
         if (bluetoothAdapter != null || bluetoothAdapter.isEnabled()) {
-
             return true;
-
         } else {
-
             return false;
-
         }
-
     }
 
     private void intentBluetoothSettingWindow() {
-
         Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 
         startActivityForResult(intent, Constants.REQUEST_ENABLE_BLUETOOTH);
-
     }
-
-
 }

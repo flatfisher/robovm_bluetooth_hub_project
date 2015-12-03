@@ -26,7 +26,6 @@ public class DeviceDataUIView extends UIView {
                        String deviceName,
                        List<String> valueTypeList,
                        List<String> valueUnitList) {
-
         super(cgRect);
 
         displayHeight = getFrame().getHeight();
@@ -44,23 +43,17 @@ public class DeviceDataUIView extends UIView {
         setValueLabel();
 
         setValueUnitLabel();
-
     }
 
     public void setDeviceName(String deviceName){
-
         this.deviceName = deviceName;
-
     }
 
     public String getDeviceName() {
-
         return deviceName;
-
     }
 
     private void setValueTypeLabel() {
-
         int count = valueTypeList.size();
 
         double width = displayWidth / 2;
@@ -70,7 +63,6 @@ public class DeviceDataUIView extends UIView {
         double dividedHeight = displayHeight / count;
 
         for (int i = 0; i < count; i++) {
-
             CGRect position = new CGRect(0, dividedHeight * (i + 1) - dividedHeight / 2, width, height / 3);
 
             UILabel valueTypeLabel = new UILabel(position);
@@ -81,11 +73,9 @@ public class DeviceDataUIView extends UIView {
 
             addSubview(valueTypeLabel);
         }
-
     }
 
     private void setValueLabel() {
-
         int count = valueUnitList.size();
 
         valueLabelList = new ArrayList<UILabel>();
@@ -97,7 +87,6 @@ public class DeviceDataUIView extends UIView {
         double dividedHeight = displayHeight / count;
 
         for (int i = 0; i < count; i++) {
-
             CGRect position = new CGRect(displayWidth / 2,
                     dividedHeight * (i + 1) - dividedHeight / 2, width, height / 3);
 
@@ -111,33 +100,23 @@ public class DeviceDataUIView extends UIView {
 
             addSubview(valueLabel);
         }
-
     }
 
     public void setValue(List<String> valueList) {
-
         int count = valueUnitList.size();
 
         for (int i = 0; i < count; i++) {
-
             String value = valueList.get(i);
 
             if (value == null || value.length() <= 0){
-
                 valueLabelList.get(i).setText("--");
-
             }else{
-
                 valueLabelList.get(i).setText(value);
-
             }
-
         }
-
     }
 
     private void setValueUnitLabel() {
-
         int count = valueUnitList.size();
 
         double width = displayWidth / 4;
@@ -147,7 +126,6 @@ public class DeviceDataUIView extends UIView {
         double dividedHeight = displayHeight / count;
 
         for (int i = 0; i < count; i++) {
-
             CGRect position = new CGRect(width * 3, dividedHeight * (i + 1) - dividedHeight / 2, width, height / 3);
 
             UILabel valueTypeLabel = new UILabel(position);
@@ -158,7 +136,5 @@ public class DeviceDataUIView extends UIView {
 
             addSubview(valueTypeLabel);
         }
-
     }
-
 }

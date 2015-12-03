@@ -17,24 +17,19 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
     private Drawable divider;
 
     public DividerItemDecoration(Context context) {
-
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
 
         divider = a.getDrawable(0);
 
         a.recycle();
-
     }
 
     @Override
     public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
-
         drawVertical(c, parent);
-
     }
 
     public void drawVertical(Canvas c, RecyclerView parent) {
-
         final int left = parent.getPaddingLeft();
 
         final int right = parent.getWidth() - parent.getPaddingRight();
@@ -61,8 +56,6 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-
         outRect.set(0, 0, 0, divider.getIntrinsicHeight());
-
     }
 }

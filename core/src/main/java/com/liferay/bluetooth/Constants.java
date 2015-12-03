@@ -29,5 +29,4 @@ public class Constants {
     public static final String BROADCAST = "Broadcast";
 
     public static final String UNABLE_RETRIEVE = "Unable to retrieve web page. URL may be invalid.";
-
 }

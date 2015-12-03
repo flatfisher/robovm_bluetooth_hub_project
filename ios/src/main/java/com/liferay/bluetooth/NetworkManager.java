@@ -9,7 +9,6 @@ public class NetworkManager {
     }
 
     public static void getConfiguration(VoidBlock3<NSData, NSURLResponse, NSError> newDataTaskChangeListener) {
-
         NSURL requestUrl = new NSURL(Constants.REQUEST_URL+Constants.CONFIG_URL);
 
         NSURLRequest request = new NSURLRequest(requestUrl);
@@ -19,7 +18,6 @@ public class NetworkManager {
         NSURLSessionDataTask dataTask = session.newDataTask(request, newDataTaskChangeListener);
 
         dataTask.resume();
-
     }
 
     public static void postToServer(String value) {
@@ -41,7 +39,5 @@ public class NetworkManager {
         NSURLSessionDataTask nsurlSessionDataTask = nsurlSession.newDataTask(nsMutableURLRequest);
 
         nsurlSessionDataTask.resume();
-
     }
-
 }

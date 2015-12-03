@@ -38,36 +38,28 @@ public class MainViewController extends UIViewController implements
     //First call method
     @Override
     public void viewDidLoad() {
-
         super.viewDidLoad();
 
         System.out.println("Main viewDidLoad");
-
     }
 
     @Override
     public void viewWillAppear(boolean b) {
-
         super.viewWillAppear(b);
 
         System.out.println("viewWillAppear");
 
         getConfigData();
-
     }
 
     @IBAction
     private void onClickAddDevice() {
-
         removeMainView();
-
     }
 
     private void getConfigData() {
-
         //check saved configuration.
         if (DataManager.isConfigData()) {
-
             configManager = new ConfigManager(DataManager.getConfigData());
 
             gattManagerList = configManager.getGattManagerList();
@@ -77,19 +69,15 @@ public class MainViewController extends UIViewController implements
             startBluetoothIFCheckedDevice();
 
         } else {
-
             getConfigurationFromServer();
-
         }
     }
 
     private void getConfigurationFromServer() {
-
         NetworkManager.getConfiguration(new VoidBlock3<NSData, NSURLResponse, NSError>() {
 
             @Override
             public void invoke(NSData nsData, NSURLResponse nsurlResponse, NSError nsError) {
-
                 try {
 
                     NSDictionary jsonConfigData = (NSDictionary) NSJSONSerialization.createJSONObject(nsData,
@@ -105,40 +93,29 @@ public class MainViewController extends UIViewController implements
 
                         @Override
                         public void run() {
-
                             stopActivityIndicator();
 
                             moveToAddDeviceTableViewController();
-
                         }
 
                     });
 
                 } catch (NSErrorException nserrorException) {
-
                     System.out.println("Error" + nserrorException);
-
                 }
             }
-
         });
-
         startActivityIndicator();
-
     }
 
     private void moveToAddDeviceTableViewController() {
-
         if (!DataManager.isCheckedData()) {
 
             performSegue("AddDevice", null);
-
         }
-
     }
 
     private void startActivityIndicator() {
-
         uiActivityIndicatorView = new UIActivityIndicatorView(UIActivityIndicatorViewStyle.WhiteLarge);
 
         uiActivityIndicatorView.setCenter(getView().getCenter());
@@ -148,60 +125,45 @@ public class MainViewController extends UIViewController implements
         bluetoothDataView.addSubview(uiActivityIndicatorView);
 
         uiActivityIndicatorView.startAnimating();
-
     }
 
     private void stopActivityIndicator() {
-
         if (uiActivityIndicatorView.isAnimating()) {
 
             uiActivityIndicatorView.stopAnimating();
-
         }
-
     }
 
     private void startBluetoothIFCheckedDevice() {
-
         checkedDeviceList = getCheckedList();
 
         int size = checkedDeviceList.size();
 
         if (size >= 1) {
-
             deviceDataUIViewList = new ArrayList<DeviceDataUIView>();
 
             setUpDeviceDataView();
 
             startScanBluetooth();
-
         } else {
-
             removeMainView();
 
             moveToAddDeviceTableViewController();
-
         }
-
     }
 
     private void startScanBluetooth() {
-
         System.out.println("main startScanBluetooth");
 
         bluetoothManager = new CBCentralManager(this, null, null);
-
     }
 
     private List<String> getCheckedList() {
-
         return DataManager.getCheckedDeviceList();
-
     }
 
     @Override
     public void didUpdateState(CBCentralManager cbCentralManager) {
-
         // usable BLE
         if (cbCentralManager.getState() == CBCentralManagerState.PoweredOn) {
 
@@ -211,7 +173,6 @@ public class MainViewController extends UIViewController implements
 
             System.out.println("unusable Bluetooth.");
         }
-
     }
 
     @Override
@@ -224,7 +185,6 @@ public class MainViewController extends UIViewController implements
     public void didDiscoverPeripheral(CBCentralManager cbCentralManager,
                                       CBPeripheral cbPeripheral,
                                       CBAdvertisementData cbAdvertisementData, NSNumber nsNumber) {
-
         String deviceName = cbPeripheral.getName();
 
         String serverType = getServerType(deviceName);
@@ -246,67 +206,49 @@ public class MainViewController extends UIViewController implements
                     broadcastManager.setValues(data);
 
                     updateValueOnDataLayout(broadcastManager);
-
                 }
-
             } else {
                 // no server type error.
             }
-
         }
-
     }
 
     private void updateValueOnDataLayout(BroadcastManager broadcastManager) {
-
         DeviceDataUIView deviceDataUIView = getDeviceDataUIView(broadcastManager.getDeviceName());
 
         List<String> data = broadcastManager.getValueData();
 
         deviceDataUIView.setValue(data);
-
     }
 
     private String getServerType(String deviceName) {
-
         if (deviceName != null) {
-
             for (String checkedDevice : checkedDeviceList) {
-
                 if (deviceName.contains(checkedDevice)) {
-
                     return configManager.getServerType(checkedDevice);
-
                 }
-
             }
         }
-
         return null;
-
     }
 
     @Override
     public void didConnectPeripheral(CBCentralManager cbCentralManager, CBPeripheral cbPeripheral) {
-
         System.out.println("will connect" + cbPeripheral.getName());
 
         cbPeripheral.setDelegate(this);
 
         cbPeripheral.discoverServices(null);
-
     }
 
     @Override
     public void didFailToConnectPeripheral(CBCentralManager cbCentralManager,
                                            CBPeripheral cbPeripheral, NSError nsError) {
-
     }
 
     @Override
     public void didDisconnectPeripheral(CBCentralManager cbCentralManager,
                                         CBPeripheral cbPeripheral, NSError nsError) {
-
     }
 
     @Override
@@ -334,17 +276,13 @@ public class MainViewController extends UIViewController implements
         System.out.println("didDiscoverServices");
 
         if (nsError == null) {
-
             discoverCharacteristics(cbPeripheral);
-
         } else {
             System.out.print("Discover Services Error");
         }
-
     }
 
     private void discoverCharacteristics(CBPeripheral cbPeripheral) {
-
         NSArray<CBService> services = cbPeripheral.getServices();
 
         for (GattManager gattManager : gattManagerList) {
@@ -586,7 +524,6 @@ public class MainViewController extends UIViewController implements
     }
 
     private void setUpDeviceDataView() {
-
         int size = checkedDeviceList.size();
 
         double width = getView().getFrame().getWidth();
@@ -594,7 +531,6 @@ public class MainViewController extends UIViewController implements
         double height = getView().getFrame().getHeight();
 
         for (int index = 0; index < size; index++) {
-
             String checkedDevice = checkedDeviceList.get(index);
 
             if (configManager.getServerType(checkedDevice).equals(Constants.GATT)) {
@@ -604,17 +540,13 @@ public class MainViewController extends UIViewController implements
             } else if (configManager.getServerType(checkedDevice).equals(Constants.BROADCAST)) {
 
                 createDeviceLayoutForBroadcast(checkedDevice, index, height, width);
-
             }
 
         }
-
         addDeviceDataView();
-
     }
 
     private void createDeviceLayoutForGatt(String checkedDevice, int index, double height, double width) {
-
         GattManager gattManager = getGattManager(checkedDevice);
 
         CGRect position = new CGRect(0, height / 5 * index, width, height / 5);
@@ -629,11 +561,9 @@ public class MainViewController extends UIViewController implements
                 valueTypeList, valueUnitList);
 
         deviceDataUIViewList.add(deviceDataUIView);
-
     }
 
     private void createDeviceLayoutForBroadcast(String checkedDevice, int index, double height, double width) {
-
         BroadcastManager broadcastManager = getBroadcastManager(checkedDevice);
 
         CGRect position = new CGRect(0, height / 5 * index, width, height / 5);
@@ -648,32 +578,25 @@ public class MainViewController extends UIViewController implements
                 valueTypeList, valueUnitList);
 
         deviceDataUIViewList.add(deviceDataUIView);
-
-
     }
 
     private void addDeviceDataView() {
-
         for (DeviceDataUIView deviceDataUIView : deviceDataUIViewList) {
 
             bluetoothDataView.addSubview(deviceDataUIView);
-
         }
     }
 
     private void removeMainView() {
-
         System.out.println("removeMainView");
 
         stopBluetoothScan();
 
         removeDataView();
-
     }
 
 
     private void stopBluetoothScan() {
-
         System.out.println("stopBluetoothScan");
 
         if (bluetoothManager != null) {
@@ -683,27 +606,20 @@ public class MainViewController extends UIViewController implements
             bluetoothManager.release();
 
             bluetoothManager = null;
-
         }
-
     }
 
     private void removeDataView() {
-
         System.out.println("removeDataView");
 
         if (deviceDataUIViewList != null) {
-
             for (DeviceDataUIView deviceDataView : deviceDataUIViewList) {
-
                 deviceDataView.removeFromSuperview();
 
                 deviceDataView.release();
 
                 deviceDataUIViewList = null;
-
             }
         }
     }
-
 }

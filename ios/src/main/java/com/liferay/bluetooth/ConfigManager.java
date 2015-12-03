@@ -9,11 +9,9 @@ import java.util.List;
 public class ConfigManager {
 
     class Device {
-
         String deviceName;
 
         String serverType;
-
     }
 
     private List<Device> deviceList;
@@ -25,7 +23,6 @@ public class ConfigManager {
     private List<BroadcastManager> broadcastManagerList;
 
     public ConfigManager(NSDictionary configData) {
-
         deviceList = new ArrayList<Device>();
 
         gattManagerList = new ArrayList<GattManager>();
@@ -35,64 +32,48 @@ public class ConfigManager {
         jsonConfigData = configData;
 
         parseConfigData();
-
     }
 
     public List<String> getDeviceNameList() {
-
         List<String> deviceNameList = new ArrayList<String>();
 
         for (Device device : deviceList) {
-
             deviceNameList.add(device.deviceName);
-
         }
-
         return deviceNameList;
     }
 
     public String getServerType(String deviceName) {
-
         String serverType;
 
         for (Device device : deviceList) {
-
             if (device.deviceName.equals(deviceName)) {
 
                 serverType = device.serverType;
 
                 return serverType;
             }
-
         }
-
         return null;
     }
 
     public List<GattManager> getGattManagerList() {
-
         return gattManagerList;
-
     }
 
     public List<BroadcastManager> getBroadcastManagerList() {
-
         return broadcastManagerList;
-
     }
 
     private void parseConfigData() {
-
         NSArray deviceArray = (NSArray) jsonConfigData.get("device");
 
         setDeviceList(deviceArray);
 
         createManagers(deviceArray);
-
     }
 
     private void setDeviceList(NSArray deviceArray) {
-
         int size = deviceArray.size();
 
         for (int i = 0; i < size; i++) {
@@ -109,10 +90,10 @@ public class ConfigManager {
     }
 
     private void createManagers(NSArray deviceArray) {
-
         int size = deviceArray.size();
 
         for (int index = 0; index < size; index++) {
+
             NSDictionary device = (NSDictionary) deviceArray.get(index);
 
             String deviceName = device.getString("name");
@@ -130,13 +111,10 @@ public class ConfigManager {
             } else {
                 // error no server type.
             }
-
         }
-
     }
 
     private void createGattManager(String deviceName, NSArray deviceArray, int index) {
-
         NSDictionary device = (NSDictionary) deviceArray.get(index);
 
         NSArray methodArray = (NSArray) device.get("method");
@@ -144,11 +122,9 @@ public class ConfigManager {
         List<GattManager> newGattManagerList = getGattManagerList(deviceName, methodArray);
 
         gattManagerList.addAll(newGattManagerList);
-
     }
 
     private List<GattManager> getGattManagerList(String deviceName, NSArray methodArray) {
-
         List<GattManager> gattManagerList = new ArrayList<GattManager>();
 
         String name;
@@ -162,7 +138,6 @@ public class ConfigManager {
         List<GattProcess> gattProcessList = new ArrayList<GattProcess>();
 
         for (int i = 0; i < methodArray.size(); i++) {
-
             GattManager gattManager = new GattManager();
 
             gattManager.setDeviceName(deviceName);
@@ -206,29 +181,22 @@ public class ConfigManager {
             gattManager.setGattProcessList(gattProcessList);
 
             gattManagerList.add(gattManager);
-
         }
-
         return gattManagerList;
     }
 
 
     private List<String> getList(NSArray valueTypeArray) {
-
         List<String> list = new ArrayList<String>();
 
         for (int i = 0; i < valueTypeArray.size(); i++) {
-
             list.add(String.valueOf(valueTypeArray.get(i)));
-
         }
 
         return list;
-
     }
 
     private void createBroadcastManager(String deviceName, NSArray deviceArray, int index) {
-
         NSDictionary device = (NSDictionary) deviceArray.get(index);
 
         BroadcastManager broadcastManager = new BroadcastManager();
@@ -275,7 +243,6 @@ public class ConfigManager {
         List<BroadcastMethod> methodList = new ArrayList<BroadcastMethod>();
 
         for (int i = 0; i < methodArray.size(); i++) {
-
             NSDictionary method = (NSDictionary) methodArray.get(i);
 
             int valueIndex = method.getInt("valueIndex");
@@ -291,7 +258,6 @@ public class ConfigManager {
             broadcastMethod.setIndex(valueIndex);
 
             methodList.add(broadcastMethod);
-
         }
 
         broadcastManager.setBroadcastMethodList(methodList);
@@ -299,11 +265,9 @@ public class ConfigManager {
         broadcastManagerList.add(broadcastManager);
 
         return broadcastManagerList;
-
     }
 
     private static int[] getIntArray(NSArray valueIndex){
-
         int length = valueIndex.size();
 
         int[] valueIndexArray = new int[length];
@@ -313,7 +277,5 @@ public class ConfigManager {
         }
 
         return valueIndexArray;
-
     }
-
 }
