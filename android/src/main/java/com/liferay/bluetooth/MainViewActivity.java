@@ -86,10 +86,11 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
             downloadConfigFromServer();
         }
     }
-
-
+    
     private void prepareDataView() {
         dataViewList = new ArrayList<DataView>();
+
+        mainDataView.removeAllViews();
 
         int rowHeight = layoutSize.getHeight() / 5;
 
@@ -133,7 +134,9 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void downloadConfigFromServer() {
+
         NetworkManager.getConfiguration(this, new RequestListener() {
+
             @Override
             public void onResponse(String jsonString, int code) {
                 DataManager.saveConfigData(MainViewActivity.this, jsonString);
@@ -415,7 +418,6 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     private GattManager getGattManager(String deviceName) {
         for (GattManager gattManager : gattManagerList) {
             if (gattManager.getDeviceName().equals(deviceName)) {
-
                 return gattManager;
             }
         }
