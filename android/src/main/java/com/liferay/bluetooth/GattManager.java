@@ -1,5 +1,6 @@
 package com.liferay.bluetooth;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GattManager {
@@ -137,53 +138,53 @@ public class GattManager {
 
     }
 
-//    public List<String> getValue(byte[] valueArray) {
-//
-//        int dataCount = valueUnitTypeList.size();
-//
-//        List<String> valueList = new ArrayList<String>();
-//
-//        if (dataCount == 1) {
-//
-//            String valueString = "";
-//
-//            for (byte value : valueArray) {
-//
-//                valueString = valueString + getConvertedData(value);
-//
-//            }
-//
-//            valueList.add(valueString);
-//
-//        } else {
-//
-//            for (int i = 0; i < dataCount; i++) {
-//
-//                valueList.add(getConvertedData(valueArray[i]));
-//
-//            }
-//
-//        }
-//
-//        return valueList;
-//
-//    }
+    public List<String> getValue(byte[] valueArray) {
 
-//    private String getConvertedData(byte value) {
-//
-//        if (convertType.equals("decimal")) {
-//
-//            return Convert.byteToDecimalString(value);
-//
-//        } else if (convertType.equals("ascii")) {
-//
-//            return Convert.byteToAscii(value);
-//
-//        } else {
-//
-//            return null;
-//
-//        }
-//    }
+        int dataCount = valueUnitTypeList.size();
+
+        List<String> valueList = new ArrayList<String>();
+
+        if (dataCount == 1) {
+
+            String valueString = "";
+
+            for (byte value : valueArray) {
+
+                valueString = valueString + getConvertedData(value);
+
+            }
+
+            valueList.add(valueString);
+
+        } else {
+
+            for (int i = 0; i < dataCount; i++) {
+
+                valueList.add(getConvertedData(valueArray[i]));
+
+            }
+
+        }
+
+        return valueList;
+
+    }
+
+    private String getConvertedData(byte value) {
+
+        if (convertType.equals("decimal")) {
+
+            return Convert.byteToDecimalString(value);
+
+        } else if (convertType.equals("ascii")) {
+
+            return Convert.byteToAscii(value);
+
+        } else {
+
+            return null;
+
+        }
+    }
 
 }
