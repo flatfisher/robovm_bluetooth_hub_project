@@ -1,22 +1,24 @@
 package com.liferay.bluetooth;
 
-import android.app.Activity;
 import android.bluetooth.*;
 import android.bluetooth.le.*;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 
 import java.util.List;
 import java.util.UUID;
 
-public class MainViewActivity extends Activity implements View.OnClickListener {
+public class MainViewActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button addDeviceButton;
 
@@ -40,12 +42,20 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
 
     private static final long SCAN_PERIOD = 1000000;
 
+    private LinearLayout layoutSize;
+
+    private LinearLayout mainDataView;
+
+    private List<DataView> dataViewList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_view_main);
+
+        layoutSize = (LinearLayout) findViewById(R.id.layoutSize);
+
+        mainDataView = (LinearLayout) findViewById(R.id.get_data_view);
 
         bluetoothGattList = new ArrayList<BluetoothGatt>();
 
@@ -54,6 +64,11 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
         addDeviceButton = (Button) findViewById(R.id.add_device_button);
 
         addDeviceButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
 
         if (DataManager.isCheckConfigData(this)) {
             //prepare gattManagerList.
@@ -61,20 +76,37 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
 
             gattManagerList = getGattManagerListFromCheckedDevice(jsonData);
 
+            prepareDataView();
+
             initializeBluetoothAdapter();
 
             startScanBluetooth();
 
         } else {
-
             downloadConfigFromServer();
-
         }
+    }
 
+
+    private void prepareDataView() {
+        dataViewList = new ArrayList<DataView>();
+
+        int rowHeight = layoutSize.getHeight() / 5;
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0);
+
+        params.weight = 1;
+
+        for (GattManager gattManager : gattManagerList) {
+            DataView dataView = new DataView(this, rowHeight, gattManager);
+
+            dataViewList.add(dataView);
+
+            mainDataView.addView(dataView, params);
+        }
     }
 
     private List<GattManager> getGattManagerListFromCheckedDevice(String jsonData) {
-
         configManager = new ConfigManager(jsonData);
 
         List<GattManager> originalList = configManager.getGattManagerList();
@@ -82,43 +114,31 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
         List<GattManager> newList = new ArrayList<GattManager>();
 
         for (GattManager gattManager : originalList) {
-
             if (DataManager.isCheckedDevice(gattManager.getDeviceName(), this)) {
-
                 newList.add(gattManager);
-
             }
-
         }
 
         return newList;
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
     }
 
     @Override
     public void onClick(View v) {
-
         moveToAddDeviceActivity();
-
     }
 
     private void downloadConfigFromServer() {
-
         NetworkManager.getConfiguration(this, new RequestListener() {
-
             @Override
             public void onResponse(String jsonString, int code) {
-
                 DataManager.saveConfigData(MainViewActivity.this, jsonString);
 
                 moveToAddDeviceActivity();
-
             }
 
             @Override
@@ -127,33 +147,27 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
             }
 
         });
-
     }
 
     private void moveToAddDeviceActivity() {
-
 //        scanLeDevice(false);
 
         Intent intent = new Intent(this, AddDeviceActivity.class);
 
         startActivity(intent);
-
     }
 
 
     // for bluetooth methods bellow the this line
     private void initializeBluetoothAdapter() {
-
         scanHandler = new Handler();
 
         final BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
 
         bluetoothAdapter = bluetoothManager.getAdapter();
-
     }
 
     private void initializeBluetoothScanner() {
-
         bluetoothLeScanner = bluetoothAdapter.getBluetoothLeScanner();
 
         scanSettings = new ScanSettings.Builder()
@@ -161,47 +175,33 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
                 .build();
 
         filterList = new ArrayList<ScanFilter>();
-
     }
 
     private void startScanBluetooth() {
-
         if (isEnableBluetoothSetting()) {
-
             initializeBluetoothScanner();
 
             scanLeDevice(true);
-
         } else {
-
             intentBluetoothSettingWindow();
-
         }
-
     }
 
     private void scanLeDevice(final boolean enable) {
-
         if (enable) {
 
             scanHandler.postDelayed(new Runnable() {
 
                 @Override
                 public void run() {
-
                     bluetoothLeScanner.stopScan(mScanCallback);
-
-
                 }
-
             }, SCAN_PERIOD);
 
             bluetoothLeScanner.startScan(filterList, scanSettings, mScanCallback);
 
         } else {
-
             bluetoothLeScanner.stopScan(mScanCallback);
-
         }
     }
 
@@ -209,47 +209,22 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
 
         @Override
         public void onScanResult(int callbackType, ScanResult scanResult) {
-
             BluetoothDevice bluetoothDevice = scanResult.getDevice();
 
             int size = gattManagerList.size();
 
             for (int i = 0; i < size; i++) {
-
                 if (gattManagerList.get(i).getDeviceName().equals(bluetoothDevice.getName())) {
 
                     Log.i("Wii be connected", scanResult.getDevice().getName());
 
                     connectToDevice(bluetoothDevice, i);
-
                 }
-
             }
-
         }
-
-        @Override
-        public void onBatchScanResults(List<ScanResult> results) {
-
-            for (ScanResult sr : results) {
-
-                Log.i("ScanResult - Results", sr.toString());
-
-            }
-
-        }
-
-        @Override
-        public void onScanFailed(int errorCode) {
-
-            Log.e("Scan Failed", "Error Code: " + errorCode);
-
-        }
-
     };
 
-    public void connectToDevice(BluetoothDevice device,int index) {
-
+    public void connectToDevice(BluetoothDevice device, int index) {
         BluetoothGattIndex bluetoothGattIndex = new BluetoothGattIndex();
 
         bluetoothGattIndex.deviceName = device.getName();
@@ -259,11 +234,9 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
         bluetoothGattIndexList.add(bluetoothGattIndex);
 
         bluetoothGattList.add(device.connectGatt(this, false, bluetoothGattCallback));
-
     }
 
     private final BluetoothGattCallback bluetoothGattCallback = new BluetoothGattCallback() {
-
         @Override
         public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
             Log.i("onConnectionStateChange", "passed" + gatt.getDevice().getName());
@@ -273,7 +246,6 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
                 gatt.discoverServices();
 
             }
-
         }
 
         @Override
@@ -283,7 +255,6 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
             BluetoothGattCharacteristic characteristic = getBluetoothGattCharacteristic(gatt);
 
             doGattServer(gatt, characteristic);
-
         }
 
         @Override
@@ -295,7 +266,6 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
             BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(gatt);
 
             doGattServer(gatt, nextCharacteristic);
-
         }
 
         @Override
@@ -309,7 +279,6 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
             BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(gatt);
 
             doGattServer(gatt, nextCharacteristic);
-
         }
 
         @Override
@@ -323,13 +292,10 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
             BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(gatt);
 
             doGattServer(gatt, nextCharacteristic);
-
         }
-
     };
 
     private BluetoothGattCharacteristic getBluetoothGattCharacteristic(BluetoothGatt gatt) {
-
         GattManager gattManager = getGattManager(gatt.getDevice().getName());
 
         GattProcess gattProcess = gattManager.getGattProcess();
@@ -339,27 +305,20 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
         String gpCharacteristic = gattProcess.getCharacteristic().toLowerCase();
 
         for (BluetoothGattService service : gatt.getServices()) {
-
             String uuid = service.getUuid().toString();
 
             if (uuid.toLowerCase().contains(gpService)) {
 
                 for (BluetoothGattCharacteristic bgCharacteristic : service.getCharacteristics()) {
-
                     String characteristic = bgCharacteristic.getUuid().toString().toLowerCase();
 
                     if (characteristic.contains(gpCharacteristic)) {
 
                         return bgCharacteristic;
-
                     }
-
                 }
-
             }
-
         }
-
         return null;
     }
 
@@ -369,6 +328,8 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
         GattManager gattManager = getGattManager(gatt.getDevice().getName());
 
         GattProcess gattProcess = gattManager.getGattProcess();
+
+        String deviceName = gattManager.getDeviceName();
 
         int method = gattProcess.getMethod();
 
@@ -389,94 +350,89 @@ public class MainViewActivity extends Activity implements View.OnClickListener {
             gatt.writeCharacteristic(characteristic);
 
         } else if (method == GattProcess.NOTIFY) {
-
-            String deviceName = gattManager.getDeviceName();
-
             int index = getIndexOfBluetoothGatt(deviceName);
 
             gatt.setCharacteristicNotification(characteristic, true);
 
             for (BluetoothGattDescriptor bgDescriptor : characteristic.getDescriptors()) {
-
                 BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                         UUID.fromString(bgDescriptor.getUuid().toString()));
 
                 descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
 
                 bluetoothGattList.get(index).writeDescriptor(descriptor);
-
             }
-
         } else if (method == GattProcess.FINISH) {
+            DataView dataView = getDataView(deviceName);
 
-            System.out.println("Value"+gattManager.getValue(characteristic.getValue()));
+            List<String> data = gattManager.getValue(characteristic.getValue());
 
+            updateData(dataView,data);
         }
+    }
 
+    private DataView getDataView(String deviceName) {
+        for (DataView dataView : dataViewList) {
+            if (dataView.getDeviceName().equals(deviceName)) {
+                return dataView;
+            }
+        }
+        return null;
+    }
+
+    private static void updateData(final DataView dataView,List<String> data){
+        new Thread(new Runnable() {
+            public void run() {
+                dataView.post(new Runnable() {
+                    public void run() {
+
+                        dataView.updateData(data);
+
+                    }
+                });
+            }
+        }).start();
     }
 
     class BluetoothGattIndex {
-
         int index;
 
         String deviceName;
-
     }
 
     private int getIndexOfBluetoothGatt(String deviceName) {
-
-        for (BluetoothGattIndex bluetoothGattIndex : bluetoothGattIndexList){
-
-            if (bluetoothGattIndex.deviceName.equals(deviceName)){
+        for (BluetoothGattIndex bluetoothGattIndex : bluetoothGattIndexList) {
+            if (bluetoothGattIndex.deviceName.equals(deviceName)) {
 
                 int index = bluetoothGattIndexList.indexOf(bluetoothGattIndex);
 
                 return index;
-
             }
-
         }
-
         return -1;
-
     }
 
     private GattManager getGattManager(String deviceName) {
-
         for (GattManager gattManager : gattManagerList) {
-
             if (gattManager.getDeviceName().equals(deviceName)) {
 
                 return gattManager;
-
             }
-
         }
-
         return null;
-
     }
 
     private boolean isEnableBluetoothSetting() {
-
         if (bluetoothAdapter != null || bluetoothAdapter.isEnabled()) {
-
             return true;
-
         } else {
-
             return false;
-
         }
-
     }
 
     private void intentBluetoothSettingWindow() {
-
         Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
 
         startActivityForResult(intent, Constants.REQUEST_ENABLE_BLUETOOTH);
-
     }
-
 }
