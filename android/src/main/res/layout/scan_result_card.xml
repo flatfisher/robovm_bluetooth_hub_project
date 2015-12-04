@@ -11,13 +11,19 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
+        <Space
+                android:layout_weight="0.4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
         <LinearLayout
-                android:layout_weight="8"
+                android:layout_weight="9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
             <TextView
+                    android:text="dsdsd"
                     android:id="@+id/device_name_text"
                     android:gravity="bottom"
                     android:textSize="20dp"
@@ -35,9 +41,14 @@
 
         </LinearLayout>
 
+        <Space
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+
         <CheckBox
                 android:id="@+id/setting_config_check"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"/>
 
