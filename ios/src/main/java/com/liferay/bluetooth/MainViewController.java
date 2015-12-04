@@ -249,6 +249,9 @@ public class MainViewController extends UIViewController implements
     @Override
     public void didDisconnectPeripheral(CBCentralManager cbCentralManager,
                                         CBPeripheral cbPeripheral, NSError nsError) {
+        String deviceName = cbPeripheral.getName();
+
+        updateValueOnDataLayout(deviceName);
     }
 
     @Override
@@ -353,7 +356,6 @@ public class MainViewController extends UIViewController implements
     }
 
     private void doGattServer(GattManager gattManager, CBPeripheral cbPeripheral, CBCharacteristic characteristic) {
-
         GattProcess gattProcess = gattManager.getGattProcess();
 
         int method = gattProcess.getMethod();
@@ -384,17 +386,20 @@ public class MainViewController extends UIViewController implements
     }
 
     private void updateValueOnDataLayout(GattManager gattManager, byte[] values) {
-
         DeviceDataUIView deviceDataUIView = getDeviceDataUIView(gattManager.getDeviceName());
 
         List<String> valueList = gattManager.getValue(values);
 
         deviceDataUIView.setValue(valueList);
+    }
 
+    private void updateValueOnDataLayout(String deviceName) {
+        DeviceDataUIView deviceDataUIView = getDeviceDataUIView(deviceName);
+
+        deviceDataUIView.setValue();
     }
 
     private DeviceDataUIView getDeviceDataUIView(String deviceName) {
-
         for (DeviceDataUIView deviceDataUIView : deviceDataUIViewList) {
 
             if (deviceDataUIView.getDeviceName().equals(deviceName)) {
@@ -411,18 +416,15 @@ public class MainViewController extends UIViewController implements
 
     //for BLE Gatt Server
     private void setWriteValue(CBPeripheral cbPeripheral, CBCharacteristic characteristic, String value) {
-
         byte[] hex = Convert.stringToByteArray(value);
 
         NSData data = new NSData(hex);
 
         cbPeripheral.writeValue(data, characteristic, CBCharacteristicWriteType.WithResponse);
-
     }
 
     @Override
     public void didUpdateValue(CBPeripheral cbPeripheral, CBCharacteristic cbCharacteristic, NSError nsError) {
-
         if (nsError == null) {
 
             GattManager gattManager = getGattManager(cbPeripheral.getName());
@@ -440,7 +442,6 @@ public class MainViewController extends UIViewController implements
 
     @Override
     public void didWriteValue(CBPeripheral cbPeripheral, CBCharacteristic cbCharacteristic, NSError nsError) {
-
         System.out.println("didWriteValue");
 
         if (nsError == null) {
@@ -472,11 +473,9 @@ public class MainViewController extends UIViewController implements
             }
 
         }
-
     }
 
     private GattManager getGattManager(String deviceName) {
-
         for (GattManager gattManager : gattManagerList) {
 
             if (deviceName.contains(gattManager.getDeviceName())) {
@@ -489,7 +488,6 @@ public class MainViewController extends UIViewController implements
     }
 
     private BroadcastManager getBroadcastManager(String deviceName) {
-
         for (BroadcastManager broadcastManager : broadcastManagerList) {
 
             if (deviceName.contains(broadcastManager.getDeviceName())) {

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -266,6 +267,10 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 bluetoothGatt.discoverServices();
             }else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
+                String deviceName = bluetoothGatt.getDevice().getName();
+
+                updateData(getDataView(deviceName));
+
                 bluetoothGattList.remove(bluetoothGatt);
             }
         }
@@ -409,6 +414,21 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
                     public void run() {
 
                         dataView.updateData(data);
+
+                    }
+                });
+            }
+        }).start();
+    }
+
+    //for disconnect
+    private static void updateData(final DataView dataView){
+        new Thread(new Runnable() {
+            public void run() {
+                dataView.post(new Runnable() {
+                    public void run() {
+
+                        dataView.updateData();
 
                     }
                 });

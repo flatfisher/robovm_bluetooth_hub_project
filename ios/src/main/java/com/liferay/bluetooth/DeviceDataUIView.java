@@ -2,6 +2,7 @@ package com.liferay.bluetooth;
 
 import org.robovm.apple.coregraphics.CGRect;
 import org.robovm.apple.uikit.NSTextAlignment;
+import org.robovm.apple.uikit.UIColor;
 import org.robovm.apple.uikit.UILabel;
 import org.robovm.apple.uikit.UIView;
 
@@ -23,9 +24,9 @@ public class DeviceDataUIView extends UIView {
     private List<String> valueUnitList;
 
     public DeviceDataUIView(CGRect cgRect,
-                       String deviceName,
-                       List<String> valueTypeList,
-                       List<String> valueUnitList) {
+                            String deviceName,
+                            List<String> valueTypeList,
+                            List<String> valueUnitList) {
         super(cgRect);
 
         displayHeight = getFrame().getHeight();
@@ -45,7 +46,7 @@ public class DeviceDataUIView extends UIView {
         setValueUnitLabel();
     }
 
-    public void setDeviceName(String deviceName){
+    public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
 
@@ -108,11 +109,21 @@ public class DeviceDataUIView extends UIView {
         for (int i = 0; i < count; i++) {
             String value = valueList.get(i);
 
-            if (value == null || value.length() <= 0){
+            if (value == null || value.length() <= 0) {
                 valueLabelList.get(i).setText("--");
-            }else{
+            } else {
                 valueLabelList.get(i).setText(value);
             }
+        }
+    }
+
+    public void setValue() {
+        int count = valueUnitList.size();
+
+        for (int i = 0; i < count; i++) {
+            valueLabelList.get(i).setTextColor(UIColor.red());
+
+            valueLabelList.get(i).setText("--");
         }
     }
 

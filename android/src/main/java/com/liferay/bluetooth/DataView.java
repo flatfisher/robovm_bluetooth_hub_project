@@ -1,6 +1,7 @@
 package com.liferay.bluetooth;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -30,6 +31,8 @@ public class DataView extends LinearLayout {
 
     private List<String> valueUnitTypeList;
 
+//    private int defaultTextColor;
+
     public DataView(Context context, int rowHeight, GattManager gattManager) {
         super(context);
 
@@ -46,6 +49,8 @@ public class DataView extends LinearLayout {
         valueTypeLabelList = gattManager.getValueTypeLabelList();
 
         valueUnitTypeList = gattManager.getValueUnitTypeList();
+
+//        defaultTextColor = Color.argb(0,75,75,75);
 
         initContainers();
 
@@ -120,7 +125,6 @@ public class DataView extends LinearLayout {
 
     private void setUnitText(LayoutParams params) {
         for (String unit:valueUnitTypeList){
-
             TextView unitText = new TextView(context);
 
             unitText.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
@@ -141,7 +145,19 @@ public class DataView extends LinearLayout {
         int size = valueTextList.size();
 
         for (int i = 0;i<size;i++){
+
             valueTextList.get(i).setText(value.get(i));
+        }
+    }
+
+    //for disconnect
+    public void updateData() {
+        int size = valueTextList.size();
+
+        for (int i = 0;i<size;i++){
+            valueTextList.get(i).setTextColor(Color.RED);
+
+            valueTextList.get(i).setText("--");
         }
     }
 
