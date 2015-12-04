@@ -17,11 +17,8 @@ public class Convert {
     }
 
     public static String byteToDecimalString(byte value) {
-        String decimalString = String.valueOf(value & 0xff);
-
-        return decimalString;
+        return String.valueOf(value);
     }
-
 
     public static String byteToAscii(byte value) {
         char[] data = new char[1];
