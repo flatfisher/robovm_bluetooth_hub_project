@@ -323,7 +323,7 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
                                                     characteristic) {
             super.onCharacteristicChanged(bluetoothGatt, characteristic);
 
-            Log.i("onCharacteristicRead", "passed");
+            Log.i("onCharacteristicRead", "" + bluetoothGatt.getDevice().getName());
 
             BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(bluetoothGatt);
 
@@ -431,7 +431,7 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     //for disconnect
-    private static void updateData(final DataView dataView){
+    private static void updateData(final DataView dataView)throws NullPointerException{
         new Thread(new Runnable() {
             public void run() {
                 dataView.post(new Runnable() {
