@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,7 +17,7 @@ import android.widget.ProgressBar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddDeviceActivity extends Activity {
+public class AddDeviceActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener{
 
     class ScanResult {
         public String deviceName;
@@ -25,6 +26,8 @@ public class AddDeviceActivity extends Activity {
     }
 
     private ProgressBar progressBar;
+
+    private SwipeRefreshLayout pullToRefresh;
 
     private RecyclerView scanResultView;
 
@@ -49,6 +52,10 @@ public class AddDeviceActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_device);
 
+        pullToRefresh = (SwipeRefreshLayout)findViewById(R.id.pull_to_refresh);
+
+        pullToRefresh.setOnRefreshListener(this);
+
         progressBar = (ProgressBar)findViewById(R.id.ProgressBar);
 
         scanResultList = new ArrayList<ScanResult>();
@@ -61,6 +68,15 @@ public class AddDeviceActivity extends Activity {
 
         scanResultView.addItemDecoration(new DividerItemDecoration(this));
 
+        startScanDevice();
+    }
+
+    @Override
+    public void onRefresh() {
+        startScanDevice();
+    }
+
+    private void startScanDevice(){
         if (DataManager.isCheckConfigData(this)) {
             String configData = DataManager.getConfigData(this);
 
@@ -72,22 +88,9 @@ public class AddDeviceActivity extends Activity {
         }
     }
 
-    //add result for already setting configs.
-//    private void addCheckedDeviceToScanResultList() {
-//        List<String> list = DataManager.getCheckedList(this);
-//
-//        for (String checkedName : list) {
-//            ScanResult scanResult = new ScanResult();
-//
-//            scanResult.deviceName = checkedName;
-//
-//            scanResult.configuration = Constants.CONFIG_MESSAGE;
-//
-//            scanResultList.add(scanResult);
-//        }
-//    }
-
     private void setScanResultOnRecyclerView() {
+        pullToRefresh.setRefreshing(false);
+
         progressBar.setVisibility(View.INVISIBLE);
 
         scanResultView.setAdapter(new ScanResultViewAdapter(this, scanResultList));
@@ -185,4 +188,19 @@ public class AddDeviceActivity extends Activity {
 
         startActivityForResult(intent, Constants.REQUEST_ENABLE_BLUETOOTH);
     }
+
+    //add result for already setting configs.
+//    private void addCheckedDeviceToScanResultList() {
+//        List<String> list = DataManager.getCheckedList(this);
+//
+//        for (String checkedName : list) {
+//            ScanResult scanResult = new ScanResult();
+//
+//            scanResult.deviceName = checkedName;
+//
+//            scanResult.configuration = Constants.CONFIG_MESSAGE;
+//
+//            scanResultList.add(scanResult);
+//        }
+//    }
 }
