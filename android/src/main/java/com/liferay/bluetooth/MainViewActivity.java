@@ -86,7 +86,24 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
             downloadConfigFromServer();
         }
     }
-    
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        stopBluetooth();
+    }
+
+    private void stopBluetooth(){
+        startScanDevice(false);
+
+        for(BluetoothGatt bluetoothGatt:bluetoothGattList){
+            bluetoothGatt.disconnect();
+
+            bluetoothGatt.close();
+        }
+    }
+
     private void prepareDataView() {
         dataViewList = new ArrayList<DataView>();
 
@@ -134,7 +151,6 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void downloadConfigFromServer() {
-
         NetworkManager.getConfiguration(this, new RequestListener() {
 
             @Override
@@ -153,8 +169,6 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void moveToAddDeviceActivity() {
-//        scanLeDevice(false);
-
         Intent intent = new Intent(this, AddDeviceActivity.class);
 
         startActivity(intent);
@@ -184,13 +198,13 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
         if (isEnableBluetoothSetting()) {
             initializeBluetoothScanner();
 
-            scanLeDevice(true);
+            startScanDevice(true);
         } else {
             intentBluetoothSettingWindow();
         }
     }
 
-    private void scanLeDevice(final boolean enable) {
+    private void startScanDevice(final boolean enable) {
         if (enable) {
 
             scanHandler.postDelayed(new Runnable() {
@@ -241,60 +255,60 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
 
     private final BluetoothGattCallback bluetoothGattCallback = new BluetoothGattCallback() {
         @Override
-        public void onConnectionStateChange(BluetoothGatt gatt, int status, int newState) {
-            Log.i("onConnectionStateChange", "passed" + gatt.getDevice().getName());
+        public void onConnectionStateChange(BluetoothGatt bluetoothGatt, int status, int newState) {
+            Log.i("onConnectionStateChange", "passed" + bluetoothGatt.getDevice().getName());
 
             if (newState == BluetoothProfile.STATE_CONNECTED) {
-
-                gatt.discoverServices();
-
+                bluetoothGatt.discoverServices();
+            }else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
+                bluetoothGattList.remove(bluetoothGatt);
             }
         }
 
         @Override
-        public void onServicesDiscovered(BluetoothGatt gatt, int status) {
+        public void onServicesDiscovered(BluetoothGatt bluetoothGatt, int status) {
             Log.i("onServicesDiscovered", "passed");
 
-            BluetoothGattCharacteristic characteristic = getBluetoothGattCharacteristic(gatt);
+            BluetoothGattCharacteristic characteristic = getBluetoothGattCharacteristic(bluetoothGatt);
 
-            doGattServer(gatt, characteristic);
+            doGattServer(bluetoothGatt, characteristic);
         }
 
         @Override
-        public void onCharacteristicRead(BluetoothGatt gatt,
+        public void onCharacteristicRead(BluetoothGatt bluetoothGatt,
                                          BluetoothGattCharacteristic
                                                  characteristic, int status) {
             Log.i("onCharacteristicRead", "passed");
 
-            BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(gatt);
+            BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(bluetoothGatt);
 
-            doGattServer(gatt, nextCharacteristic);
+            doGattServer(bluetoothGatt, nextCharacteristic);
         }
 
         @Override
-        public void onCharacteristicWrite(BluetoothGatt gatt,
+        public void onCharacteristicWrite(BluetoothGatt bluetoothGatt,
                                           BluetoothGattCharacteristic
                                                   characteristic, int status) {
-            super.onCharacteristicWrite(gatt, characteristic, status);
+            super.onCharacteristicWrite(bluetoothGatt, characteristic, status);
 
             Log.i("onCharacteristicWrite", "passed");
 
-            BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(gatt);
+            BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(bluetoothGatt);
 
-            doGattServer(gatt, nextCharacteristic);
+            doGattServer(bluetoothGatt, nextCharacteristic);
         }
 
         @Override
-        public void onCharacteristicChanged(BluetoothGatt gatt,
+        public void onCharacteristicChanged(BluetoothGatt bluetoothGatt,
                                             BluetoothGattCharacteristic
                                                     characteristic) {
-            super.onCharacteristicChanged(gatt, characteristic);
+            super.onCharacteristicChanged(bluetoothGatt, characteristic);
 
             Log.i("onCharacteristicRead", "passed");
 
-            BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(gatt);
+            BluetoothGattCharacteristic nextCharacteristic = getBluetoothGattCharacteristic(bluetoothGatt);
 
-            doGattServer(gatt, nextCharacteristic);
+            doGattServer(bluetoothGatt, nextCharacteristic);
         }
     };
 
