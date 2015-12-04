@@ -26,7 +26,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvv-gx-QPF" userLabel="DataView">
-                                <rect key="frame" x="20" y="64" width="560" height="429"/>
+                                <rect key="frame" x="20" y="64" width="560" height="482.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCO-T0-RGb" userLabel="ButtonContainer">
@@ -61,7 +61,7 @@
                             <constraint firstItem="GRf-jy-2iC" firstAttribute="top" secondItem="iCO-T0-RGb" secondAttribute="bottom" id="lSC-11-4fi"/>
                             <constraint firstItem="iCO-T0-RGb" firstAttribute="leading" secondItem="xci-4R-44w" secondAttribute="trailing" id="lVJ-fy-ja0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iCO-T0-RGb" secondAttribute="trailing" id="qZ1-SV-t4y"/>
-                            <constraint firstItem="Zvv-gx-QPF" firstAttribute="height" secondItem="xci-4R-44w" secondAttribute="height" multiplier="0.8" id="uBa-Fr-cqh"/>
+                            <constraint firstItem="Zvv-gx-QPF" firstAttribute="height" secondItem="xci-4R-44w" secondAttribute="height" multiplier="0.9" id="uBa-Fr-cqh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Main" id="m6M-Wf-lZn"/>

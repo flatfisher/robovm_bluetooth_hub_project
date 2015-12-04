@@ -20,7 +20,7 @@ public class MainViewController extends UIViewController implements
 
     @IBOutlet
     private UIView bluetoothDataView;
-
+    
     private ConfigManager configManager;
 
     private List<GattManager> gattManagerList;
@@ -122,7 +122,7 @@ public class MainViewController extends UIViewController implements
 
         uiActivityIndicatorView.setColor(UIColor.black());
 
-        bluetoothDataView.addSubview(uiActivityIndicatorView);
+        getNavigationController().getNavigationBar().addSubview(uiActivityIndicatorView);
 
         uiActivityIndicatorView.startAnimating();
     }

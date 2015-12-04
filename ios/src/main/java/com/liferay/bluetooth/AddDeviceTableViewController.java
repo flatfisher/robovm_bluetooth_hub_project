@@ -5,6 +5,7 @@ import org.robovm.apple.corebluetooth.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.objc.annotation.CustomClass;
+import org.robovm.objc.annotation.IBOutlet;
 import org.robovm.rt.bro.annotation.MachineSizedSInt;
 
 import java.util.ArrayList;
@@ -68,7 +69,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
         uiActivityIndicatorView.setColor(UIColor.black());
 
-        getTableView().addSubview(uiActivityIndicatorView);
+        getNavigationController().getNavigationBar().addSubview(uiActivityIndicatorView);
 
         uiActivityIndicatorView.startAnimating();
     }
@@ -92,9 +93,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         scanResultArray.clear();
 
         for (String checkedDevice : checkedDeviceList){
-
             scanResultArray.add(checkedDevice);
-
         }
     }
 
@@ -105,9 +104,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         NSArray<UIViewController> array = getNavigationController().getViewControllers();
 
         if (array.getAssociatedObject(this) == null) {
-
             stopBLEScan();
-
         }
     }
 
@@ -119,7 +116,6 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             bluetoothManager.release();
 
             bluetoothManager = null;
-
         }
     }
 
@@ -131,13 +127,11 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         for (UITableViewCell cell : cellNSArray) {
 
             if (cell.getAccessoryType() == UITableViewCellAccessoryType.Checkmark) {
-
                 String deviceName = cell.getTextLabel().getText();
 
                 if (!cell.getDetailTextLabel().getText().equals(Constants.NO_CONFIG_MESSAGE)) {
 
                     checkedDeviceList.add(deviceName);
-
                 }
 
             }
@@ -205,13 +199,11 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         uiLabel.setTextColor(UIColor.gray());
 
         if (checkConfigDataName(device) != null) {
-
             uiLabel.setText(Constants.CONFIG_MESSAGE);
 
         } else {
 
             uiLabel.setText(Constants.NO_CONFIG_MESSAGE);
-
         }
     }
 
