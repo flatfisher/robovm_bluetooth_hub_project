@@ -22,6 +22,8 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
     class ScanResult {
         public String deviceName;
 
+        public String methodName;
+
         public String configuration;
     }
 
@@ -77,6 +79,8 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
     }
 
     private void startScanDevice(){
+        scanResultList.clear();
+
         if (DataManager.isCheckConfigData(this)) {
             String configData = DataManager.getConfigData(this);
 
@@ -163,7 +167,9 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
                 if (!isOverlap(name)) {
                     ScanResult device = new ScanResult();
 
-                    device.deviceName = name;//getType(DeviceName);
+                    device.deviceName = name;
+
+                    device.methodName = getMethodName(name);
 
                     configManager.getGattManagerList();
 
@@ -177,7 +183,7 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
         }
     };
 
-    private String getType(String deviceName){
+    private String getMethodName(String deviceName){
         String typeLabel = "";
 
         for (GattManager gattManager:configManager.getGattManagerList()){
@@ -193,7 +199,7 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
                     if (i==0){
                         typeLabel = list.get(i);
                     }else{
-                        typeLabel = typeLabel + "&" + list.get(i);
+                        typeLabel = typeLabel + " & " + list.get(i);
                     }
                 }
 
@@ -205,7 +211,7 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
 
     private boolean isOverlap(String name) {
         for (ScanResult scanResult : scanResultList) {
-            if (scanResult.deviceName.equals(name)) {
+            if (scanResult.deviceName.contains(name)) {
                 return true;
             }
         }
@@ -233,7 +239,7 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
 //        for (String checkedName : list) {
 //            ScanResult scanResult = new ScanResult();
 //
-//            scanResult.deviceName = checkedName;
+//            scanResult.methodName = checkedName;
 //
 //            scanResult.configuration = Constants.CONFIG_MESSAGE;
 //

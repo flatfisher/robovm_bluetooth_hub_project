@@ -5,7 +5,6 @@ import org.robovm.apple.corebluetooth.*;
 import org.robovm.apple.foundation.*;
 import org.robovm.apple.uikit.*;
 import org.robovm.objc.annotation.CustomClass;
-import org.robovm.objc.annotation.IBOutlet;
 import org.robovm.rt.bro.annotation.MachineSizedSInt;
 
 import java.util.ArrayList;
@@ -18,6 +17,12 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         UIControl.OnValueChangedListener,
         CBCentralManagerDelegate {
 
+    class ScanResult {
+        public String deviceName;
+
+        public String methodName;
+    }
+
     private static String scanResultCellId = Constants.SCAN_RESULT_CELL;
 
     private ConfigManager configManager;
@@ -26,7 +31,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
     private CBCentralManager bluetoothManager;
 
-    private List<String> scanResultArray;
+    private List<ScanResult> scanResultArray;
 
     private int SCAN_TIME = 5000;
 
@@ -47,11 +52,13 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
         checkedDeviceList = DataManager.getCheckedDeviceList();
 
+        System.out.println("LIST"+checkedDeviceList);
+
         configNameList = getConfigData();
 
         ROW_HEIGHT = getView().getFrame().getHeight() / 8;
 
-        scanResultArray = new ArrayList<String>();
+        scanResultArray = new ArrayList<ScanResult>();
 
         pullToRefreshManager = new UIRefreshControl();
 
@@ -77,10 +84,8 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     @Override
-    public void viewWillAppear(boolean b) {
-        super.viewWillAppear(b);
-
-        System.out.println("add device viewWillAppear");
+    public void viewDidAppear(boolean b) {
+        super.viewDidAppear(b);
 
         startScanBLEData();
     }
@@ -95,7 +100,14 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         scanResultArray.clear();
 
         for (String checkedDevice : checkedDeviceList) {
-            scanResultArray.add(checkedDevice);
+
+            ScanResult scanResult = new ScanResult();
+
+            scanResult.deviceName = checkedDevice;
+
+            scanResult.methodName = getMethodName(checkedDevice);
+
+            scanResultArray.add(scanResult);
         }
     }
 
@@ -129,17 +141,31 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         for (UITableViewCell cell : cellNSArray) {
 
             if (cell.getAccessoryType() == UITableViewCellAccessoryType.Checkmark) {
-                String deviceName = cell.getTextLabel().getText();
+                String methodName = cell.getTextLabel().getText();
 
                 if (!cell.getDetailTextLabel().getText().equals(Constants.NO_CONFIG_MESSAGE)) {
 
+                    String deviceName = getDeviceName(methodName);
+
                     checkedDeviceList.add(deviceName);
                 }
-
             }
         }
 
         DataManager.saveCheckedDeviceList(checkedDeviceList);
+    }
+
+    private String getDeviceName(String method){
+
+        for(ScanResult scanResult:scanResultArray){
+
+            if (method.contains(scanResult.methodName)){
+
+                return scanResult.deviceName;
+            }
+
+        }
+        return null;
     }
 
     private List<String> getConfigData() {
@@ -178,17 +204,17 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             cell = new UITableViewCell(UITableViewCellStyle.Subtitle, scanResultCellId);
         }
 
-        String deviceName = scanResultArray.get(row);
+        String methodName = scanResultArray.get(row).methodName;
 
-        if (isCheckSavedDevice(deviceName)) {
+        String device = getDeviceName(methodName);
+
+        if (isCheckSavedDevice(device )) {
             cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
         }
 
-        String valueType = getValueTypeName(deviceName);
+        cell.getTextLabel().setText(methodName);
 
-        cell.getTextLabel().setText(valueType);
-
-        setConfigFound(cell, deviceName);
+        setConfigFound(cell, device );
 
         cell.getDetailTextLabel().setNumberOfLines(0);
 
@@ -197,7 +223,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         return cell;
     }
 
-    private String getValueTypeName(String deviceName) {
+    private String getMethodName(String deviceName) {
         String typeLabel = getValueTypeFromGatt(deviceName);
 
         if (typeLabel.length() <= 0) {
@@ -301,7 +327,10 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
             if (cell.getAccessoryType() == UITableViewCellAccessoryType.Checkmark) {
 
-                String deviceName = cell.getTextLabel().getText();
+
+                String method = cell.getTextLabel().getText();
+
+                String deviceName = getDeviceName(method);
 
                 disSelectDevice(deviceName);
 
@@ -309,8 +338,8 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
             } else {
 
-                cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
 
+                cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
             }
         }
         saveConfig();
@@ -395,7 +424,14 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
             if (name != null) {
                 if (isCheckOverlap(name)) {
-                    scanResultArray.add(name);
+
+                    ScanResult scanResult = new ScanResult();
+
+                    scanResult.deviceName = name;
+
+                    scanResult.methodName = getMethodName(name);
+
+                    scanResultArray.add(scanResult);
                 }
             }
         }
@@ -421,8 +457,8 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private boolean isCheckOverlap(String deviceName) {
-        for (String device : scanResultArray) {
-            if (device.equals(deviceName)) {
+        for (ScanResult scanResult : scanResultArray) {
+            if (scanResult.deviceName.equals(deviceName)) {
                 return false;
             }
         }

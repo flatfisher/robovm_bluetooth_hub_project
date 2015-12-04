@@ -44,9 +44,11 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
     public void onBindViewHolder(ScanResultViewAdapter.ScanResultHolder viewHolder, int i) {
         String deviceName = scanResultList.get(i).deviceName;
 
+        String methodName = scanResultList.get(i).methodName;
+
         String configuration = scanResultList.get(i).configuration;
 
-        viewHolder.deviceName.setText(deviceName);
+        viewHolder.methodName.setText(methodName);
 
         viewHolder.container.setOnClickListener(new View.OnClickListener() {
 
@@ -97,7 +99,7 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
     public static class ScanResultHolder extends RecyclerView.ViewHolder {
         public LinearLayout container;
 
-        public TextView deviceName;
+        public TextView methodName;
 
         public TextView configuration;
 
@@ -108,7 +110,7 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
 
             container = (LinearLayout)itemView.findViewById(R.id.container);
 
-            deviceName = (TextView)itemView.findViewById(R.id.device_name_text);
+            methodName = (TextView)itemView.findViewById(R.id.method_name_text);
 
             configuration = (TextView)itemView.findViewById(R.id.config_info_text);
 

@@ -51,8 +51,8 @@
 					"isa" = "PBXSourcesBuildPhase";
 					"buildActionMask" = "2147483647";
 					"files" =
-						("82F304ADE28A487886AA6F39", "FA58174C9C904B4AA3C3FE74", "8A790371333746238B4DEC5E",
- "66A2ADFDD5244436823E02A3", "41E52A07C4EF49658404345C");
+						("863F56E3FE3B4A5498CAC2E1", "2C624E467AEE4319901E7634", "FA58174C9C904B4AA3C3FE74",
+ "66A2ADFDD5244436823E02A3", "9B1ED87F2EE04D768188E02F");
 					"runOnlyForDeploymentPostprocessing" = "0";
 				};
 			"100000000000000000000004" =
@@ -138,9 +138,9 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("164A20490B9546428B1BD1F0", "239ADAB57D924C8992B2B512", "902C5FE5B09D4994B6444118",
- "6873AEB19D774968B28D7C2E", "99A989D0A3014364BA985C5F", "E4A74D7891964A05A531BD20",
- "7E7D15F0018B4DF9BCB06BFB", "8AEE2F000BDE447E8189C788", "BB246D5110CF4CE6B41EC934",
+						("324BA56B2FD843FBB6824160", "2EF065BE10404D5D86813047", "902C5FE5B09D4994B6444118",
+ "6873AEB19D774968B28D7C2E", "38757B89B41C4D76A822580E", "D12D0AA5DFE344CF8156364C",
+ "D4DCA1CBFECE4B0B81C8D5E7", "9C849911C0F743F299F2B900", "BB246D5110CF4CE6B41EC934",
  "E04B9E0DA79A4B9D8CB6E41B");
 					"name" = "com.liferay.bluetooth";
 					"sourceTree" = "<group>";
@@ -244,7 +244,7 @@
 					"sourceTree" = "<group>";
 					"path" = "Info.plist.xml";
 				};
-			"164A20490B9546428B1BD1F0" =
+			"324BA56B2FD843FBB6824160" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "AddDeviceTableViewController.h";
@@ -252,7 +252,7 @@
 					"sourceTree" = "<group>";
 					"path" = "AddDeviceTableViewController.h";
 				};
-			"239ADAB57D924C8992B2B512" =
+			"2EF065BE10404D5D86813047" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "AddDeviceTableViewController.m";
@@ -260,12 +260,12 @@
 					"sourceTree" = "<group>";
 					"path" = "AddDeviceTableViewController.m";
 				};
-			"82F304ADE28A487886AA6F39" =
+			"863F56E3FE3B4A5498CAC2E1" =
 				{
 					"isa" = "PBXBuildFile";
-					"fileRef" = "239ADAB57D924C8992B2B512";
+					"fileRef" = "2EF065BE10404D5D86813047";
 				};
-			"99A989D0A3014364BA985C5F" =
+			"38757B89B41C4D76A822580E" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "DeviceDataUIView.h";
@@ -273,7 +273,7 @@
 					"sourceTree" = "<group>";
 					"path" = "DeviceDataUIView.h";
 				};
-			"E4A74D7891964A05A531BD20" =
+			"D12D0AA5DFE344CF8156364C" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "DeviceDataUIView.m";
@@ -281,12 +281,12 @@
 					"sourceTree" = "<group>";
 					"path" = "DeviceDataUIView.m";
 				};
-			"8A790371333746238B4DEC5E" =
+			"2C624E467AEE4319901E7634" =
 				{
 					"isa" = "PBXBuildFile";
-					"fileRef" = "E4A74D7891964A05A531BD20";
+					"fileRef" = "D12D0AA5DFE344CF8156364C";
 				};
-			"7E7D15F0018B4DF9BCB06BFB" =
+			"D4DCA1CBFECE4B0B81C8D5E7" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "MainViewController.h";
@@ -294,7 +294,7 @@
 					"sourceTree" = "<group>";
 					"path" = "MainViewController.h";
 				};
-			"8AEE2F000BDE447E8189C788" =
+			"9C849911C0F743F299F2B900" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "MainViewController.m";
@@ -302,10 +302,10 @@
 					"sourceTree" = "<group>";
 					"path" = "MainViewController.m";
 				};
-			"41E52A07C4EF49658404345C" =
+			"9B1ED87F2EE04D768188E02F" =
 				{
 					"isa" = "PBXBuildFile";
-					"fileRef" = "8AEE2F000BDE447E8189C788";
+					"fileRef" = "9C849911C0F743F299F2B900";
 				};
 		};
 	"rootObject" = "100000000000000000000001";

@@ -76,18 +76,25 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
         super.onWindowFocusChanged(hasFocus);
 
         if (DataManager.isCheckConfigData(this)) {
-            //prepare gattManagerList.
-            String jsonData = DataManager.getConfigData(this);
 
-            gattManagerList = getGattManagerListFromCheckedDevice(jsonData);
+            List<String> list = DataManager.getCheckedList(this);
 
-            progressBar.setVisibility(View.INVISIBLE);
+            if (list==null||list.size()<=0){
+                moveToAddDeviceActivity();
+            }else {
+                //prepare gattManagerList.
+                String jsonData = DataManager.getConfigData(this);
 
-            prepareDataView();
+                gattManagerList = getGattManagerListFromCheckedDevice(jsonData);
 
-            initializeBluetoothAdapter();
+                progressBar.setVisibility(View.INVISIBLE);
 
-            startScanBluetooth();
+                prepareDataView();
+
+                initializeBluetoothAdapter();
+
+                startScanBluetooth();
+            }
 
         } else {
             downloadConfigFromServer();

@@ -44,10 +44,9 @@ public class MainViewController extends UIViewController implements
     }
 
     @Override
-    public void viewWillAppear(boolean b) {
-        super.viewWillAppear(b);
+    public void viewDidAppear(boolean b) {
+        super.viewDidAppear(b);
 
-        System.out.println("viewWillAppear");
 
         getConfigData();
     }
@@ -85,7 +84,7 @@ public class MainViewController extends UIViewController implements
 
                     DataManager.saveConfigData(jsonConfigData);
 
-                    System.out.println("getData");
+                    System.out.println("getData"+jsonConfigData);
 
                     DispatchQueue queue = DispatchQueue.getGlobalQueue(DispatchQueue.PRIORITY_BACKGROUND, 0);
 
