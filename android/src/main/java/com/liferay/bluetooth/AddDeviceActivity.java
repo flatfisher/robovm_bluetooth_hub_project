@@ -10,6 +10,8 @@ import android.os.Handler;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,8 @@ public class AddDeviceActivity extends Activity {
 
         public String configuration;
     }
+
+    private ProgressBar progressBar;
 
     private RecyclerView scanResultView;
 
@@ -44,6 +48,8 @@ public class AddDeviceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_device);
+
+        progressBar = (ProgressBar)findViewById(R.id.ProgressBar);
 
         scanResultList = new ArrayList<ScanResult>();
 
@@ -83,6 +89,8 @@ public class AddDeviceActivity extends Activity {
     }
 
     private void setScanResultOnRecyclerView() {
+        progressBar.setVisibility(View.INVISIBLE);
+
         scanResultView.setAdapter(new ScanResultViewAdapter(this, scanResultList));
     }
 
