@@ -20,7 +20,7 @@ public class MainViewController extends UIViewController implements
 
     @IBOutlet
     private UIView bluetoothDataView;
-    
+
     private ConfigManager configManager;
 
     private List<GattManager> gattManagerList;

@@ -15,10 +15,13 @@ import java.util.TimerTask;
 
 @CustomClass("AddDeviceTableViewController")
 public class AddDeviceTableViewController extends UITableViewController implements
-                                                UIControl.OnValueChangedListener,
-                                                    CBCentralManagerDelegate {
+        UIControl.OnValueChangedListener,
+        CBCentralManagerDelegate {
 
     private static String scanResultCellId = Constants.SCAN_RESULT_CELL;
+
+    private ConfigManager configManager;
+
 
     private UIRefreshControl pullToRefreshManager;
 
@@ -80,7 +83,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
         System.out.println("add device viewWillAppear");
 
-        startScanBLEData() ;
+        startScanBLEData();
     }
 
     private void startScanBLEData() {
@@ -89,10 +92,10 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         bluetoothManager = new CBCentralManager(this, null, null);
     }
 
-    private void moveCheckedDeviceToScanResultArray(){
+    private void moveCheckedDeviceToScanResultArray() {
         scanResultArray.clear();
 
-        for (String checkedDevice : checkedDeviceList){
+        for (String checkedDevice : checkedDeviceList) {
             scanResultArray.add(checkedDevice);
         }
     }
@@ -143,7 +146,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     private List<String> getConfigData() {
         NSDictionary nsDictionary = DataManager.getConfigData();
 
-        ConfigManager configManager = new ConfigManager(nsDictionary);
+        configManager = new ConfigManager(nsDictionary);
 
         return configManager.getDeviceNameList();
     }
@@ -151,7 +154,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     //UIControl.OnValueChangedListener fot pull to refresh
     @Override
     public void onValueChanged(UIControl uiControl) {
-        if (!bluetoothManager.isScanning()){
+        if (!bluetoothManager.isScanning()) {
             startScanBLEData();
         }
     }
@@ -182,7 +185,9 @@ public class AddDeviceTableViewController extends UITableViewController implemen
             cell.setAccessoryType(UITableViewCellAccessoryType.Checkmark);
         }
 
-        cell.getTextLabel().setText(deviceName);
+        String valueType = getValueTypeName(deviceName);
+
+        cell.getTextLabel().setText(valueType);
 
         setConfigFound(cell, deviceName);
 
@@ -191,6 +196,56 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         cell.setSelectionStyle(UITableViewCellSelectionStyle.Blue);
 
         return cell;
+    }
+
+    private String getValueTypeName(String deviceName) {
+        String typeLabel = "";
+
+        List<GattManager> gattList = configManager.getGattManagerList();
+
+        for (GattManager gattManager:gattList){
+
+            if (gattManager.getDeviceName().equals(deviceName)){
+
+                List<String> list = gattManager.getValueTypeLabelList();
+
+                int size = list.size();
+
+                for (int i = 0; i < size;i++){
+
+                    if (i==0){
+                        typeLabel = list.get(i);
+                    }else{
+                        typeLabel = typeLabel + "&" + list.get(i);
+                    }
+                }
+                return typeLabel;
+            }
+        }
+
+        List<BroadcastManager> broadcastList =  configManager.getBroadcastManagerList();
+
+        for (BroadcastManager broadcastManager:broadcastList){
+
+            if (broadcastManager.getDeviceName().equals(deviceName)){
+
+                List<String> list = broadcastManager.getValueTypeLabelList();
+
+                int size = list.size();
+
+                for (int i = 0; i < size;i++){
+
+                    if (i==0){
+                        typeLabel = list.get(i);
+                    }else{
+                        typeLabel = typeLabel + "&" + list.get(i);
+                    }
+                }
+                return typeLabel;
+            }
+        }
+
+        return null;
     }
 
     private void setConfigFound(UITableViewCell cell, String device) {
@@ -295,13 +350,13 @@ public class AddDeviceTableViewController extends UITableViewController implemen
         }
     }
 
-    private void stopPullToRefresh(){
-        if (pullToRefreshManager.isRefreshing()){
+    private void stopPullToRefresh() {
+        if (pullToRefreshManager.isRefreshing()) {
             pullToRefreshManager.endRefreshing();
         }
     }
 
-    private void stopUIActivityIndicator(){
+    private void stopUIActivityIndicator() {
         if (uiActivityIndicatorView.isAnimating()) {
             uiActivityIndicatorView.stopAnimating();
         }
@@ -316,7 +371,7 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     public void didDiscoverPeripheral(CBCentralManager cbCentralManager,
                                       CBPeripheral cbPeripheral,
                                       CBAdvertisementData cbAdvertisementData, NSNumber nsNumber) {
-        System.out.println("Add Device didDiscover"+cbPeripheral.getName());
+        System.out.println("Add Device didDiscover" + cbPeripheral.getName());
 
         String deviceName = cbPeripheral.getName();
 

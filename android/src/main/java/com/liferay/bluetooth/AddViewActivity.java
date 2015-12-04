@@ -163,7 +163,9 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
                 if (!isOverlap(name)) {
                     ScanResult device = new ScanResult();
 
-                    device.deviceName = name;
+                    device.deviceName = name;//getType(DeviceName);
+
+                    configManager.getGattManagerList();
 
                     if (configManager.isCheckConfig(name)) {
                         device.configuration = Constants.CONFIG_MESSAGE;
@@ -174,6 +176,32 @@ public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRe
             }
         }
     };
+
+    private String getType(String deviceName){
+        String typeLabel = "";
+
+        for (GattManager gattManager:configManager.getGattManagerList()){
+
+            if(gattManager.getDeviceName().equals(deviceName)){
+
+                List<String> list = gattManager.getValueTypeLabelList();
+
+                int size = list.size();
+
+                for (int i = 0; i < size;i++){
+
+                    if (i==0){
+                        typeLabel = list.get(i);
+                    }else{
+                        typeLabel = typeLabel + "&" + list.get(i);
+                    }
+                }
+
+                return typeLabel;
+            }
+        }
+        return null;
+    }
 
     private boolean isOverlap(String name) {
         for (ScanResult scanResult : scanResultList) {
