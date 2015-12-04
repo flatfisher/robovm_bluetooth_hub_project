@@ -22,7 +22,6 @@ public class AddDeviceTableViewController extends UITableViewController implemen
 
     private ConfigManager configManager;
 
-
     private UIRefreshControl pullToRefreshManager;
 
     private CBCentralManager bluetoothManager;
@@ -199,46 +198,62 @@ public class AddDeviceTableViewController extends UITableViewController implemen
     }
 
     private String getValueTypeName(String deviceName) {
+        String typeLabel = getValueTypeFromGatt(deviceName);
+
+        if (typeLabel.length() <= 0) {
+            typeLabel = getValueTypeFromBroadcast(deviceName);
+        }
+
+        return typeLabel;
+    }
+
+    private String getValueTypeFromGatt(String deviceName) {
         String typeLabel = "";
 
         List<GattManager> gattList = configManager.getGattManagerList();
 
-        for (GattManager gattManager:gattList){
+        for (GattManager gattManager : gattList) {
 
-            if (gattManager.getDeviceName().equals(deviceName)){
+            if (gattManager.getDeviceName().equals(deviceName)) {
 
                 List<String> list = gattManager.getValueTypeLabelList();
 
                 int size = list.size();
 
-                for (int i = 0; i < size;i++){
+                for (int i = 0; i < size; i++) {
 
-                    if (i==0){
+                    if (i == 0) {
                         typeLabel = list.get(i);
-                    }else{
-                        typeLabel = typeLabel + "&" + list.get(i);
+                    } else {
+                        typeLabel = typeLabel + " & " + list.get(i);
                     }
                 }
                 return typeLabel;
             }
         }
 
-        List<BroadcastManager> broadcastList =  configManager.getBroadcastManagerList();
+        return typeLabel;
+    }
 
-        for (BroadcastManager broadcastManager:broadcastList){
+    private String getValueTypeFromBroadcast(String deviceName) {
+        String typeLabel = "";
 
-            if (broadcastManager.getDeviceName().equals(deviceName)){
+        List<BroadcastManager> broadcastList = configManager.getBroadcastManagerList();
+
+        for (BroadcastManager broadcastManager : broadcastList) {
+
+            if (broadcastManager.getDeviceName().equals(deviceName)) {
 
                 List<String> list = broadcastManager.getValueTypeLabelList();
 
                 int size = list.size();
 
-                for (int i = 0; i < size;i++){
+                for (int i = 0; i < size; i++) {
 
-                    if (i==0){
+                    if (i == 0) {
                         typeLabel = list.get(i);
-                    }else{
-                        typeLabel = typeLabel + "&" + list.get(i);
+                    } else {
+                        typeLabel = typeLabel + " & " + list.get(i);
                     }
                 }
                 return typeLabel;
@@ -382,13 +397,10 @@ public class AddDeviceTableViewController extends UITableViewController implemen
                 if (isCheckOverlap(name)) {
                     scanResultArray.add(name);
                 }
-            } else {
-                if (isCheckOverlap(deviceName)) {
-                    scanResultArray.add(deviceName);
-                }
             }
         }
     }
+
 
     private String checkConfigDataName(String device) {
         for (String configName : configNameList) {

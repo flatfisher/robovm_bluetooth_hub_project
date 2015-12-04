@@ -111,7 +111,7 @@ public class MainViewController extends UIViewController implements
     private void moveToAddDeviceTableViewController() {
         if (!DataManager.isCheckedData()) {
 
-            performSegue("Add View", null);
+            performSegue("AddDevice", null);
         }
     }
 

@@ -5,6 +5,8 @@ import org.robovm.apple.foundation.NSDictionary;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ConfigManager {
 
@@ -159,7 +161,7 @@ public class ConfigManager {
 
                 GattProcess gattProcess = new GattProcess();
 
-                gattProcess.setMethod(String.valueOf(process.get("method")));
+                gattProcess.setMethod(getStringWithSpace(String.valueOf(process.get("method"))));
 
                 gattProcess.setService(String.valueOf(process.get("service")));
 
@@ -185,6 +187,17 @@ public class ConfigManager {
         return gattManagerList;
     }
 
+    private static String getStringWithSpace(String value){
+        String regex = "&nbsp;";
+
+        Pattern p = Pattern.compile(regex);
+
+        Matcher m = p.matcher(value);
+
+        String result = m.replaceAll(" ");
+
+        return result;
+    }
 
     private List<String> getList(NSArray valueTypeArray) {
         List<String> list = new ArrayList<String>();
@@ -249,7 +262,7 @@ public class ConfigManager {
 
             BroadcastMethod broadcastMethod = new BroadcastMethod();
 
-            broadcastMethod.setName(method.getString("name"));
+            broadcastMethod.setName(getStringWithSpace(method.getString("name")));
 
             broadcastMethod.setConvert(method.getString("convert"));
 
