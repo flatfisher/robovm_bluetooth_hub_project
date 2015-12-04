@@ -6,13 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.SyncStateContract;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import java.util.ArrayList;
 
@@ -20,6 +20,8 @@ import java.util.List;
 import java.util.UUID;
 
 public class MainViewActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private ProgressBar progressBar;
 
     private Button addDeviceButton;
 
@@ -54,6 +56,8 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_main);
 
+        progressBar = (ProgressBar)findViewById(R.id.ProgressBar);
+
         layoutSize = (LinearLayout) findViewById(R.id.layoutSize);
 
         mainDataView = (LinearLayout) findViewById(R.id.get_data_view);
@@ -76,6 +80,8 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
             String jsonData = DataManager.getConfigData(this);
 
             gattManagerList = getGattManagerListFromCheckedDevice(jsonData);
+
+            progressBar.setVisibility(View.INVISIBLE);
 
             prepareDataView();
 
@@ -161,6 +167,8 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void onResponse(String jsonString, int code) {
+                progressBar.setVisibility(View.INVISIBLE);
+
                 DataManager.saveConfigData(MainViewActivity.this, jsonString);
 
                 moveToAddDeviceActivity();
@@ -168,6 +176,7 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
 
             @Override
             public void onError(String errorMessage) {
+                progressBar.setVisibility(View.INVISIBLE);
 
             }
 

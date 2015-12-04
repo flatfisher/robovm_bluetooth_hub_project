@@ -1,40 +1,60 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:id="@+id/layoutSize"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ScrollView
-            android:layout_marginTop="@dimen/abc_action_bar_stacked_max_height"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_margin="8dp"
-            android:scrollbars="vertical"
-            android:layout_weight="8"
+    <LinearLayout
+            android:id="@+id/layoutSize"
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <LinearLayout
-                android:orientation="vertical"
-                android:id="@+id/get_data_view"
+        <ScrollView
+                android:layout_marginTop="@dimen/abc_action_bar_stacked_max_height"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_margin="8dp"
+                android:scrollbars="vertical"
+                android:layout_weight="8"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="0dp">
 
-    </ScrollView>
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:id="@+id/get_data_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
 
-    <RelativeLayout
-            android:layout_weight="2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
+        </ScrollView>
 
-        <Button
-                android:id="@+id/add_view_button"
-                android:text="Add View"
-                android:textAllCaps="false"
+        <RelativeLayout
+                android:layout_weight="2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+            <Button
+                    android:id="@+id/add_view_button"
+                    android:text="Add View"
+                    android:textAllCaps="false"
+                    android:layout_centerInParent="true"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+        <ProgressBar
+                android:id="@+id/ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"/>
+                style="?android:attr/progressBarStyleLarge">
+        </ProgressBar>
 
     </RelativeLayout>
 
-</LinearLayout>
+</FrameLayout>
