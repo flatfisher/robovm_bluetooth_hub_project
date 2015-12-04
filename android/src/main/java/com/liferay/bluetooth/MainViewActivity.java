@@ -61,7 +61,7 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
 
         bluetoothGattIndexList = new ArrayList<BluetoothGattIndex>();
 
-        addDeviceButton = (Button) findViewById(R.id.add_device_button);
+        addDeviceButton = (Button) findViewById(R.id.add_view_button);
 
         addDeviceButton.setOnClickListener(this);
     }
@@ -174,7 +174,7 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void moveToAddDeviceActivity() {
-        Intent intent = new Intent(this, AddDeviceActivity.class);
+        Intent intent = new Intent(this, AddViewActivity.class);
 
         startActivity(intent);
     }

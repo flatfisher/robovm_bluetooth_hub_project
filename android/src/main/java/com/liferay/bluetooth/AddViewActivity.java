@@ -17,7 +17,7 @@ import android.widget.ProgressBar;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddDeviceActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener{
+public class AddViewActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener{
 
     class ScanResult {
         public String deviceName;

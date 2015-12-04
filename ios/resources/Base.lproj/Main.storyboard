@@ -34,8 +34,8 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay9-FH-g1H">
                                         <rect key="frame" x="241" y="12" width="79" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="AddDevice"/>
-                                        <state key="normal" title="AddDevice"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="AddDevice" label=""/>
+                                        <state key="normal" title="Add View"/>
                                         <connections>
                                             <action selector="onClickAddDevice" destination="Rw5-ns-KcI" eventType="touchUpInside" id="Wpe-Xj-qB7"/>
                                             <segue destination="7Ut-6I-Ftx" kind="show" identifier="AddDevice" id="9Gi-vC-ZHE"/>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="609" y="507"/>
         </scene>
-        <!--AddDevice-->
+        <!--Add View-->
         <scene sceneID="mM3-Cj-nCY">
             <objects>
-                <tableViewController title="AddDevice" id="7Ut-6I-Ftx" customClass="AddDeviceTableViewController" sceneMemberID="viewController">
+                <tableViewController title="Add View" id="7Ut-6I-Ftx" customClass="AddDeviceTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="V2p-bX-pZm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

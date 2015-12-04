@@ -18,9 +18,9 @@ public class ScanResultViewAdapter extends RecyclerView.Adapter<ScanResultViewAd
 
     private LayoutInflater layoutInflater;
 
-    private List<AddDeviceActivity.ScanResult> scanResultList;
+    private List<AddViewActivity.ScanResult> scanResultList;
 
-    public ScanResultViewAdapter(Context context,List<AddDeviceActivity.ScanResult> scanResultList){
+    public ScanResultViewAdapter(Context context,List<AddViewActivity.ScanResult> scanResultList){
         this.context = context;
 
         layoutInflater = LayoutInflater.from(context);

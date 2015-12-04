@@ -28,10 +28,11 @@
             android:layout_height="0dp">
 
         <Button
-                android:id="@+id/add_device_button"
-                android:text="AddDevice"
+                android:id="@+id/add_view_button"
+                android:text="Add View"
+                android:textAllCaps="false"
                 android:layout_centerInParent="true"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"/>
 
     </RelativeLayout>
