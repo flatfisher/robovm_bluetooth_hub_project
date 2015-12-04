@@ -95,14 +95,17 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void stopBluetooth(){
-        startScanDevice(false);
 
-        int size = bluetoothGattList.size();
+        if (bluetoothLeScanner != null) {
+            startScanDevice(false);
 
-        for(int i = 0;i<size;i++){
-            bluetoothGattList.get(i).disconnect();
+            int size = bluetoothGattList.size();
 
-            bluetoothGattList.get(i).close();
+            for (int i = 0; i < size; i++) {
+                bluetoothGattList.get(i).disconnect();
+
+                bluetoothGattList.get(i).close();
+            }
         }
     }
 
@@ -441,7 +444,7 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private boolean isEnableBluetoothSetting() {
-        if (bluetoothAdapter != null || bluetoothAdapter.isEnabled()) {
+        if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
             return true;
         } else {
             return false;

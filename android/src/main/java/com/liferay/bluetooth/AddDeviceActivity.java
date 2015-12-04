@@ -92,7 +92,9 @@ public class AddDeviceActivity extends Activity implements SwipeRefreshLayout.On
     protected void onPause() {
         super.onPause();
 
-        scanLeDevice(false);
+        if (bluetoothLeScanner != null) {
+            scanLeDevice(false);
+        }
     }
 
     private void setScanResultOnRecyclerView() {
@@ -183,7 +185,7 @@ public class AddDeviceActivity extends Activity implements SwipeRefreshLayout.On
     }
 
     private boolean isEnableBluetoothSetting() {
-        if (bluetoothAdapter != null || bluetoothAdapter.isEnabled()) {
+        if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
             return true;
         } else {
             return false;
