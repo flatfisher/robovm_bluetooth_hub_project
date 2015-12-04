@@ -9,9 +9,9 @@
 @interface MainViewController : UIViewController <CBCentralManagerDelegate,CBPeripheralDelegate>
 
 /**
- * IBOutlet bleDataView
+ * IBOutlet bluetoothDataView
  */
-@property (weak, nonatomic) IBOutlet UIScrollView *bleDataView;
+@property (weak, nonatomic) IBOutlet UIView *bluetoothDataView;
 
 /**
  * IBAction onClickAddDevice

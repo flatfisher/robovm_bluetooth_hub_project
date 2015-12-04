@@ -51,8 +51,8 @@
 					"isa" = "PBXSourcesBuildPhase";
 					"buildActionMask" = "2147483647";
 					"files" =
-						("E816D3223364469F942233CA", "FA58174C9C904B4AA3C3FE74", "66A2ADFDD5244436823E02A3"
-);
+						("82F304ADE28A487886AA6F39", "FA58174C9C904B4AA3C3FE74", "8A790371333746238B4DEC5E",
+ "66A2ADFDD5244436823E02A3", "41E52A07C4EF49658404345C");
 					"runOnlyForDeploymentPostprocessing" = "0";
 				};
 			"100000000000000000000004" =
@@ -60,7 +60,7 @@
 					"isa" = "XCBuildConfiguration";
 					"buildSettings" =
 						{
-							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/Info.plist.xml";
+							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/Info.plist.xml";
 							"SDKROOT" = "iphoneos";
 							"TARGETED_DEVICE_FAMILY" = "1,2";
 							"GCC_PRECOMPILE_PREFIX_HEADER" = "YES";
@@ -73,7 +73,7 @@
 					"isa" = "XCBuildConfiguration";
 					"buildSettings" =
 						{
-							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/Info.plist.xml";
+							"INFOPLIST_FILE" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/Info.plist.xml";
 							"SDKROOT" = "iphoneos";
 							"TARGETED_DEVICE_FAMILY" = "1,2";
 							"GCC_PRECOMPILE_PREFIX_HEADER" = "YES";
@@ -93,16 +93,17 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("A046392D4AF2474E894A2B91", "2072CAC20DBE469487DC08BE");
+						("A046392D4AF2474E894A2B91", "E3BFF385747840D390502FAF", "2072CAC20DBE469487DC08BE"
+);
 					"name" = "Resources";
 					"sourceTree" = "<absolute>";
-					"path" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/resources";
+					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/resources";
 				};
 			"2072CAC20DBE469487DC08BE" =
 				{
 					"isa" = "PBXVariantGroup";
 					"children" =
-						("C064DAB850A94CA2AD6AE8D4");
+						("33A8A98051DD4454A0B4A41C", "C064DAB850A94CA2AD6AE8D4");
 					"name" = "Main.storyboard";
 					"sourceTree" = "<group>";
 				};
@@ -118,10 +119,11 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("949004EF845C4024B6F365D7", "F22C5521E63D48E29CD2D296");
+						("949004EF845C4024B6F365D7", "9748D15360494190A8783966", "B40D852B22E54629811EEE37",
+ "F22C5521E63D48E29CD2D296");
 					"name" = "Supporting Files";
 					"sourceTree" = "<absolute>";
-					"path" = "/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios";
+					"path" = "/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios";
 				};
 			"50D5DC562BB1449AA424125A" =
 				{
@@ -136,9 +138,10 @@
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("902C5FE5B09D4994B6444118", "6873AEB19D774968B28D7C2E", "50958CD55F134C37955084D3",
- "2205C6A14CE7424C9AC8F667", "BB246D5110CF4CE6B41EC934", "E04B9E0DA79A4B9D8CB6E41B"
-);
+						("164A20490B9546428B1BD1F0", "239ADAB57D924C8992B2B512", "902C5FE5B09D4994B6444118",
+ "6873AEB19D774968B28D7C2E", "99A989D0A3014364BA985C5F", "E4A74D7891964A05A531BD20",
+ "7E7D15F0018B4DF9BCB06BFB", "8AEE2F000BDE447E8189C788", "BB246D5110CF4CE6B41EC934",
+ "E04B9E0DA79A4B9D8CB6E41B");
 					"name" = "com.liferay.bluetooth";
 					"sourceTree" = "<group>";
 					"path" = "com.liferay.bluetooth";
@@ -209,7 +212,81 @@
 					"sourceTree" = "<group>";
 					"path" = "Info.plist.xml";
 				};
-			"50958CD55F134C37955084D3" =
+			"B40D852B22E54629811EEE37" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Info.plist";
+					"explicitFileType" = "text.plist.info";
+					"sourceTree" = "<group>";
+					"path" = "Info.plist.xml";
+				};
+			"33A8A98051DD4454A0B4A41C" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Main.storyboard";
+					"lastKnownFileType" = "file.storyboard";
+					"sourceTree" = "<group>";
+					"path" = "Base.lproj/Main.storyboard";
+				};
+			"E3BFF385747840D390502FAF" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Images.xcassets";
+					"lastKnownFileType" = "folder.assetcatalog";
+					"sourceTree" = "<group>";
+					"path" = "Images.xcassets";
+				};
+			"9748D15360494190A8783966" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Info.plist";
+					"explicitFileType" = "text.plist.info";
+					"sourceTree" = "<group>";
+					"path" = "Info.plist.xml";
+				};
+			"164A20490B9546428B1BD1F0" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "AddDeviceTableViewController.h";
+					"lastKnownFileType" = "sourcecode.c.h";
+					"sourceTree" = "<group>";
+					"path" = "AddDeviceTableViewController.h";
+				};
+			"239ADAB57D924C8992B2B512" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "AddDeviceTableViewController.m";
+					"lastKnownFileType" = "sourcecode.c.objc";
+					"sourceTree" = "<group>";
+					"path" = "AddDeviceTableViewController.m";
+				};
+			"82F304ADE28A487886AA6F39" =
+				{
+					"isa" = "PBXBuildFile";
+					"fileRef" = "239ADAB57D924C8992B2B512";
+				};
+			"99A989D0A3014364BA985C5F" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "DeviceDataUIView.h";
+					"lastKnownFileType" = "sourcecode.c.h";
+					"sourceTree" = "<group>";
+					"path" = "DeviceDataUIView.h";
+				};
+			"E4A74D7891964A05A531BD20" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "DeviceDataUIView.m";
+					"lastKnownFileType" = "sourcecode.c.objc";
+					"sourceTree" = "<group>";
+					"path" = "DeviceDataUIView.m";
+				};
+			"8A790371333746238B4DEC5E" =
+				{
+					"isa" = "PBXBuildFile";
+					"fileRef" = "E4A74D7891964A05A531BD20";
+				};
+			"7E7D15F0018B4DF9BCB06BFB" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "MainViewController.h";
@@ -217,7 +294,7 @@
 					"sourceTree" = "<group>";
 					"path" = "MainViewController.h";
 				};
-			"2205C6A14CE7424C9AC8F667" =
+			"8AEE2F000BDE447E8189C788" =
 				{
 					"isa" = "PBXFileReference";
 					"name" = "MainViewController.m";
@@ -225,10 +302,10 @@
 					"sourceTree" = "<group>";
 					"path" = "MainViewController.m";
 				};
-			"E816D3223364469F942233CA" =
+			"41E52A07C4EF49658404345C" =
 				{
 					"isa" = "PBXBuildFile";
-					"fileRef" = "2205C6A14CE7424C9AC8F667";
+					"fileRef" = "8AEE2F000BDE447E8189C788";
 				};
 		};
 	"rootObject" = "100000000000000000000001";

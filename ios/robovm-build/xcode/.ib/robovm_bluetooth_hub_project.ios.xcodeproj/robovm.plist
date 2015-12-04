@@ -10,6 +10,12 @@
 		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/MainViewController.h</string>
 		<key>/Users/flatfisher/Documents/GitProjects/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/ScanBLEDeviceViewController.class</key>
 		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/ScanBLEDeviceViewController.h</string>
+		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/AddDeviceTableViewController.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/AddDeviceTableViewController.h</string>
+		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/DeviceDataUIView.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/DeviceDataUIView.h</string>
+		<key>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/build/classes/main/com/liferay/bluetooth/MainViewController.class</key>
+		<string>/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/xcode/.ib/com.liferay.bluetooth/MainViewController.h</string>
 	</dict>
 	<key>implementationToBuild</key>
 	<dict>
@@ -17,8 +23,12 @@
 		<string>66A2ADFDD5244436823E02A3</string>
 		<key>E04B9E0DA79A4B9D8CB6E41B</key>
 		<string>FA58174C9C904B4AA3C3FE74</string>
-		<key>2205C6A14CE7424C9AC8F667</key>
-		<string>E816D3223364469F942233CA</string>
+		<key>239ADAB57D924C8992B2B512</key>
+		<string>82F304ADE28A487886AA6F39</string>
+		<key>E4A74D7891964A05A531BD20</key>
+		<string>8A790371333746238B4DEC5E</string>
+		<key>8AEE2F000BDE447E8189C788</key>
+		<string>41E52A07C4EF49658404345C</string>
 	</dict>
 </dict>
 </plist>
