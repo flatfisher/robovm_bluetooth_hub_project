@@ -20,7 +20,7 @@ public class Constants {
 
     public static final String SCAN_DEVICE = "Scan Bluetooth.";
 
-    public static final String CONFIG_MESSAGE = "Configuration found";
+    public static final String CONFIG_MESSAGE = "Configuration found.";
 
     public static final String NO_CONFIG_MESSAGE = "No configuration found.";
 
