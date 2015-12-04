@@ -14,6 +14,8 @@ public class DataView extends LinearLayout {
 
     private Context context;
 
+    private int rowHeight;
+
     private LinearLayout typeTextContainer;
 
     private LinearLayout valueTextContainer;
@@ -33,6 +35,8 @@ public class DataView extends LinearLayout {
 
         this.context = context;
 
+        this.rowHeight = rowHeight;
+
         setMinimumHeight(rowHeight);
 
         setOrientation(HORIZONTAL);
@@ -49,31 +53,23 @@ public class DataView extends LinearLayout {
     }
 
     private void initContainers() {
-        LayoutParams containerParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
-
+        LayoutParams typeParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
+        typeParams.weight = 6;
         typeTextContainer = new LinearLayout(context);
-
         typeTextContainer.setOrientation(VERTICAL);
+        addView(typeTextContainer,typeParams);
 
-        containerParams.weight = 6;
-
-        addView(typeTextContainer,containerParams);
-
+        LayoutParams valueParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
+        valueParams.weight = 2;
         valueTextContainer = new LinearLayout(context);
-
         valueTextContainer.setOrientation(VERTICAL);
+        addView(valueTextContainer,valueParams);
 
-        containerParams.weight = 2;
-
-        addView(valueTextContainer,containerParams);
-
+        LayoutParams unitParams = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
+        unitParams.weight = 2;
         unitTextContainer = new LinearLayout(context);
-
         unitTextContainer.setOrientation(VERTICAL);
-
-        containerParams.weight = 2;
-
-        addView(unitTextContainer,containerParams);
+        addView(unitTextContainer,unitParams);
     }
 
     private void initTextViews(){
@@ -94,6 +90,8 @@ public class DataView extends LinearLayout {
 
             typeText.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
 
+            typeText.setTextSize(rowHeight/20);
+
             typeText.setText(type);
 
             typeTextContainer.addView(typeText, params);
@@ -108,7 +106,11 @@ public class DataView extends LinearLayout {
         for (int i = 0;i<size;i++){
             TextView valueText = new TextView(context);
 
-            valueText.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+            valueText.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER);
+
+            valueText.setTextSize(rowHeight/20);
+
+            valueText.setText("--");
 
             valueTextContainer.addView(valueText, params);
 
@@ -122,6 +124,8 @@ public class DataView extends LinearLayout {
             TextView unitText = new TextView(context);
 
             unitText.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+
+            unitText.setTextSize(rowHeight/20);
 
             unitText.setText(unit);
 
