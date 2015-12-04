@@ -97,10 +97,12 @@ public class MainViewActivity extends AppCompatActivity implements View.OnClickL
     private void stopBluetooth(){
         startScanDevice(false);
 
-        for(BluetoothGatt bluetoothGatt:bluetoothGattList){
-            bluetoothGatt.disconnect();
+        int size = bluetoothGattList.size();
 
-            bluetoothGatt.close();
+        for(int i = 0;i<size;i++){
+            bluetoothGattList.get(i).disconnect();
+
+            bluetoothGattList.get(i).close();
         }
     }
 
