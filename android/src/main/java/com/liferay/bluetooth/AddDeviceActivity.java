@@ -88,6 +88,13 @@ public class AddDeviceActivity extends Activity implements SwipeRefreshLayout.On
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        scanLeDevice(false);
+    }
+
     private void setScanResultOnRecyclerView() {
         pullToRefresh.setRefreshing(false);
 
