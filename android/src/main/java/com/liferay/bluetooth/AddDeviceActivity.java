@@ -53,8 +53,6 @@ public class AddDeviceActivity extends Activity {
 
         scanResultList = new ArrayList<ScanResult>();
 
-        addCheckedDeviceToScanResultList();
-
         scanResultView = (RecyclerView) findViewById(R.id.scan_result_view);
 
         scanResultView.setLayoutManager(new LinearLayoutManager(this));
@@ -74,19 +72,20 @@ public class AddDeviceActivity extends Activity {
         }
     }
 
-    private void addCheckedDeviceToScanResultList() {
-        List<String> list = DataManager.getCheckedList(this);
-
-        for (String checkedName : list) {
-            ScanResult scanResult = new ScanResult();
-
-            scanResult.deviceName = checkedName;
-
-            scanResult.configuration = Constants.CONFIG_MESSAGE;
-
-            scanResultList.add(scanResult);
-        }
-    }
+    //add result for already setting configs.
+//    private void addCheckedDeviceToScanResultList() {
+//        List<String> list = DataManager.getCheckedList(this);
+//
+//        for (String checkedName : list) {
+//            ScanResult scanResult = new ScanResult();
+//
+//            scanResult.deviceName = checkedName;
+//
+//            scanResult.configuration = Constants.CONFIG_MESSAGE;
+//
+//            scanResultList.add(scanResult);
+//        }
+//    }
 
     private void setScanResultOnRecyclerView() {
         progressBar.setVisibility(View.INVISIBLE);
@@ -156,10 +155,9 @@ public class AddDeviceActivity extends Activity {
 
                     if (configManager.isCheckConfig(name)) {
                         device.configuration = Constants.CONFIG_MESSAGE;
-                    } else {
-                        device.configuration = Constants.NO_CONFIG_MESSAGE;
+
+                        scanResultList.add(device);
                     }
-                    scanResultList.add(device);
                 }
             }
         }
