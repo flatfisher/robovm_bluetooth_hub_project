@@ -8,6 +8,8 @@ public class Constants {
 
     public static final String REQUEST_URL = "https://apiflatfisher.appspot.com";
 
+    public static final String REQUEST_URL_GITHUB = "https://api.github.com/repos/flatfisher/robovm_bluetooth_hub_project/git/blobs/8edafba596c05776f7ae2ea5918e0f2f250b9f82";
+
     public static final String CONFIG_URL = "/config";
 
     public static final String SCAN_RESULT_CELL = "SCAN_RESULT_CELL";
