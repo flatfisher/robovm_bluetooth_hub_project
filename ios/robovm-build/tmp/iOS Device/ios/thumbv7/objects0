@@ -1,28 +1,29 @@
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker0.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker1.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker4.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker3.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker7.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker2.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker5.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker6.o
-/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker3.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker4.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker1.o
+/Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker2.o
 /Users/flatfisher/Documents/Develop/robovm_bluetooth_hub_project/ios/robovm-build/tmp/iOS Device/ios/thumbv7/linker8.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController.db407aa00e2313d7a87a64522cc7729d.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$1.2a76269f0a795ee115f1653fefdf6ebd.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastManager.3a30a07188bfbea0b73909dbbd7d4321.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastMethod.a8021724471fb33a8a1a34357141d988.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager.ee089f8b9a6b72a828a61ab8791dc9db.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager$Device.9e4b2765e798af6ff57fdeff721b83f2.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Convert.1d75a3ad6958df343a94b96a9bff4da2.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DataManager.286b23390c1c330da5f74cb03b7b6661.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DeviceDataUIView.0b92e6f41a96798a4e343f3f227d8cf6.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattManager.dc6068027c57c1082aebc2fe3c905f5a.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattProcess.04693cb660906a15ae15625134e34dd7.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController.cd330158d2094387e4138c5b1dfa39d3.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$1.bf5d007cb73bfec8fa2d5504975c54ff.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$ScanResult.fb7a0e67f8788bae93f3f669ee5cd96a.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastManager.d019286ad8b7d6632c9d42a80b481042.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastMethod.ec89de890c77a9d85261e2943606669e.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager.1c9805147254f2b4f8ba13076380e868.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager$Device.ee3fd45f977dd5dc33bbd8e5fa340654.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Convert.68247d45b1c25661db39b675c027d5e0.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DataManager.84e880f4a6eb513732891c0d414bcb2f.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DeviceDataUIView.4978f1d534b2af5e0b97e59c9de4055d.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattManager.d2486863e7206defee8d16b00f8c9416.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattProcess.2a1831521c24f07b2ef33e522cd3bfbd.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Main.36a3498036027d58c257887217ac8ed9.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController.d60c7106187cbf66c3dc9e6655a33ac8.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1.b19b3e07f5350bb0f5807a2b8be36d1d.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1$1.58293d6e04dc5a27f2b1d4ddcfda3caa.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/NetworkManager.696ad8cb8e5eab871d8e3df644f64408.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController.5cd9ba5f2abfa79d5ee19bc03f4080b3.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1.c46239c81aa3f6ad108daf8b374d066e.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1$1.bb585f0e45a394c4c0946bd17a0d64ad.class.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/NetworkManager.5fd53eafb1f5a0a34155fe01f34c14b2.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard.14e020d2ebc90634eb8bd345d6fe28e6.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard$1.1020b12629ef25f2de2ed8b9082de457.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard$2.40adbb812d7cf16d66fbd03422c37975.class.o
@@ -2953,22 +2954,23 @@
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/xmlpull/v1/XmlPullParser.3ac114b5dd492674d5d663052443dbea.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/org/xmlpull/v1/XmlPullParserException.e518f6958fca3cadb50a7d1289dd0d01.class.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/sun/misc/Unsafe.d89abf37163f4e4af115ddde2836593a.class.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController.db407aa00e2313d7a87a64522cc7729d.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$1.2a76269f0a795ee115f1653fefdf6ebd.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastManager.3a30a07188bfbea0b73909dbbd7d4321.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastMethod.a8021724471fb33a8a1a34357141d988.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager.ee089f8b9a6b72a828a61ab8791dc9db.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager$Device.9e4b2765e798af6ff57fdeff721b83f2.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Convert.1d75a3ad6958df343a94b96a9bff4da2.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DataManager.286b23390c1c330da5f74cb03b7b6661.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DeviceDataUIView.0b92e6f41a96798a4e343f3f227d8cf6.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattManager.dc6068027c57c1082aebc2fe3c905f5a.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattProcess.04693cb660906a15ae15625134e34dd7.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController.cd330158d2094387e4138c5b1dfa39d3.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$1.bf5d007cb73bfec8fa2d5504975c54ff.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/AddDeviceTableViewController$ScanResult.fb7a0e67f8788bae93f3f669ee5cd96a.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastManager.d019286ad8b7d6632c9d42a80b481042.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/BroadcastMethod.ec89de890c77a9d85261e2943606669e.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager.1c9805147254f2b4f8ba13076380e868.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/ConfigManager$Device.ee3fd45f977dd5dc33bbd8e5fa340654.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Convert.68247d45b1c25661db39b675c027d5e0.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DataManager.84e880f4a6eb513732891c0d414bcb2f.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/DeviceDataUIView.4978f1d534b2af5e0b97e59c9de4055d.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattManager.d2486863e7206defee8d16b00f8c9416.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/GattProcess.2a1831521c24f07b2ef33e522cd3bfbd.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/Main.36a3498036027d58c257887217ac8ed9.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController.d60c7106187cbf66c3dc9e6655a33ac8.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1.b19b3e07f5350bb0f5807a2b8be36d1d.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1$1.58293d6e04dc5a27f2b1d4ddcfda3caa.class.lines.o
-/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/NetworkManager.696ad8cb8e5eab871d8e3df644f64408.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController.5cd9ba5f2abfa79d5ee19bc03f4080b3.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1.c46239c81aa3f6ad108daf8b374d066e.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/MainViewController$1$1.bb585f0e45a394c4c0946bd17a0d64ad.class.lines.o
+/Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/com/liferay/bluetooth/NetworkManager.5fd53eafb1f5a0a34155fe01f34c14b2.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard.14e020d2ebc90634eb8bd345d6fe28e6.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard$1.1020b12629ef25f2de2ed8b9082de457.class.lines.o
 /Users/flatfisher/.robovm/cache/ios/thumbv7/release/files/dalvik/system/BlockGuard$2.40adbb812d7cf16d66fbd03422c37975.class.lines.o

@@ -56,7 +56,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6Peo1g55cifBL/L2C2N5sRUBWaw=
+			RRqXBMrYh/6MdzoYrZ+jEbAv68o=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -65,7 +65,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			N/9MosfdgtVt6u7A9n+IkchDaUM=
+			fjnyunsoAJGJIi95/g6DWO8heOs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -74,7 +74,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xO7g7D+yqyAom/A8BUtSZKvXUEA=
+			+BuziwT/6DeMR8YUDnAa6mZlbzc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -83,7 +83,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MBeYnBg+2B/FX06dsnbtfX+Ru0w=
+			jb101VCp1HJGVGlLNma5Enn1kKI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -92,7 +92,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sqq0mN6BbDSPcxeR6JG7Xw1d4kU=
+			wwgFADR31zbbFrxwws3kj9DgJFo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -143,11 +143,11 @@
 		</data>
 		<key>lib/core.jar</key>
 		<data>
-		Zdo8U3Ugvg+cFrDhVNPGVjIRuLY=
+		OZngVXCWiPy7WZLO3Oo/xD+LRSI=
 		</data>
 		<key>lib/ios.jar</key>
 		<data>
-		yeQYF0Rig8g6KaFwko+ht0rSMek=
+		pJiW9n5llHdpjAyqdOnGLcMCE/U=
 		</data>
 		<key>lib/robovm-cacerts-full.jar</key>
 		<data>
@@ -216,7 +216,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6Peo1g55cifBL/L2C2N5sRUBWaw=
+			RRqXBMrYh/6MdzoYrZ+jEbAv68o=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -225,7 +225,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			N/9MosfdgtVt6u7A9n+IkchDaUM=
+			fjnyunsoAJGJIi95/g6DWO8heOs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -234,7 +234,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xO7g7D+yqyAom/A8BUtSZKvXUEA=
+			+BuziwT/6DeMR8YUDnAa6mZlbzc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -243,7 +243,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MBeYnBg+2B/FX06dsnbtfX+Ru0w=
+			jb101VCp1HJGVGlLNma5Enn1kKI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -252,7 +252,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sqq0mN6BbDSPcxeR6JG7Xw1d4kU=
+			wwgFADR31zbbFrxwws3kj9DgJFo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -299,11 +299,11 @@
 		</data>
 		<key>lib/core.jar</key>
 		<data>
-		Zdo8U3Ugvg+cFrDhVNPGVjIRuLY=
+		OZngVXCWiPy7WZLO3Oo/xD+LRSI=
 		</data>
 		<key>lib/ios.jar</key>
 		<data>
-		yeQYF0Rig8g6KaFwko+ht0rSMek=
+		pJiW9n5llHdpjAyqdOnGLcMCE/U=
 		</data>
 		<key>lib/robovm-cacerts-full.jar</key>
 		<data>
